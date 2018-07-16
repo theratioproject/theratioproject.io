@@ -1,4 +1,5 @@
 
+call "../database/GetBlogs.sim"
 
 @'
 	<section class="devsite-landing-row devsite-landing-row-1-up"><div class="devsite-landing-row-group"><div class="devsite-landing-row-item ">
@@ -9,6 +10,7 @@
 	for a = 0 to lengthOf(blogList) {
 		tempBlob = blogList[a]
 		@tempBlob
+		
 	}
 @'
 	</div></div></div></div></section>
