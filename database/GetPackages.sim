@@ -1,5 +1,5 @@
 
-packageList = [
+packagesList = [
 	[
 		:status = "verified",
 		:name = "atomic",

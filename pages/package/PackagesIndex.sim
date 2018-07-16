@@ -8,7 +8,13 @@ call "../../database/GetPackages.sim"
 			<tbody>
 			<tr><th>Name</th><th>Title</th><th>Author</th><th>Description</th><th>Version</th><th>Size</th><th>Download</th></tr>
 '				
-				
+				for a = 0 to lengthOf(packagesList) {
+					tempPackage = packagesList[a]
+					@tempPackage
+					@'
+					
+					'
+				}
 @'
 				</tr>
 			</tbody>
