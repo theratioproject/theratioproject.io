@@ -16,6 +16,8 @@ if package = "" || package == "(null)" {
 }
 	'
 else
+	type = GET["type"]
+	
 	packageExist = false
 	packageListLength = lengthOf(packagesList)
 	for a = 0 to packageListLength {
@@ -25,6 +27,14 @@ else
 			packageExist = true
 			break
 		}
+	}
+	if !packageExist {
+	@'
+{
+	"value":"failed",
+	"message":"the '+package+' '+type+' cannot be found in the package index",
+}
+	'
 	}
 	
 }
