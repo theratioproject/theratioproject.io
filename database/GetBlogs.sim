@@ -1,19 +1,19 @@
 
 blogList = [
 	[
-		:title = "SIMPLE (Simple Intelligent and Modular Programming Language and Environment)",
-		:url = "https://medium.com/@thecarisma/simple-simple-intelligent-and-modular-programming-language-and-environment-eed1a7551ec3",
-		:website = "Medium",
-		:date = "March 02, 2018",
-		:author = "Azeez Adewale",
-		:description = "Follow @thesimplelang on Twitter"
-	],
-	[
 		:title = "Introducing SIMPLE - A new programming language",
 		:url = "https://dev.to/kvng_zeez/introducing-simple---a-new-programming-language--ld9",
 		:website = "dev.to",
 		:date = "April 13, 2018",
 		:author = "Abdulazeez Adeshina",
+		:description = "Follow @thesimplelang on Twitter"
+	],
+	[
+		:title = "SIMPLE (Simple Intelligent and Modular Programming Language and Environment)",
+		:url = "https://medium.com/@thecarisma/simple-simple-intelligent-and-modular-programming-language-and-environment-eed1a7551ec3",
+		:website = "Medium",
+		:date = "March 02, 2018",
+		:author = "Azeez Adewale",
 		:description = "Follow @thesimplelang on Twitter"
 	]
 	
