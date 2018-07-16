@@ -9,7 +9,7 @@ packagesList = [
 		:description = "a test module for modular",
 		:author = "Azeez Adewale",
 		:authorwebsite = "https://twitter.com/iamthecarisma",
-		:version = "1.0.0",
+		:version = "1.0.1",
 		:license = "MIT License",
 		:size = "143.75 KB",
 		:website = modulesUrl,
@@ -31,7 +31,7 @@ packagesList = [
 		:size = "243.75 KB",
 		:website = modulesUrl,
 		:date = "16 July 2018",
-		:download_url = "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
+		:download_url = "http://localhost/simple-lang/modular/nuclearicalyret-module-1.0.1.zip",
 		:supporting_modules = ""
 	],
 	[
@@ -43,12 +43,12 @@ packagesList = [
 		:description = "a maniac test module for modular supporting modules",
 		:author = "Azeez Adewale",
 		:authorwebsite = "https://twitter.com/iamthecarisma",
-		:version = "1.0.0",
+		:version = "1.0.1",
 		:license = "MIT License",
 		:size = "543.75 KB",
 		:website = modulesUrl,
 		:date = "16 July 2018",
-		:download_url = "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
+		:download_url = "http://localhost/simple-lang/modular/letitrainagain-module-1.0.1.zip",
 		:supporting_modules = ""
 	]
 
