@@ -1,5 +1,6 @@
 
 downloadsList = [
-
-
+	[
+		:latest_version = "verified",
+	]
 ]
