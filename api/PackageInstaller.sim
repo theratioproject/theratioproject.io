@@ -20,7 +20,11 @@ else
 	packageListLength = lengthOf(packagesList)
 	for a = 0 to packageListLength {
 		tempPackage = packagesList[a]
-		if tempPackage[:name]
+		if tempPackage[:name] == package {
+			@"found it"
+			packageExist = true
+			break
+		}
 	}
 	
 }
