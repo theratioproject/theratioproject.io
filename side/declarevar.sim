@@ -49,6 +49,10 @@ downloadSubHeadings = [
 		:url = downloadLinuxUrl
 	],
 	[
+		:title = "Unix",
+		:url = downloadUnixUrl
+	],
+	[
 		:title = "Mac",
 		:url = downloadMacUrl
 	],

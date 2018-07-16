@@ -16,6 +16,7 @@ tryOnlineUrl = homeUrl+"&sub_page=Try Online"
 #download
 downloadWindowsUrl = downloadUrl+"&sub_page=Windows"
 downloadLinuxUrl = downloadUrl+"&sub_page=Linux"
+downloadUnixUrl = downloadUrl+"&sub_page=Unix"
 downloadMacUrl = downloadUrl+"&sub_page=Mac"
 downloadHaikuUrl = downloadUrl+"&sub_page=Haiku"
 downloadAndroidUrl = downloadUrl+"&sub_page=Android"
