@@ -1,0 +1,79 @@
+#!simple
+
+@'
+			
+		<footer class="devsite-footer-promos nocontent">
+		<nav class="devsite-full-site-width">
+			<ul class="devsite-footer-promos-list">
+'
+		for a = 0 to lengthOf(footerSocialMedia) {
+			tempMedia = footerSocialMedia[a] 
+			@'
+				<li class="devsite-footer-promo">
+					<a target="_blank" href="'+tempMedia[:url]+'" class="devsite-footer-promo-title gc-analytics-event"> 
+					<img class="devsite-footer-promo-icon" src="'+tempMedia[:imagesrc]+'"> '+tempMedia[:title]+' </a>
+					<div class="devsite-footer-promo-description">'+tempMedia[:description]+'</div>
+				</li>
+			'
+		}
+			
+@'
+			</ul>
+		</nav> </footer>
+		<footer class="devsite-footer-linkboxes nocontent"><nav class="devsite-full-site-width"><ul class="devsite-footer-linkboxes-list">'
+			for a = 0 to lengthOf(footerLinks) {
+				tempFooter = footerLinks[a]
+				if tempFooter[:title] == pageTitle {
+					continue
+				}
+				@'
+						<li class="devsite-footer-linkbox "><h3 class="devsite-footer-linkbox-heading">'+tempFooter[:title]+'</h3><ul class="devsite-footer-linkbox-list">'
+						subFooter = tempFooter[:sublinks]
+						for b = 0 to lengthOf(subFooter) {
+							tempSubFooter = subFooter[b]
+							@'
+								<li class="devsite-footer-linkbox-item">
+									<a href="'+tempSubFooter[:url]+'" class="gc-analytics-event" > '+tempSubFooter[:title]+' </a>
+								</li>
+							'
+						}
+					@'						</ul></li> '
+			}
+@'
+			</ul></nav></footer>
+		<footer class="devsite-utility-footer">
+			<nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width">
+			<div class=""> '+footerText+' </div>
+			</nav>
+		</footer>
+		<script async="" defer="" src="./assets/js/api.js.download"></script>
+		<script src="./assets/js/saved_resource"></script>
+		<script src="./assets/js/script_foot_closure.js.download"></script>
+		<script src="./assets/js/script_foot.js.download"></script>
+		<script>var METADATA = {};</script>
+		<script src="./assets/js/irina_metadata_en.js.download"></script>
+		<script src="./assets/js/dynamic-content-widget.js.download"></script>
+		<script>
+        (function($) {
+          
+          devsite.devsite.Init($, {"ENABLE_BLOCKED_VIDEO_PLACEHOLDER": 0, "SITE_NAME": "irina", "FULL_SITE_SEARCH_ENABLED": 1, "ENABLE_CLOUDTRACK": 0, "VTAGS_ENABLED": 0, "HISTORY_ENABLED": 0, "SIDEBAR_MINI_ENABLED": 1, "VERSION_HASH": "6d893b1b39", "SCRIPTSAFE_DOMAIN": "android-dot-google-developers.appspot.com", "ENABLE_BLOCKED_LINK_TOOLTIP": 0, "ALLOWED_HOSTS": [".android.com", ".anvato.com", ".apigee.com", ".appspot.com", ".dialogflow.com", ".gonglchuangl.net", ".google.cn", ".google.com", ".googleplex.com", ".nest.com", ".openthread.io", ".openweave.io", ".orbitera.com", ".tensorflow.org"], "BLOCK_RSS_FEEDS": 0},
+                               "[]","en",
+                               true, "",
+                               {"f62218c009ec029abef196bba5aa34cf": true, "8de7a048f21618359bd37f5ce44be073": false, "098dafe57affddc137df300142652cfd": false, "8e03e230de0bd8a6fe173fdf172e8b3f": true, "cb025a64a50094835616312f4774a53d": true, "51470233c56fc1fde50f00b73c52b216": false, "d169d485cf24243a263783dbe42029b1": true, "039e5d84b87fd75807ffb37b7f1bbf2c": true, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true}, "/",
+                               "http://localhost/simple.io/");
+        })(jQuery);
+
+        
+        devsite.localInit = function() {
+          
+        };
+
+      </script><script>
+      $(".devsite-utility-footer-language-select").each(function() {
+        $(this).change(function(){$(".devsite-utility-footer-language").submit();});
+      });
+      </script>
+	  
+	</body>
+</html>
+'

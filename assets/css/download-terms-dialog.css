@@ -1,0 +1,85 @@
+/* Required for en/dynamic_shared/___download_terms_dialog.html */
+
+.button-regular {
+  font-size: inherit;
+  padding: 0;
+  text-transform: none;
+}
+
+.download-bundle-button .small {
+  font-size: 12px;
+  opacity: .7;
+}
+
+.devsite-dialog-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dialog-content-stretch {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.devsite-dialog-contents p:last-child {
+  margin-bottom: 0;
+}
+
+.dac-download-dialog {
+  height: 100%;
+  left: 50%;
+  margin-left: -40%;
+  top: 0;
+  width: 80%;
+}
+
+@media screen and (max-width: 720px) {
+  div.devsite-dialog {
+    height: 85%;
+    width: 100%;
+  }
+}
+
+* > .dac-download-dialog.devsite-dialog h2,
+* > .dac-download-dialog.devsite-dialog h3 {
+  border: 0;
+  font: 400 20px/32px Roboto,sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.sdk-terms {
+  border: 1px solid #b9b9b9;
+  color: #757575;
+  font: 14px/20px Roboto,sans-serif;
+  height: calc(100% - 150px);
+  margin-bottom: 16px;
+  min-height: 130px;
+  overflow: scroll;
+  padding: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.agreed,
+.not-agreed {
+  color: #fff;
+  margin: 16px 0 0;
+}
+
+.agreebox:not(:checked) ~ .agreed,
+.agreebox:checked ~ .not-agreed {
+  display: none;
+}
+
+.agreebox:not(:checked) ~ .not-agreed,
+.agreebox:checked ~ .agreed {
+  display: block !important;
+}

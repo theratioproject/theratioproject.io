@@ -1,0 +1,29 @@
+#!simple -cgi
+
+call "web/functions/Methods.sim"
+
+pageTitle = GET["page"]
+pageSubTitle = GET["sub_page"]
+
+if pageTitle == "" { pageTitle = "Home" }
+
+call "./header.sim"
+
+if pageSubTitle == "Try Online" {
+	call "./pages/try_online.sim"
+elif pageSubTitle == "Blog"
+	call "./pages/blog.sim"
+else
+	@GET["page"]+'<br />'
+	@GET["sub_page"] + '<br />'
+
+	@'
+
+
+
+	'
+}
+
+
+
+call "./footer.sim"

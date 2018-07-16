@@ -1,0 +1,284 @@
+
+
+
+
+homeSubHeadings = [
+	
+	[
+		:title = "Features",
+		:url = featuresUrl
+	],
+	[
+		:title = "Try Online",
+		:url = tryOnlineUrl
+	]
+
+]
+
+docsSubHeadings = [
+	[
+		:title = "Getting Started",
+		:url = gettingStartedUrl
+	],
+	[
+		:title = "Syntax",
+		:url = syntaxUrl
+	],
+	[
+		:title = "Modules",
+		:url = modulesUrl
+	],
+	[
+		:title = "Environments",
+		:url = environmentsUrl
+	],
+	[
+		:title = "Examples",
+		:url = examplesUrl
+	]
+
+]
+
+downloadSubHeadings = [
+	[
+		:title = "Windows",
+		:url = downloadWindowsUrl
+	],
+	[
+		:title = "Linux",
+		:url = downloadLinuxUrl
+	],
+	[
+		:title = "Mac",
+		:url = downloadMacUrl
+	],
+	[
+		:title = "Haiku",
+		:url = downloadHaikuUrl
+	],
+	[
+		:title = "Android",
+		:url = downloadAndroidUrl
+	],
+	[
+		:title = "Build From Source",
+		:url = buildFromSourceUrl
+	]
+
+]
+
+blogSubHeadings = [
+	
+	[
+		:title = "Blog",
+		:url = blogUrl
+	],
+	[
+		:title = "Videos",
+		:url = videosUrl
+	]
+
+]
+
+packageSubHeadings = [
+	
+	[
+		:title = "Index",
+		:url = packageIndexUrl
+	],
+	[
+		:title = "Add New Package",
+		:url = addPackageUrl
+	],
+	[
+		:title = "Manage Package",
+		:url = managePackageUrl
+	],
+	[
+		:title = "Verifier",
+		:url = packageVerifierUrl
+	],
+	[
+		:title = "About Package",
+		:url = aboutPackageUrl
+	]
+
+]
+
+contributeSubHeadings = [
+	
+	[
+		:title = "License",
+		:url = licenseUrl
+	],
+	[
+		:title = "Contributing",
+		:url = contributingUrl
+	],
+	[
+		:title = "Contributors",
+		:url = contributorsUrl
+	],
+	[
+		:title = "Code Of Conduct",
+		:url = codeOfConductUrl
+	]
+
+]
+
+mainHeadings = [
+	[
+		:title = "Home",
+		:url = homeUrl,
+		:subheading = homeSubHeadings
+	],
+	[
+		:title = "Download",
+		:url = downloadUrl,
+		:subheading = downloadSubHeadings
+	],
+	[
+		:title = "Packages Index",
+		:url = packageUrl,
+		:subheading = packageSubHeadings
+	],
+	[
+		:title = "Docs",
+		:url = documentationUrl,
+		:subheading = docsSubHeadings
+	],
+	[
+		:title = "Blog",
+		:url = blogUrl,
+		:subheading = blogSubHeadings
+	],
+	[
+		:title = "Contribute",
+		:url = contributeUrl,
+		:subheading = contributeSubHeadings
+	]
+
+]
+
+
+
+
+
+/*
+	FOOTER
+*/
+#Social Media
+
+footerSocialMedia = [
+	[
+		:title = "Twitter",
+		:url = twitterUrl,
+		:imagesrc = "./assets/images/logo-twitter.svg",
+		:description = "Follow @thesimplelang on Twitter"
+	],
+	[
+		:title = "Slack",
+		:url = slackUrl,
+		:imagesrc = "./assets/images/slack_Icon.png",
+		:description = "Join the conversation on Slack simple-lang.slack.com"
+	],
+	[
+		:title = "Youtube",
+		:url = youtubeUrl,
+		:imagesrc = "./assets/images/youtube_48dp.png",
+		:description = "Check out simple-lang Videos on YouTube"
+	],
+	[
+		:title = "Google+",
+		:url = googlePlusUrl,
+		:imagesrc = "./assets/images/google_plus_48dp.png",
+		:description = "Follow simple-lang on Google+"
+	]
+
+]
+
+#main footer links
+
+footerLinks = [
+	[
+		:title = "Docs",
+		:sublinks = docsSubHeadings
+	],
+	[
+		:title = "Packages Index",
+		:sublinks = packageSubHeadings
+	],
+	[
+		:title = "Blog",
+		:sublinks = blogSubHeadings
+	],
+	[
+		:title = "Contribute",
+		:sublinks = contributeSubHeadings
+	]
+]
+
+
+footerText = "simple-lang 2018"
+
+#try online
+#the permalink but tally with the name in the repository
+tryOnlineExamples = [
+	[
+		:title = "Hello World",
+		:permalink = "helloworld"
+	],
+	[
+		:title = "Ascii Characters",
+		:permalink = "ascii"
+	],
+	[
+		:title = "Character",
+		:permalink = "char"
+	],
+	[
+		:title = "Count To Million",
+		:permalink = "counttomillion"
+	],
+	[
+		:title = "Decimal Triangle",
+		:permalink = "decimaltriangle"
+	],
+	[
+		:title = "Error",
+		:permalink = "error"
+	],
+	[
+		:title = "Floyd Triangle",
+		:permalink = "floydstriangle"
+	],
+	[
+		:title = "List",
+		:permalink = "listdemo"
+	],
+	[
+		:title = "Loop",
+		:permalink = "loop"
+	],
+	[
+		:title = "Misc",
+		:permalink = "misc"
+	],
+	[
+		:title = "Multiple Inheritance",
+		:permalink = "multipleinheritance"
+	],
+	[
+		:title = "Stress Display",
+		:permalink = "stressdisplay"
+	],
+	[
+		:title = "This Self",
+		:permalink = "thisself"
+	]
+	
+]
+
+
+
+

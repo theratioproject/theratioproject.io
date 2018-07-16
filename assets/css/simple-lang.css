@@ -1,0 +1,24 @@
+
+.try-online-editor {
+	width:100%;
+	height:60%;
+	background:rgb(32,35,64);
+	border:0;
+	color:white;
+	padding:1%;
+}
+
+.try-online-console {
+	background:rgb(47,49,41);
+	border:0;
+	color:white;
+	overflow:auto;
+}
+
+.try-online-console::-webkit-scrollbar {
+   display: none;
+ }
+
+.try-online-button {
+	color:rgb(47,49,41);
+}
