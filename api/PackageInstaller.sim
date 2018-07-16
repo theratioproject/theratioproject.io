@@ -27,7 +27,8 @@ else
 	packageListLength = lengthOf(packagesList)
 	for a = 0 to packageListLength {
 		tempPackage = packagesList[a]
-		if tempPackage[:name] == package && tempPackage[:type] == type && (tempPackage[:version] == version || version == "latest") && (tempPackage[:os] == os || os == "" ) {
+		if tempPackage[:name] == package && tempPackage[:type] == type && (tempPackage[:version] == version || version == "latest") 
+		/*&& (tempPackage[:os] == os || os == "" )*/ {
 			@'
 {
 	"value":"success",
