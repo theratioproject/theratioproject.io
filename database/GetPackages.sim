@@ -13,6 +13,20 @@ packagesList = [
 		:date = "09 July 2018",
 		:download_url = "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
 		:supporting_modules = "simple archiver"
+	],
+	[
+		:status = "verified",
+		:name = "atomic",
+		:title = "Atomic Test Module",
+		:description = "a test module for modular",
+		:author = "Azeez Adewale",
+		:version = "1.0.0",
+		:license = "MIT License",
+		:size = "143.75 KB",
+		:website = modulesUrl,
+		:date = "09 July 2018",
+		:download_url = "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
+		:supporting_modules = "simple archiver"
 	]
 
 ]
