@@ -1,6 +1,14 @@
 
+/*
+	The download is from top to bottom so the latest release should
+	always be on top of the list. This list entry is for all the 
+	operating system
+*/
+
 downloadsList = [
 	[
-		:latest_version = "verified",
+		:latest_version = "0.3.36",
+		:size = "5.0 MiB",
+		:code_name = "red ribbon"
 	]
 ]
