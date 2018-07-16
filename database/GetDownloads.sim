@@ -7,7 +7,7 @@
 
 downloadsList = [
 	[
-		:latest_version = "0.3.36",
+		:version = "0.3.36",
 		:size = "5.0 MB",
 		:code_name = "red ribbon",
 		:download_url = "http://localhost/simple-lang/modular/s0.3.36-64.zip",
@@ -15,7 +15,7 @@ downloadsList = [
 		:os = "Windows 64"
 	],
 	[
-		:latest_version = "0.3.36",
+		:version = "0.3.36",
 		:size = "3.8 MB",
 		:code_name = "red ribbon",
 		:download_url = "http://localhost/simple-lang/modular/s0.3.36.zip",
