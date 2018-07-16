@@ -1,8 +1,9 @@
 
 blogList = [
 	[
-		:title = "Introduction to simple-lang",
-		:url = "",
+		:title = "Introducing SIMPLE - A new programming language",
+		:url = "https://dev.to/kvng_zeez/introducing-simple---a-new-programming-language--ld9",
+		:website = "dev.to"
 		:imagesrc = "./assets/images/logo-twitter.svg",
 		:description = "Follow @thesimplelang on Twitter"
 	]
