@@ -1,6 +1,7 @@
 #!simple
 
 call "web/functions/Methods.sim"
+call "../side/urladdresses.sim"
 call "../database/GetPackages.sim"
 
 @"Content-Type: text/json"+crlf
@@ -18,7 +19,8 @@ else
 	packageExist = false
 	packageListLength = lengthOf(packagesList)
 	for a = 0 to packageListLength {
-	
+		tempPackage = packagesList[a]
+		if tempPackage[:name]
 	}
 	
 }
