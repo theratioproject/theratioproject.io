@@ -45,8 +45,7 @@ else
 	"date": "'+tempPackage[:date]+'",
 	"download_url": "'+tempPackage[:download_url]+'",
 	"supporting_modules" : "'+tempPackage[:supporting_modules]+'",
-}
-			'
+}'
 			packageExist = true
 			break
 		}
