@@ -18,7 +18,10 @@ call "../../database/GetPackages.sim"
 							<td>'+tempPackage[:description]+'</td>
 							<td>'+tempPackage[:version]+'</td>
 							<td>'+tempPackage[:size]+'</td>
-							<td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_linux_bundle_download">DOWNLOAD</button></td>
+							<td>
+								<a href="'+tempPackage[:download_url]+'">
+								<button class="devsite-dialog-button button-white button-regular">DOWNLOAD</button></a>
+							</td>
 						</tr>
 					'
 				}
