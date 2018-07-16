@@ -1,6 +1,6 @@
 
 #main heading
-indexUrl = "http://localhost/simple.io/index.sim"
+indexUrl = "http://localhost/simple-lang.io/index.sim"
 homeUrl = indexUrl+"?page=Home"
 downloadUrl = indexUrl+"?page=Download" 
 packageUrl = indexUrl+"?page=Packages Index"
