@@ -7,10 +7,13 @@
 			<tbody>
 			<tr><th>Name</th><th>Title</th><th>Author</th><th>Size</th><th>Description</th><th>Download</th></tr>
 				<tr>
-				<td>Linux</td>
-				<td>Atomic Test Module</td>
-				<td>853 MB</td>
-				<td>d86748e44d658fd39581b40f7b706fb397fc1eca5dd6f8066a56c0beb856dea4</td></tr>
+					<td>atomic</td>
+					<td>Atomic Test Module</td>
+					<td>Azeez Adewale</td>
+					<td>853 MB</td>
+					<td></td>
+					<td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_linux_bundle_download">android-studio-ide-173.4819257-linux.zip</button></td>
+				</tr>
 			</tbody>
 		</table>
 	</div> </div></div></div></section>
