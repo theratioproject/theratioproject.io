@@ -1,0 +1,112 @@
+#!simple
+
+call "./side/urladdresses.sim"
+call "./side/declarevar.sim"
+
+mainSubHeadings = null
+
+@'
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<link rel="stylesheet" href="./assets/css/css">
+		<link rel="stylesheet" href="./assets/css/devsite-android-light-grey.css">
+		<link rel="stylesheet" href="./assets/css/simple-lang-site.css">
+		<link rel="stylesheet" href="./assets/css/simple-lang.css?8458">
+		
+		<script type="text/javascript" async="" src="./assets/js/linkid.js.download"></script>
+		<script async="" src="./assets/js/analytics.js.download"></script>
+		<script>
+			var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;
+			a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
+		</script>
+		<script src="./assets/js/jquery-bundle.js.download"></script>
+		
+		<title>simple-lang - '+pageTitle+'</title>
+		<link rel="stylesheet" href="./assets/css/landing-page.css">
+	</head>
+	<body class="devsite-landing-page dac-studio-page no-touch" id="top_of_page">
+		<div class="devsite-wrapper" style="margin-top: 0px;">
+'
+
+@ '
+	<div class="devsite-top-section-wrapper">
+	<header class="devsite-top-section nocontent devsite-top-section-pinned">
+		<div class="devsite-top-logo-row-wrapper-wrapper" style="position: relative;">
+		<div class="devsite-top-logo-row-wrapper">
+		<div class="devsite-top-logo-row devsite-full-site-width">
+			<button type="button" class="devsite-expand-section-nav devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Hamburger menu"></button>
+			<div class="devsite-product-name-wrapper">
+				<a href="'+homeUrl+'" class="devsite-site-logo-link gc-analytics-event">
+					<img src="'+simple_lang_logo+'" class="devsite-site-logo" alt="simple-lang"><span class="devsite-site-name devsite-product-name">Android Developers</span>
+				</a>
+			</div>
+									
+			<div class="devsite-header-upper-tabs">
+				<nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper">
+					<ul class="devsite-doc-set-nav-tab-list devsite-overflow-tabs-scroll" style="min-width: 670px; left: 0px;">
+'
+	for a = 0 to lengthOf(mainHeadings) {
+		tempMainHeading = mainHeadings[a] 
+		activeClass = ''
+		if pageTitle == tempMainHeading[:title] {
+			activeClass = 'devsite-doc-set-nav-active '
+			mainSubHeadings = tempMainHeading[:subheading]
+		}
+		@'
+						<li class="devsite-doc-set-nav-tab-container devsite-nav-tab">
+							 <a href="'+tempMainHeading[:url]+'" class="'+activeClass+'devsite-nav-tab
+							  devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event">'+tempMainHeading[:title]+'</a>
+						</li>
+		'
+	}
+@'
+					</ul>
+					
+					<button type="button" class="devsite-overflow-tabs-scroll-button devsite-top-button material-icons devsite-scroll-forward devsite-hidden"></button>
+					<button type="button" class="devsite-overflow-tabs-scroll-button devsite-top-button material-icons devsite-scroll-back devsite-hidden"></button>
+			</nav></div>
+			
+				<form class="devsite-search-form" action="http://localhost/simple.io/s/results/" method="GET" id="top-search" search-placeholder="Search"><div id="searchbox" class="devsite-searchbox"><input placeholder="Search" type="text" class="devsite-search-field devsite-search-query" name="q" value="" autocomplete="off" aria-label="Search box"><div class="devsite-search-image material-icons"></div></div><input type="hidden" name="p" id="search_project" value="/" data-project-name="Android Developers" data-project-path="/" data-query-match=""><input type="hidden" class="suggest-project" value="Android Developers"><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Android Developers"></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Android Open Source Project"></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Apigee Docs"></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Google Cloud Platform"></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Dialogflow"></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Firebase"></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Android Developers"></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Link.app"></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="Nest Developers"></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="OpenThread"></div><div class="suggest-project-metadata" data-home_url="https://www.orbitera.com/" data-path="/" data-name="Orbitera"></div><div class="suggest-project-metadata" data-home_url="/" data-path="/" data-name="TensorFlow"></div><div class="devsite-popout devsite-popout-closed"><div class="devsite-suggest-results" style="display: none;"></div></div></form>
+			<button type="button" class="devsite-search-button devsite-header-icon-button button-flat material-icons"></button>
+			</div></div></div>
+			<div class="devsite-collapsible-section" style="margin-top: -68px;">
+			<div class="devsite-header-background devsite-full-site-width">
+			<div class="devsite-product-id-row devsite-full-site-width" style="visibility: hidden;">
+				<div class="devsite-product-description-row">
+					<ul class="devsite-breadcrumb-list">
+						<li class="devsite-breadcrumb-item">The Simple Intelligent and Modular Programming Language and Environment</li>
+					</ul>
+				<div class="devsite-product-description"><!-- hide description --></div>
+				</div>
+			</div>
+		  <div class="devsite-doc-set-nav-row devsite-full-site-width">
+		  <nav class="devsite-doc-set-nav devsite-nav devsite-overflow-tabs-scroll-wrapper">
+		  <ul class="devsite-doc-set-nav-tab-list devsite-overflow-tabs-scroll" style="min-width: 488px; left: 0px;">'
+				for a = 0 to lengthOf(mainSubHeadings) {
+					tempSubHeading = mainSubHeadings[a] 
+					activeClass = ''
+					if pageSubTitle == "" { pageSubTitle = tempSubHeading[:title] }
+					if pageSubTitle == tempSubHeading[:title] {
+						activeClass = 'devsite-doc-set-nav-active '
+					}
+					@'
+									<li class="devsite-doc-set-nav-tab-container devsite-nav-tab">
+										<a href="'+tempSubHeading[:url]+'" class="'+activeClass+'devsite-nav-tab devsite-doc-set-nav-tab devsite-doc-set-nav-tab-link gc-analytics-event">'+tempSubHeading[:title]+'</a>
+									  </li>
+					'
+				}
+@'
+			</ul>
+				<button type="button" class="devsite-overflow-tabs-scroll-button devsite-top-button material-icons devsite-scroll-forward devsite-hidden"></button><button type="button" class="devsite-overflow-tabs-scroll-button devsite-top-button material-icons devsite-scroll-back devsite-hidden"></button>
+			</nav>
+			</div>
+			</div>
+			</div>
+		</header> 
+		</div>
+		
+		<div class="devsite-main-content clearfix" style="margin-top:10px;">
+	
+'
