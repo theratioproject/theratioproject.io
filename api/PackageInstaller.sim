@@ -18,6 +18,7 @@ if package = "" || package == "(null)" {
 else
 	type = GET["type"] 
 	version = GET["version"]
+	os = GET["os"]
 	
 	if type == "" { type = "module" }
 	if version == "" { version = "latest" }
@@ -26,7 +27,7 @@ else
 	packageListLength = lengthOf(packagesList)
 	for a = 0 to packageListLength {
 		tempPackage = packagesList[a]
-		if tempPackage[:name] == package && tempPackage[:type] == type && (tempPackage[:version] == version || version == "latest") {
+		if tempPackage[:name] == package && tempPackage[:type] == type && (tempPackage[:version] == version || version == "latest") && tempPackage[:os] == os {
 			@'
 {
 	"value":"success",
