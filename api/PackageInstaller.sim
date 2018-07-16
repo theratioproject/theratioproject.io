@@ -24,20 +24,22 @@ else
 		tempPackage = packagesList[a]
 		if tempPackage[:name] == package {
 			@'
-				"value":"success",
-				"message":"successfully found '+package+' '+type+' ",
-				"status":"verified",
-				"name": "atomic",
-				"title": "Atomic Test Module",
-				"description": "a test module for modular",
-				"author": "Azeez Adewale",
-				"version": "1.0.0",
-				"license": "MIT License",
-				"size": "15 kb",
-				"website": "http://localhost/simple-lang/",
-				"date": "09 July 2018",
-				"download_url": "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
-				"supporting_modules" : "simple archiver",
+{
+	"value":"success",
+	"message":"successfully found '+package+' '+type+' ",
+	"status":"verified",
+	"name": "atomic",
+	"title": "Atomic Test Module",
+	"description": "a test module for modular",
+	"author": "Azeez Adewale",
+	"version": "1.0.0",
+	"license": "MIT License",
+	"size": "15 kb",
+	"website": "http://localhost/simple-lang/",
+	"date": "09 July 2018",
+	"download_url": "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
+	"supporting_modules" : "simple archiver",
+}
 			'
 			packageExist = true
 			break
