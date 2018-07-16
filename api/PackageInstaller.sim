@@ -14,5 +14,6 @@ if package = "" || package == "(null)" {
 }
 	'
 else
+	packageExist = false
 	
 }
