@@ -6,4 +6,6 @@ call "web/functions/Methods.sim"
 
 OS = GET["os"]
 
-@OS
+if OS == "Windows 64" {
+
+}
