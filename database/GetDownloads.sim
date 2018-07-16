@@ -9,6 +9,9 @@ downloadsList = [
 	[
 		:latest_version = "0.3.36",
 		:size = "5.0 MiB",
-		:code_name = "red ribbon"
+		:code_name = "red ribbon",
+		:download_url = "http://localhost/simple-lang/modular/s0.3.36-64.zip",
+		:file_extension = "zip"
+		:os = "Windows 64"
 	]
 ]
