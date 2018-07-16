@@ -15,15 +15,6 @@
 					<td>15 KB</td>
 					<td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_linux_bundle_download">android-studio-ide-173.4819257-linux.zip</button></td>
 				</tr>
-				<tr>
-					<td>atomic</td>
-					<td>Atomic Test Module</td>
-					<td>Azeez Adewale</td>
-					<td></td>
-					<td>1.0.0</td>
-					<td>15 KB</td>
-					<td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_linux_bundle_download">android-studio-ide-173.4819257-linux.zip</button></td>
-				</tr>
 			</tbody>
 		</table>
 	</div> </div></div></div></section>
