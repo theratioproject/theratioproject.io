@@ -6,6 +6,7 @@ packagesList = [
 		:title = "Atomic Test Module",
 		:description = "a test module for modular",
 		:author = "Azeez Adewale",
+		:authorwebsite = "https://twitter.com/iamthecarisma",
 		:version = "1.0.0",
 		:license = "MIT License",
 		:size = "143.75 KB",
