@@ -14,7 +14,7 @@ if pageSubTitle == "Try Online" {
 elif pageSubTitle == "Blog"
 	call "./pages/Blog.sim"
 elif pageSubTitle == "Index"
-	call "./pages/PackagesIndex.sim"
+	call "./pages/package/PackagesIndex.sim"
 else
 	@GET["page"]+'<br />'
 	@GET["sub_page"] + '<br />'
