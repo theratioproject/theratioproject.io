@@ -12,7 +12,7 @@ call "./header.sim"
 if pageSubTitle == "Try Online" {
 	call "./pages/try_online.sim"
 elif pageSubTitle == "Blog"
-	#call "./pages/blog.sim"
+	call "./pages/blog.sim"
 else
 	@GET["page"]+'<br />'
 	@GET["sub_page"] + '<br />'
