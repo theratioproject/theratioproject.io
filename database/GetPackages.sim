@@ -1,14 +1,11 @@
 
 packageList = [
 	[
-		:status = "verified"
+		:status = "verified",
+		:name = "atomic",
 		:title = "Atomic Test Module",
-		:url = "https://dev.to/kvng_zeez/introducing-simple---a-new-programming-language--ld9",
-		:website = "dev.to",
-		:date = "April 13, 2018",
-		:author = "Abdulazeez Adeshina",
-		:description = "About Simple
-SIMPLE is a plain and innovative programming with multi-paradigm. It can be embedded in C/C++ projects. The language is portable to various OS including windows, macOS, any linux and unix distros and other OS. The language is small and fast."
+		:status = "verified",
+		:status = "verified",
 	]
 
 ]
