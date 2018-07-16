@@ -5,6 +5,14 @@ call "web/functions/Methods.sim"
 @"Content-Type: text/json"+crlf
 
 package = GET["package"]
-if package = "" || package == "(null)" {
 
+if package = "" || package == "(null)" {
+	@'
+{
+	"value":"failed",
+	"message":"no package provided",
+}
+	'
+else
+	
 }
