@@ -1,7 +1,8 @@
 
 packageList = [
 	[
-		: = "Introducing SIMPLE - A new programming language",
+		:status = "verified"
+		:title = "Atomic Test Module",
 		:url = "https://dev.to/kvng_zeez/introducing-simple---a-new-programming-language--ld9",
 		:website = "dev.to",
 		:date = "April 13, 2018",
@@ -11,3 +12,23 @@ SIMPLE is a plain and innovative programming with multi-paradigm. It can be embe
 	]
 
 ]
+
+if (os=="Windows 32" && type == "module") {
+		@'
+		{		
+			"value":"success",
+			"message":"successfully found '+package+' '+type+' ",
+			"status":"verified",
+			"name": "atomic",
+			"title": "",
+			"description": "a test module for modular",
+			"author": "Azeez Adewale",
+			"version": "1.0.0",
+			"license": "MIT License",
+			"size": "15 kb",
+			"website": "http://localhost/simple-lang/",
+			"date": "09 July 2018",
+			"download_url": "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
+			"supporting_modules" : "simple archiver",
+		} ' ;
+}
