@@ -12,26 +12,7 @@ packageList = [
 		:website = modulesUrl,
 		:date = "09 July 2018",
 		:download_url = "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
+		:supporting_modules = "simple archiver"
 	]
 
 ]
-
-if (os=="Windows 32" && type == "module") {
-		@'
-		{		
-			"value":"success",
-			"message":"successfully found '+package+' '+type+' ",
-			"status":"",
-			"name": "",
-			"title": "",
-			"description": "",
-			"": "",
-			"": "",
-			"": "",
-			"size": "",
-			"website": "",
-			"": "",
-			"": "",
-			"supporting_modules" : "simple archiver",
-		} ' ;
-}
