@@ -6,6 +6,8 @@ call "web/functions/Methods.sim"
 
 OS = GET["os"]
 
-if OS == "Windows 64" {
-
+if OS == "Windows 32" {
+	@"yes yes"
 }
+
+block getGetLatestVersion(osversion)
