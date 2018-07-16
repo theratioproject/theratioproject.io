@@ -1,5 +1,5 @@
 
-call "../database/package/GetPackages.sim"
+call "../../database/GetPackages.sim"
 
 @'
 	<section class="devsite-landing-row-landing-row-1-up"><div class="devsite-landing-row-group">
@@ -7,14 +7,9 @@ call "../database/package/GetPackages.sim"
 		<table class="download">
 			<tbody>
 			<tr><th>Name</th><th>Title</th><th>Author</th><th>Description</th><th>Version</th><th>Size</th><th>Download</th></tr>
-				<tr>
-					<td>atomic</td>
-					<td>Atomic Test Module</td>
-					<td>Azeez Adewale</td>
-					<td></td>
-					<td>1.0.0</td>
-					<td>15 KB</td>
-					<td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_linux_bundle_download">android-studio-ide-173.4819257-linux.zip</button></td>
+'				
+				
+@'
 				</tr>
 			</tbody>
 		</table>
