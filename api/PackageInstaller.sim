@@ -16,7 +16,8 @@ if package = "" || package == "(null)" {
 }
 	'
 else
-	type = GET["type"]
+	type = GET["type"] 
+	if type == "" { type = "module" }
 	
 	packageExist = false
 	packageListLength = lengthOf(packagesList)
