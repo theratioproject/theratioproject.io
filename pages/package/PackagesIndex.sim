@@ -14,7 +14,7 @@ call "../../database/GetPackages.sim"
 						<tr>
 							<td>'+tempPackage[:name]+'</td>
 							<td>'+tempPackage[:title]+'</td>
-							<td>'+tempPackage[:author]+'</td>
+							<td><a target="_blank" href="'+tempPackage[:authorwebsite]+'">'+tempPackage[:author]+'</a></td>
 							<td>'+tempPackage[:description]+'</td>
 							<td>'+tempPackage[:version]+'</td>
 							<td>'+tempPackage[:size]+'</td>
