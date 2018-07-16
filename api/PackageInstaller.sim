@@ -3,3 +3,5 @@
 call "web/functions/Methods.sim"
 
 @"Content-Type: text/json"+crlf
+
+package = GET["package"]
