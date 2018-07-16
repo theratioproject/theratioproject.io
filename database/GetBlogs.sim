@@ -14,7 +14,8 @@ blogList = [
 		:website = "Medium",
 		:date = "March 02, 2018",
 		:author = "Azeez Adewale",
-		:description = "Follow @thesimplelang on Twitter"
+		:description = "About Simple
+SIMPLE is a plain and innovative programming with multi-paradigm. It can be embedded in C/C++ projects. The language is portable to various OS including windows, macOS, any linux and unix distros and other OS. The language is small and fast."
 	]
 	
 ]
