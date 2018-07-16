@@ -23,7 +23,7 @@ else
 	packageListLength = lengthOf(packagesList)
 	for a = 0 to packageListLength {
 		tempPackage = packagesList[a]
-		if tempPackage[:name] == package {
+		if tempPackage[:name] == package && tempPackage[:type] == type {
 			@'
 {
 	"value":"success",
@@ -33,6 +33,7 @@ else
 	"title": "'+tempPackage[:title]+'",
 	"description": "'+tempPackage[:description]+'",
 	"author": "'+tempPackage[:author]+'",
+	"authorwebsite": "'+tempPackage[:authorwebsite]+'",
 	"version": "'+tempPackage[:version]+'",
 	"license": "'+tempPackage[:license]+'",
 	"size": "'+tempPackage[:size]+'",

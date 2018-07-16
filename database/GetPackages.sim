@@ -2,6 +2,7 @@
 packagesList = [
 	[
 		:status = "verified",
+		:type = "module",
 		:name = "atomic",
 		:title = "Atomic Test Module",
 		:description = "a test module for modular",
