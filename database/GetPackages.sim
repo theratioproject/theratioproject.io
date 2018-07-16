@@ -21,18 +21,35 @@ packagesList = [
 		:status = "verified",
 		:type = "module",
 		:os = "all",
-		:name = "atomic",
-		:title = "Atomic Test Module",
-		:description = "a test module for modular",
+		:name = "nuclearicalyret",
+		:title = "Nuclear Atomic Module",
+		:description = "a test module for modular supporting modules",
 		:author = "Azeez Adewale",
 		:authorwebsite = "https://twitter.com/iamthecarisma",
-		:version = "1.0.0",
+		:version = "1.0.1",
 		:license = "MIT License",
-		:size = "143.75 KB",
+		:size = "243.75 KB",
 		:website = modulesUrl,
-		:date = "09 July 2018",
+		:date = "16 July 2018",
 		:download_url = "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
-		:supporting_modules = "nuclearicalyret letitrainagain"
+		:supporting_modules = ""
+	],
+	[
+		:status = "verified",
+		:type = "module",
+		:os = "all",
+		:name = "letitrainagain",
+		:title = "Manic Atomic Module",
+		:description = "a maniac test module for modular supporting modules",
+		:author = "Azeez Adewale",
+		:authorwebsite = "https://twitter.com/iamthecarisma",
+		:version = "1.0.1",
+		:license = "MIT License",
+		:size = "243.75 KB",
+		:website = modulesUrl,
+		:date = "16 July 2018",
+		:download_url = "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
+		:supporting_modules = ""
 	]
 
 ]
