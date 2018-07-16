@@ -18,7 +18,7 @@ call "../../database/GetPackages.sim"
 							<td>'+tempPackage[:description]+'</td>
 							<td>'+tempPackage[:version]+'</td>
 							<td>'+tempPackage[:size]+'</td>
-							<td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_linux_bundle_download">android-studio-ide-173.4819257-linux.zip</button></td>
+							<td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_linux_bundle_download">DOWNLOAD</button></td>
 						</tr>
 					'
 				}
