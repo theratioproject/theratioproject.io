@@ -15,7 +15,7 @@ packagesList = [
 		:website = modulesUrl,
 		:date = "09 July 2018",
 		:download_url = "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
-		:supporting_modules = "atomic atomic"
+		:supporting_modules = "nuclearicalyret letitrainagain"
 	]
 
 ]
