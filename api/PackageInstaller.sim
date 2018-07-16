@@ -1,6 +1,7 @@
 #!simple
 
 call "web/functions/Methods.sim"
+call "../database/GetPackages.sim"
 
 @"Content-Type: text/json"+crlf
 
@@ -15,5 +16,9 @@ if package = "" || package == "(null)" {
 	'
 else
 	packageExist = false
+	packageListLength = lengthOf(packagesList)
+	for a = 0 to packageListLength {
+	
+	}
 	
 }
