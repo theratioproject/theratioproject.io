@@ -3,6 +3,7 @@ packagesList = [
 	[
 		:status = "verified",
 		:type = "module",
+		:os = "Windows",
 		:name = "atomic",
 		:title = "Atomic Test Module",
 		:description = "a test module for modular",
