@@ -17,13 +17,14 @@ if package = "" || package == "(null)" {
 	'
 else
 	type = GET["type"] 
+	version = GET["version"]
 	if type == "" { type = "module" }
 	
 	packageExist = false
 	packageListLength = lengthOf(packagesList)
 	for a = 0 to packageListLength {
 		tempPackage = packagesList[a]
-		if tempPackage[:name] == package && tempPackage[:type] == type {
+		if tempPackage[:name] == package && tempPackage[:type] == type && tempPackage[:version] == version {
 			@'
 {
 	"value":"success",
