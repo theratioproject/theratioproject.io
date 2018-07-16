@@ -51,7 +51,7 @@
 		<script src="./assets/js/script_foot_closure.js.download"></script>
 		<script src="./assets/js/script_foot.js.download"></script>
 		<script>var METADATA = {};</script>
-		<script src="./assets/js/irina_metadata_en.js.download"></script>
+		<!--<script src="./assets/js/irina_metadata_en.js.download"></script>-->
 		<script src="./assets/js/dynamic-content-widget.js.download"></script>
 		<script>
         (function($) {
