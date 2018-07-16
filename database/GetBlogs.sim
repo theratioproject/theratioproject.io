@@ -1,4 +1,10 @@
 
 blogList = [
-
+	[
+		:title = "Introduction to simple-lang",
+		:url = "",
+		:imagesrc = "./assets/images/logo-twitter.svg",
+		:description = "Follow @thesimplelang on Twitter"
+	]
+	
 ]
