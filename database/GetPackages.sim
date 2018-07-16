@@ -9,7 +9,9 @@ packageList = [
 		:version = "1.0.0",
 		:license = "MIT License",
 		:size = "15 KB",
-		:author = "Azeez Adewale",
+		:website = modulesUrl,
+		:date = "09 July 2018",
+		:download_url = "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
 	]
 
 ]
@@ -27,9 +29,9 @@ if (os=="Windows 32" && type == "module") {
 			"": "",
 			"": "",
 			"size": "",
-			"website": "http://localhost/simple-lang/",
-			"date": "09 July 2018",
-			"download_url": "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
+			"website": "",
+			"": "",
+			"": "",
 			"supporting_modules" : "simple archiver",
 		} ' ;
 }
