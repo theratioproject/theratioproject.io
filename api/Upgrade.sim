@@ -2,3 +2,8 @@
 
 call "web/functions/Methods.sim"
 
+@"Content-Type: text/json"+crlf
+
+OS = GET["os"]
+
+@OS
