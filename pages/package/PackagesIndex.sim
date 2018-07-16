@@ -5,13 +5,14 @@
 	<div class="devsite-landing-row-item"> <div class="dac-full-width"> <div class="devsite-table-wrapper">
 		<table class="download">
 			<tbody>
-			<tr><th>Name</th><th>Title</th><th>Author</th><th>Size</th><th>Description</th><th>Download</th></tr>
+			<tr><th>Name</th><th>Title</th><th>Author</th><th>Description</th><th>Version</th><th>Size</th><th>Download</th></tr>
 				<tr>
 					<td>atomic</td>
 					<td>Atomic Test Module</td>
 					<td>Azeez Adewale</td>
-					<td>853 MB</td>
 					<td></td>
+					<td>1.0.0</td>
+					<td>853 MB</td>
 					<td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_linux_bundle_download">android-studio-ide-173.4819257-linux.zip</button></td>
 				</tr>
 			</tbody>
