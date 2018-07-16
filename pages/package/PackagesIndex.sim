@@ -1,6 +1,18 @@
 
 
 @'
-
+	<section class="devsite-landing-row-landing-row-1-up"><div class="devsite-landing-row-group">
+	<div class="devsite-landing-row-item"> <div class="dac-full-width"> <div class="devsite-table-wrapper">
+		<table class="download"><tbody><tr><th>Platform</th><th>Android Studio package</th><th>Size</th><th>SHA-256 checksum</th></tr><tr><td rowspan="2">Windows<br>(64-bit)</td><td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_win_notools_exe_download">android-studio-ide-173.4819257-windows.exe</button><br>
+			  Recommended
+			</td><td>758 MB</td><td>2d11cd16ffefc7f4aca82bd95b0d0ca849a854a07ba1a353adf65dfc102aee9b</td></tr><tr><!-- blank TD from Windows rowspan --><td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_win_bundle_download">android-studio-ide-173.4819257-windows.zip</button><br>
+			  No .exe installer
+			</td><td>855 MB</td><td>6941761a9324998d9cdf5d7548ff16fcb65c9e71ea70e1bc75d066b51b77c7dd</td></tr><tr><td>Windows<br>(32-bit)</td><td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_win32_bundle_download">android-studio-ide-173.4819257-windows32.zip</button><br>
+			  No .exe installer
+			</td><td>854 MB</td><td>85cbfb33c94183abcb70caac34ea034214a079376fb1b2e10bc7b4ed71c05cf0</td></tr><tr><td><nobr>Mac</nobr></td><td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_mac_bundle_download">android-studio-ide-173.4819257-mac.dmg</button></td><td>849 MB</td><td>d4a8502c5aabfc5477ff30dfffe296bf705bd7e62650a76796b646a8f28b5e5c</td></tr><tr><td>Linux</td><td><button class="devsite-dialog-button button-white button-regular" data-modal-dialog-id="studio_linux_bundle_download">android-studio-ide-173.4819257-linux.zip</button></td><td>853 MB</td><td>d86748e44d658fd39581b40f7b706fb397fc1eca5dd6f8066a56c0beb856dea4</td></tr></tbody>
+		</table>
+	</div><p>See the <a href="https://developer.android.com/studio/releases/">Android Studio
+	  release notes</a>.</p>
+	  </div></div></div></section>
 
 '
