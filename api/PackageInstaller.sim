@@ -20,6 +20,7 @@ else
 	version = GET["version"]
 	
 	if type == "" { type = "module" }
+	if version == "" { version = "latest" }
 	
 	packageExist = false
 	packageListLength = lengthOf(packagesList)
