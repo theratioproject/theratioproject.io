@@ -23,7 +23,7 @@ install_simple_lang() {
 	local setup_file_name=$(fetch_setup_info "$os_platform" "file_name")
 	simple_lang_version=$(fetch_setup_info "$os_platform" "version")
 	local setup_url=$(fetch_setup_info "$os_platform" "download_link") 
-	if [ $simple_lang_version = "not_supported_yet" ]; then 
+	if [ "$simple_lang_version" = "" ] || [ "$simple_lang_version" = "not_supported_yet" ]; then 
 		display "simple-lang not built on your platform $os_platform"
 		display_error "try building simple-lang from source"
 		exit 1 
