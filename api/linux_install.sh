@@ -1,5 +1,7 @@
 
+
 TEMP_DIR="${TMPDIR:-/tmp}"
+SIMPLE_LANG_VERSION="${CHOOSENIM_CHOOSE_VERSION:-stable}"
 echo $TEMP_DIR
 
 get_platform() {
