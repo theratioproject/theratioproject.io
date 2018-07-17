@@ -46,6 +46,7 @@ install_simple_lang() {
 }
 
 install() {
+	display_error "install dir : $installation_dir"
 	if [ $2 == "windows_amd64" ] || [ $2 == "windows_amd32" ]; then 
 		if [ -e "$installation_dir" ]; then  
 			display "installation directory present"
@@ -74,9 +75,9 @@ display_error() {
 
 get_installation_dir() {
 	if [ $2 == "windows_amd64" ] || [ $2 == "windows_amd32" ]; then 
-	
+		return_value="C:/Simple/"
 	else
-	
+		return_value="/bin/"
 	fi
 }
 
