@@ -32,7 +32,6 @@ upgradeExist = false
 	}
 	if !upgradeExist {
 		display 'not_supported_yet'
+		@GET["os"]
+		@GET["query"]
 	}
-	
-	@GET["os"]
-	@GET["query"]
