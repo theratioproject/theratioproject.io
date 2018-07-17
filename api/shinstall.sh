@@ -70,7 +70,7 @@ display_error() {
 }
 
 get_installation_dir() {
-	if [ $1 == "windows_amd64" ] || [ $1 == "windows_amd32" ]; then 
+	if [ $1 == "windows_amd64" ] || [ $1 == "windows_x86" ]; then 
 		return_value="C:/Simple/"
 		temp_dir=$return_value
 	else
