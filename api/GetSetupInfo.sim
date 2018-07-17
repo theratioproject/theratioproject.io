@@ -12,7 +12,7 @@ upgradeExist = false
 	for a = 0 to downloadsListLength {
 		tempPackage = downloadsList[a]
 		if tempPackage[:os] == GET["os"] {
-			display tempPackage[query]
+			display tempPackage[:query]
 			var = '
 {
 	"value":"success",
