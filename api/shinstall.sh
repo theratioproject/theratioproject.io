@@ -26,6 +26,8 @@ install_simple_lang() {
 	display "$setup_url"
 	display "downloading $setup_file_name..."
 	curl -sSfL "$setup_url" -o "C:/Simple/$setup_file_name.zip"
+	display "installing $setup_file_name..."
+	unzip 
 	
 }
 
