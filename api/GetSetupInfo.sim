@@ -34,4 +34,5 @@ upgradeExist = false
 		display 'not_supported_yet'
 	}
 	
-	@"yes"
+	@GET["os"]
+	@GET["query"]
