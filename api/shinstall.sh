@@ -33,7 +33,7 @@ install_simple_lang() {
 		
 		if [ -e "$installation_dir"s"$simple_lang_version" ]; then 
 			display "simple $simple_lang_version installed successfully"
-			remove_temp_file "$installation_dir$setup_file_name.zip"
+			#remove_temp_file "$installation_dir$setup_file_name.zip"
 		fi
 	else
 		display_error "simple-lang not built on your platform $os_platform"
@@ -46,9 +46,9 @@ install_simple_lang() {
 remove_temp_file() {
 	rm -f $1
 	if [ -e $1 ]; then 
-		return 1
+		return 0
 	fi
-	return 0
+	return 1
 }
 
 display() {
