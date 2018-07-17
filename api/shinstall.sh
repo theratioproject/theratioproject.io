@@ -1,4 +1,4 @@
-#
+#!/bin/sh
 #
 #
 #
@@ -9,7 +9,7 @@
 # curl -sSfL https://simple-lang.io/api/stable_version.sim to get version by url in future
 
 simple_lang_url="https://simple-lang.io?page=Download"
-setup_url_prefix="http://10.0.2.2/simple-lang/"
+setup_url_prefix="http://127.0.0.1/simple-lang/"
 temp_dir="${TMPDIR:-/tmp/}"
 simple_lang_version="0.3.36"
 need_tty=yes
@@ -71,7 +71,7 @@ display_error() {
 }
 
 get_installation_dir() {
-	if [ $1 == "windows_amd64" ] || [ $1 == "windows_x86" ]; then 
+	if [ $1 = "windows_amd64" ] || [ $1 = "windows_x86" ]; then 
 		return_value="C:/Simple/"
 		temp_dir=$return_value
 	else
