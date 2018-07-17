@@ -24,6 +24,8 @@ install_simple_lang() {
 		display_error "try building simple-lang from source"
 		exit 1 
 	fi
+	get_temp_setup_extention $os_platform || return 1
+	local setup_extension="deb"
 	local setup_file_name="simple$simple_lang_version-$os_platform"
 	local setup_url="$setup_url_prefix"s"$simple_lang_version/$setup_file_name.zip"
 	display "downloading $setup_file_name to $temp_dir$setup_file_name.zip ..."
