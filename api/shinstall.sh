@@ -9,7 +9,7 @@
 # curl -sSfL https://simple-lang.io/api/stable_version.sim to get version by url in future
 
 simple_lang_url="https://simple-lang.io?page=Download"
-setup_url_prefix="http://10.0.2.2/simple-langh/"
+setup_url_prefix="http://10.0.2.2/simple-lang/"
 temp_dir="${TMPDIR:-/tmp/}"
 simple_lang_version="0.3.36"
 need_tty=yes
@@ -51,7 +51,7 @@ install() {
 	if [ $2 = "windows_amd64" ] || [ $2 = "windows_x86" ]; then 
 		unzip -o $1 -d "$installation_dir"s"$simple_lang_version" &> /dev/null
 	else #if [ $2 = "linux_amd64" ] || [ $2 = "linux_x86" ]; then
-		sudo dpkg -i $1
+		echo "" #sudo dpkg -i $1
 	fi
 }
 
@@ -60,6 +60,7 @@ remove_temp_file() {
 	if [ -e $1 ]; then 
 		return 0
 	fi
+	display "it auth to delete"
 	return 1
 }
 
