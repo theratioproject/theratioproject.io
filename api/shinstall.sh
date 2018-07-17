@@ -59,6 +59,11 @@ install() {
 		fi
 	else #if [ $2 = "linux_amd64" ] || [ $2 = "linux_x86" ]; then
 		echo "yes " #sudo dpkg -i $1
+		ldconfig -p | grep $i >/dev/null 2>&1 && {
+			
+		} || {
+		
+		}
 		return_value="true"
 		return 1
 	fi
