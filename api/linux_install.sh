@@ -1,4 +1,6 @@
 
+TEMP_DIR="${TMPDIR:-/tmp}"
+echo $TEMP_DIR
 
 get_platform() {
 	  # Get OS/CPU info and store in a `myos` and `mycpu` variable.
