@@ -20,7 +20,7 @@ install_simple_lang() {
 	get_installation_dir $os_platform || return 1
 	installation_dir=$return_value
 	if [ $simple_lang_version = "not_supported_yet" ]; then 
-		display_error "simple-lang not built on your platform $os_platform"
+		display "simple-lang not built on your platform $os_platform"
 		display_error "try building simple-lang from source"
 		exit 1 
 	fi
@@ -33,7 +33,7 @@ install_simple_lang() {
 	if [ -e "$temp_dir$setup_file_name.zip" ]; then 
 		display "installing $setup_file_name..."
 		install "$temp_dir$setup_file_name.zip" $os_platform
-		installation_value=$return_value
+		local installation_value=$return_value
 		
 		if [ -e $installation_value = "true" ]; then 
 			display "simple $simple_lang_version installed successfully"
@@ -42,8 +42,8 @@ install_simple_lang() {
 			display_error "simple $simple_lang_version installation failed"
 		fi
 	else
-		display_error "simple-lang not built on your platform $os_platform"
-		display_error "please install from alternative source"
+		display "simple-lang not built on your platform $os_platform"
+		display "please install from alternative source"
 		display_error "visit $simple_lang_url"
 		exit 1
 	fi 
@@ -53,6 +53,9 @@ install_simple_lang() {
 install() {
 	if [ $2 = "windows_amd64" ] || [ $2 = "windows_x86" ]; then 
 		unzip -o $1 -d "$installation_dir"s"$simple_lang_version" &> /dev/null
+		if [ -e "$temp_dir"s"$simple_lang_version" ]; then 
+			return_value="true"
+		fi
 	else #if [ $2 = "linux_amd64" ] || [ $2 = "linux_x86" ]; then
 		echo "yes " #sudo dpkg -i $1
 	fi
