@@ -18,6 +18,8 @@ install_simple_lang() {
 	local os_platform=$return_value
 	if [ $simple_lang_version = "not_supported_yet" ]; then 
 		display_error "simple-lang not built on your platform $os_platform"
+		display_error "try building simple-lang from source"
+		exit 1 
 	fi
 	local setup_file_name="$os_platform"_"$simple_lang_version"
 	echo $setup_file_name
@@ -28,7 +30,7 @@ display() {
 }
 
 display_error() {
-	display "error: $1" >&2
+	display "Error: $1" >&2
 }
 
 get_os_platform() {
