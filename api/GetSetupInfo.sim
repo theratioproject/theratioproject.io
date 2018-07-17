@@ -7,7 +7,6 @@ call "../database/GetDownloads.sim"
 
 query = GET["query"]
 display GET["os"]
-__exit__
 
 upgradeExist = false
 	downloadsListLength = lengthOf(downloadsList)
