@@ -24,6 +24,7 @@ install_simple_lang() {
 		display_error "try building simple-lang from source"
 		exit 1 
 	fi
+	exit 0
 	local setup_file_name="simple$simple_lang_version-$os_platform"
 	local setup_url="$setup_url_prefix"s"$simple_lang_version/$setup_file_name.zip"
 	display "$setup_url"
@@ -70,7 +71,7 @@ display_error() {
 get_installation_dir() {
 	if [ $1 == "windows_amd64" ] || [ $1 == "windows_amd32" ]; then 
 		return_value="C:/Simple/"
-		#temp_dir=$return_value
+		temp_dir=$return_value
 	else
 		return_value="/bin/"
 	fi
@@ -79,7 +80,7 @@ get_installation_dir() {
 		display "installation directory present"
 	else
 		display "creating installation directory"
-		mkdir $return_value #2> /dev/null
+		mkdir $return_value &> /dev/null
 	fi
 }
 
