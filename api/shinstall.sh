@@ -20,6 +20,7 @@ install_simple_lang() {
 	get_installation_dir $os_platform || return 1
 	installation_dir=$return_value
 	local setup_extension=$return_value
+	os_platform=ase
 	local setup_file_name="simple$simple_lang_version-$os_platform"
 	local setup_url=`curl -sSfL $setup_query_url?os=$os_platform&query=download_link`
 	if [ $simple_lang_version = "not_supported_yet" ]; then 
