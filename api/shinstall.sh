@@ -21,8 +21,8 @@ install_simple_lang() {
 		display_error "try building simple-lang from source"
 		exit 1 
 	fi
-	local setup_file_name="simple-lang-$os_platform"_"$simple_lang_version"
-	local setup_url="$setup_url_prefix$simple_lang_version/$setup_file_name"
+	local setup_file_name="simple-$os_platform"_"$simple_lang_version"
+	local setup_url="$setup_url_prefix$simple_lang_version/$setup_file_name.zip"
 	display "$setup_file_name from $setup_url"
 	display "downloading $setup_file_name "
 	
