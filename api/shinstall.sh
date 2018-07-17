@@ -16,8 +16,8 @@ need_tty=yes
 install_simple_lang() {
 	get_os_platform || return 1
 	local os_platform=$return_value
-	local setup_file_name="$os_platform$simple_lang_version"
-	echo $temp_dir and $setup_file_name
+	local setup_file_name="$os_platform"_"$simple_lang_version"
+	echo $setup_file_name
 }
 
 get_os_platform() {
