@@ -9,7 +9,7 @@
 # curl -sSfL https://simple-lang.io/api/stable_version.sim to get version by url in future
 
 simple_lang_url="https://simple-lang.io?page=Download"
-setup_query_url="http://localhost/simple-lang.io/api/GetSetupInfo.sim"
+setup_query_url="http://10.0.2.2/simple-lang.io/api/GetSetupInfo.sim"
 temp_dir="${TMPDIR:-/tmp/}"
 simple_lang_version="0.3.36"
 need_tty=yes
@@ -27,7 +27,7 @@ install_simple_lang() {
 	#get_temp_setup_extention $os_platform || return 1
 	local setup_extension=$return_value
 	local setup_file_name="simple$simple_lang_version-$os_platform"
-	local setup_url=`curl -sSfL $setup_query_url?`
+	local setup_url=`curl -sSfL $setup_query_url?os=$os_platform`
 	display_error $setup_url
 	display "downloading $setup_file_name to $temp_dir$setup_file_name.zip ..."
 	curl -sSfL "$setup_url" -o "$temp_dir$setup_file_name.zip"
