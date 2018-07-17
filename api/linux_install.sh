@@ -2,7 +2,12 @@
 
 TEMP_DIR="${TMPDIR:-/tmp}"
 SIMPLE_LANG_VERSION="${CHOOSENIM_CHOOSE_VERSION:-stable}"
-echo $TEMP_DIR
+need_tty=yes
+echo $TEMP_DIR and $SIMPLE_LANG_VERSION
+
+install_simple_lang() {
+
+}
 
 get_platform() {
 	  # Get OS/CPU info and store in a `myos` and `mycpu` variable.
@@ -78,3 +83,5 @@ get_platform() {
 
 	  RET_VAL="$myos"_"$mycpu"
 }
+
+install_simple_lang
