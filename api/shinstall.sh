@@ -10,7 +10,7 @@
 
 simple_lang_url="https://simple-lang.io?page=Download"
 setup_url_prefix="http://127.0.0.1/simple-lang/"
-temp_dir="C:/Simple/" #"${TMPDIR:-/tmp}"
+temp_dir="${TMPDIR:-/tmp}"
 simple_lang_version="0.3.36"
 need_tty=yes
 
@@ -24,7 +24,6 @@ install_simple_lang() {
 		display_error "try building simple-lang from source"
 		exit 1 
 	fi
-	exit 1
 	local setup_file_name="simple$simple_lang_version-$os_platform"
 	local setup_url="$setup_url_prefix"s"$simple_lang_version/$setup_file_name.zip"
 	display "$setup_url"
@@ -71,6 +70,7 @@ display_error() {
 get_installation_dir() {
 	if [ $1 == "windows_amd64" ] || [ $1 == "windows_amd32" ]; then 
 		return_value="C:/Simple/"
+		#temp_dir=$return_value
 	else
 		return_value="/bin/"
 	fi
