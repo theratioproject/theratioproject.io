@@ -24,16 +24,16 @@ install_simple_lang() {
 	fi
 	local setup_file_name="simple$simple_lang_version-$os_platform"
 	local setup_url="$setup_url_prefix"s"$simple_lang_version/$setup_file_name.zip"
-	local installation_dir="C:/Simple/"
 	display "$setup_url"
 	display "downloading $setup_file_name..."
-	curl -sSfL "$setup_url" -o "$installation_dir$setup_file_name.zip"
-	if [ -e "$installation_dir$setup_file_name.zip" ]; then 
+	curl -sSfL "$setup_url" -o "$temp_dir$setup_file_name.zip"
+	if [ -e "$temp_dir$setup_file_name.zip" ]; then 
 		display "installing $setup_file_name..."
+		#unzip
 		
-		if [ -e "$installation_dir"s"$simple_lang_version" ]; then 
+		if [ -e "$temp_dir"s"$simple_lang_version" ]; then 
 			display "simple $simple_lang_version installed successfully"
-			#remove_temp_file "$installation_dir$setup_file_name.zip"
+			remove_temp_file "$temp_dir$setup_file_name.zip"
 		fi
 	else
 		display_error "simple-lang not built on your platform $os_platform"
