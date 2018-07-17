@@ -10,7 +10,7 @@
 
 simple_lang_url="https://simple-lang.io?page=Download"
 setup_url_prefix="http://127.0.0.1/simple-lang/"
-temp_dir="C:/Simple/" #"${TMPDIR:-/tmp}"
+temp_dir="C:/Simple/test/" #"${TMPDIR:-/tmp}"
 simple_lang_version="0.3.36"
 need_tty=yes
 
@@ -29,7 +29,7 @@ install_simple_lang() {
 	curl -sSfL "$setup_url" -o "$temp_dir$setup_file_name.zip"
 	if [ -e "$temp_dir$setup_file_name.zip" ]; then 
 		display "installing $setup_file_name..."
-		#unzip
+		install "$temp_dir$setup_file_name.zip"
 		
 		if [ -e "$temp_dir"s"$simple_lang_version" ]; then 
 			display "simple $simple_lang_version installed successfully"
@@ -41,6 +41,10 @@ install_simple_lang() {
 		display_error "visit $simple_lang_url"
 	fi 
 	
+}
+
+install() {
+	display_error $1
 }
 
 remove_temp_file() {
