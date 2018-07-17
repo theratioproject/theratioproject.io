@@ -10,10 +10,9 @@
 
 simple_lang_url="https://simple-lang.io?page=Download"
 setup_url_prefix="http://127.0.0.1/simple-lang/"
-temp_dir="${TMPDIR}" #"${TMPDIR:-/tmp}"
+temp_dir="C:/Simple/" #"${TMPDIR:-/tmp}"
 simple_lang_version="0.3.36"
 need_tty=yes
-echo $temp_dir
 
 install_simple_lang() {
 	get_os_platform || return 1
