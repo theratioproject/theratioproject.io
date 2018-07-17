@@ -4,3 +4,7 @@ call "web/functions/Methods.sim"
 call "../database/GetDownloads.sim"
 
 @"Content-Type: text/json"+crlf
+
+OS = GET["os"]
+
+@OS
