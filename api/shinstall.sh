@@ -27,7 +27,8 @@ install_simple_lang() {
 	#get_temp_setup_extention $os_platform || return 1
 	local setup_extension=$return_value
 	local setup_file_name="simple$simple_lang_version-$os_platform"
-	local setup_url="$setup_url_prefix"s"$simple_lang_version/$setup_file_name.zip"
+	local setup_url=`curl -sSfL $setup_query_url?`
+	display_error $setup_url
 	display "downloading $setup_file_name to $temp_dir$setup_file_name.zip ..."
 	curl -sSfL "$setup_url" -o "$temp_dir$setup_file_name.zip"
 	if [ -e "$temp_dir$setup_file_name.zip" ]; then 
