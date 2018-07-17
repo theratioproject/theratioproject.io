@@ -22,7 +22,7 @@ install_simple_lang() {
 		exit 1 
 	fi
 	local setup_file_name="simple$simple_lang_version-$os_platform"
-	local setup_url="$setup_url_prefix$simple_lang_version/$setup_file_name.zip"
+	local setup_url="$setup_url_prefix"s"$simple_lang_version/$setup_file_name.zip"
 	display "$setup_url"
 	display "downloading $setup_file_name..."
 	curl -sSfL "$setup_url" -o "C:/Simple/$setup_file_name.zip"
