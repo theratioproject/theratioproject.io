@@ -46,7 +46,7 @@ install_simple_lang() {
 }
 
 install() {
-	if [ $2 == "windows_amd64" ] || [ $2 == "windows_32" ]; then 
+	if [ $2 == "windows_amd64" ] || [ $2 == "windows_amd32" ]; then 
 		if [ -e "$installation_dir" ]; then  
 			display "installation directory present"
 		else
@@ -73,7 +73,11 @@ display_error() {
 }
 
 get_installation_dir() {
+	if [ $2 == "windows_amd64" ] || [ $2 == "windows_amd32" ]; then 
 	
+	else
+	
+	fi
 }
 
 get_os_platform() {
