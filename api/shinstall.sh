@@ -22,7 +22,8 @@ install_simple_lang() {
 		exit 1 
 	fi
 	local setup_file_name="$os_platform"_"$simple_lang_version"
-	echo $setup_file_name
+	local setup_url="$setup_url_prefix$simple_lang_version/$setup_file_name"
+	echo $setup_file_name from $setup_url
 }
 
 display() {
