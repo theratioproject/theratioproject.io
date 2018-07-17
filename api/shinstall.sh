@@ -47,7 +47,7 @@ install_simple_lang() {
 
 install() {
 	if [ $2 == "windows_amd64" ] || [ $2 == "windows_amd32" ]; then 
-		
+		unzip $1 
 	fi
 }
 
@@ -72,6 +72,13 @@ get_installation_dir() {
 		return_value="C:/Simple/"
 	else
 		return_value="/bin/"
+	fi
+	
+	if [ -e "$return_value" ]; then  
+		display "installation directory present"
+	else
+		display "creating installation directory"
+		mkdir $return_value #2> /dev/null
 	fi
 }
 
