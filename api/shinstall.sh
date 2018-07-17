@@ -25,7 +25,6 @@ install_simple_lang() {
 		exit 1 
 	fi
 	local setup_file_name="simple$simple_lang_version-$os_platform"
-	local setup_extension="deb"
 	local setup_url="$setup_url_prefix"s"$simple_lang_version/$setup_file_name.zip"
 	display "downloading $setup_file_name to $temp_dir$setup_file_name.zip ..."
 	curl -sSfL "$setup_url" -o "$temp_dir$setup_file_name.zip"
@@ -49,7 +48,7 @@ install() {
 	if [ $2 = "windows_amd64" ] || [ $2 = "windows_x86" ]; then 
 		unzip -o $1 -d "$installation_dir"s"$simple_lang_version" &> /dev/null
 	elif [ $2 = "linux_amd64" ] || [ $2 = "linux_x86" ]; then
-		display "not yes installable in linu"
+		sudo dpkg -i $1
 	fi
 }
 
