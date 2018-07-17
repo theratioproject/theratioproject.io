@@ -50,7 +50,6 @@ install() {
 	if [ $2 = "windows_amd64" ] || [ $2 = "windows_x86" ]; then 
 		unzip -o $1 -d "$installation_dir"s"$simple_lang_version" &> /dev/null
 	else #if [ $2 = "linux_amd64" ] || [ $2 = "linux_x86" ]; then
-		display "yes linuxy"
 		sudo dpkg -i $1
 	fi
 }
