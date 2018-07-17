@@ -9,7 +9,7 @@
 # curl -sSfL https://simple-lang.io/api/stable_version.sim to get version by url in future
 
 simple_lang_url="https://simple-lang.io?page=Download"
-setup_query_url="http://127.0.0.1/simple-lang.io/api/GetSetupInfo.sim"
+setup_query_url="http://10.0.2.2/simple-lang.io/api/GetSetupInfo.sim"
 temp_dir="${TMPDIR:-/tmp/}"
 simple_lang_version="0.3.36"
 need_tty=yes
@@ -24,7 +24,7 @@ install_simple_lang() {
 	simple_lang_version=$(fetch_setup_info "$os_platform" "version")
 	local setup_url=$(fetch_setup_info "$os_platform" "download_link") 
 	if [ "$simple_lang_version" = "" ] || [ "$simple_lang_version" = "not_supported_yet" ]; then 
-		display "simple-lang not built on your platform $os_platform"
+		display "simple-lang not built on your platform: $os_platform"
 		display_error "try building simple-lang from source"
 		exit 1 
 	fi
