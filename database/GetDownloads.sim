@@ -13,7 +13,7 @@ downloadsList = [
 		:download_url = "http://localhost/simple-lang/s0.3.36/simple0.3.36-windows_amd64.zip",
 		:file_name = "simple0.3.36-windows_amd64",
 		:file_extension = "zip",
-		:os = "windows_amd64"
+		:os = "windows_amd64",
 		:osname = "Windows 64"
 	],
 	[
@@ -23,7 +23,7 @@ downloadsList = [
 		:download_url = "http://localhost/simple-lang/s0.3.36/simple0.3.36-windows_x86.zip",
 		:file_name = "simple0.3.36-windows_x86",
 		:file_extension = "zip",
-		:os = "windows_x86"
+		:os = "windows_x86",
 		:osname = "Windows 32"
 	]
 ]
