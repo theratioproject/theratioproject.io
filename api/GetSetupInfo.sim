@@ -15,7 +15,7 @@ upgradeExist = false
 			if query == "download_link" {
 				display tempPackage[:download_url]
 			}
-			var = '
+			@'
 {
 	"value":"success",
 	"message":"simple-lang found for this operating system",

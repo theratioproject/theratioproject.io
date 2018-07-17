@@ -27,7 +27,7 @@ install_simple_lang() {
 		display_error "try building simple-lang from source"
 		exit 1 
 	fi
-	display_error `curl -sSfL $setup_query_url?os=$os_platform&query=download_link`
+	display_error $setup_url
 	display "downloading $setup_file_name to $temp_dir$setup_file_name.zip ..."
 	curl -sSfL "$setup_url" -o "$temp_dir$setup_file_name.zip"
 	if [ -e "$temp_dir$setup_file_name.zip" ]; then 
