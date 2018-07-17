@@ -3,13 +3,14 @@
 TEMP_DIR="${TMPDIR:-/tmp}"
 SIMPLE_LANG_VERSION="${CHOOSENIM_CHOOSE_VERSION:-stable}"
 need_tty=yes
-echo $TEMP_DIR and $SIMPLE_LANG_VERSION
 
 install_simple_lang() {
-
+	get_os_platform || return 1
+	local os_platform=$RETURN_VALUE
+	echo $TEMP_DIR and $SIMPLE_LANG_VERSION
 }
 
-get_platform() {
+get_os_platform() {
 	  # Get OS/CPU info and store in a `myos` and `mycpu` variable.
 	  local ucpu=`uname -m`
 	  local uos=`uname`
