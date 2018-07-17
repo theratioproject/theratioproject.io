@@ -5,10 +5,6 @@ call "../database/GetDownloads.sim"
 
 @"Content-Type: text/json"+crlf
 
-OS = GET["os"]
-
-@OS
-
 upgradeExist = false
 	downloadsListLength = lengthOf(downloadsList)
 	for a = 0 to downloadsListLength {
@@ -30,11 +26,6 @@ upgradeExist = false
 		}
 	}
 	if !upgradeExist {
-	@'
-{
-	"value":"failed",
-	"message":"simple-lang is currently not build on your operating system\nTry building from source ",
-}
-	'
+		@'not_supported_yet'
 	}
 	
