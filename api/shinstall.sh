@@ -19,7 +19,7 @@ install_simple_lang() {
 	local os_platform=$return_value
 	get_installation_dir $os_platform || return 1
 	installation_dir=$return_value
-	local setup_extension=$return_value
+	local setup_extension=$(fetch_setup_info "$os_platform" "extension")
 	local setup_file_name=$(fetch_setup_info "$os_platform" "version")
 	simple_lang_version=$(fetch_setup_info "$os_platform" "version")
 	local setup_url=$(fetch_setup_info "$os_platform" "download_link") #`curl -sSfL $setup_query_url?os=$os_platform&query=download_link`
@@ -28,7 +28,7 @@ install_simple_lang() {
 		display_error "try building simple-lang from source"
 		exit 1 
 	fi
-	display_error $simple_lang_version
+	display_error $(fetch_setup_info "$os_platform" "version")
 	display "downloading $setup_file_name to $temp_dir$setup_file_name.zip ..."
 	curl -sSfL "$setup_url" -o "$temp_dir$setup_file_name.zip"
 	if [ -e "$temp_dir$setup_file_name.zip" ]; then 

@@ -18,20 +18,13 @@ upgradeExist = false
 				display tempPackage[:version]
 			elif query == "file_name"
 				display tempPackage[:file_name]
-			elif query == "version"
-				display tempPackage[:version]
+			elif query == "extension"
+				display tempPackage[:file_extension]
+			elif query == "code_name"
+				display tempPackage[:code_name]
+			elif query == "download_size"
+				display tempPackage[:download_size]
 			}
-			var = '
-{
-	"value":"success",
-	"message":"simple-lang found for this operating system",
-	"latest_version": "'+tempPackage[:version]+'",
-	"download_size": "'+tempPackage[:size]+'",
-	"code_name": "'+tempPackage[:code_name]+'",
-	"download_url": "'+tempPackage[:download_url]+'",
-	"file_extension": "'+tempPackage[:file_extension]+'",
-}
-			'
 			upgradeExist = true
 			break
 		}
