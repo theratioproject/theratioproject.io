@@ -8,7 +8,7 @@ call "../database/GetDownloads.sim"
 query = GET["query"]
 os = GET["os"]
 
-upgradeExist = false
+	upgradeExist = false
 	downloadsListLength = lengthOf(downloadsList)
 	for a = 0 to downloadsListLength {
 		tempPackage = downloadsList[a]
