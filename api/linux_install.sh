@@ -1,4 +1,12 @@
-
+#
+#
+#
+#
+#
+#
+#
+#
+# curl -sSfL https://simple-lang.io/api/stable_version.sim to get version by url in future
 
 temp_dir="${TMPDIR:-/tmp}"
 simple_lang_version="${CHOOSENIM_CHOOSE_VERSION:-stable}"
