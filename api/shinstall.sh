@@ -28,9 +28,8 @@ install_simple_lang() {
 	display "$setup_url"
 	display "downloading $setup_file_name..."
 	curl -sSfL "$setup_url" -o "$installation_dir$setup_file_name.zip"
-	display "installing $setup_file_name..."
-	if [ -e "$installation_dir" ]; then 
-		
+	if [ -e "$installation_dir$setup_file_name.zip" ]; then 
+		display "installing $setup_file_name..."
 	else
 		display_error "simple-lang not built on your platform $os_platform"
 		display_error "please install from alternative source"
