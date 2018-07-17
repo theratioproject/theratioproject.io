@@ -46,7 +46,10 @@ install_simple_lang() {
 install() {
 	if [ $2 == "windows_amd64" ] || [ $2 == "windows_32" ]; then 
 		if [ -e "$installation_dir" ]; then  
-		
+			display "installation directory present"
+		else
+			display "creating installation directory"
+			mkdir $installation_dir #2> /dev/null
 		fi
 	fi
 }
