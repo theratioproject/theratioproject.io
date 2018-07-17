@@ -52,7 +52,7 @@ install_simple_lang() {
 
 fetch_setup_info() {
 	local params="-F 'os=$1' -F 'query=$2'"
-	response=$(curl -sSfL "$setup_query_url" -X "GET" "$params")
+	response=$(curl -sSfL -X "GET" "$setup_query_url" "$params")
 	echo "$response"
 }
 
