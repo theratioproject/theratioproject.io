@@ -9,7 +9,7 @@
 # curl -sSfL https://simple-lang.io/api/stable_version.sim to get version by url in future
 
 simple_lang_url="https://simple-lang.io?page=Download"
-setup_url_prefix="http://10.0.2.2/simple-lang/"
+setup_url_prefix="."
 temp_dir="${TMPDIR:-/tmp/}"
 simple_lang_version="0.3.36"
 need_tty=yes
@@ -24,8 +24,8 @@ install_simple_lang() {
 		display_error "try building simple-lang from source"
 		exit 1 
 	fi
-	get_temp_setup_extention $os_platform || return 1
-	local setup_extension="deb"
+	#get_temp_setup_extention $os_platform || return 1
+	local setup_extension=$return_value
 	local setup_file_name="simple$simple_lang_version-$os_platform"
 	local setup_url="$setup_url_prefix"s"$simple_lang_version/$setup_file_name.zip"
 	display "downloading $setup_file_name to $temp_dir$setup_file_name.zip ..."
@@ -50,6 +50,7 @@ install() {
 	if [ $2 = "windows_amd64" ] || [ $2 = "windows_x86" ]; then 
 		unzip -o $1 -d "$installation_dir"s"$simple_lang_version" &> /dev/null
 	elif [ $2 = "linux_amd64" ] || [ $2 = "linux_x86" ]; then
+		display "yes linuxy"
 		sudo dpkg -i $1
 	fi
 }
