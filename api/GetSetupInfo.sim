@@ -6,6 +6,7 @@ call "../database/GetDownloads.sim"
 @"Content-Type: text/json"+crlf
 
 query = GET["query"]
+display GET["query"]
 display GET["os"]
 
 upgradeExist = false
