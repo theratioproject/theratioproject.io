@@ -17,6 +17,8 @@ need_tty=yes
 install_simple_lang() {
 	get_os_platform || return 1
 	local os_platform=$return_value
+	get_installation_dir || return 1
+	installation_dir=$return_value
 	if [ $simple_lang_version = "not_supported_yet" ]; then 
 		display_error "simple-lang not built on your platform $os_platform"
 		display_error "try building simple-lang from source"
@@ -68,6 +70,10 @@ display() {
 
 display_error() {
 	display "Error: $1" >&2
+}
+
+get_installation_dir() {
+	
 }
 
 get_os_platform() {
