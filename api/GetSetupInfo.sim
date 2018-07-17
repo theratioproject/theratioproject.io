@@ -6,12 +6,13 @@ call "../database/GetDownloads.sim"
 @"Content-Type: text/json"+crlf
 
 query = GET["query"]
+os = GET["os"]
 
 upgradeExist = false
 	downloadsListLength = lengthOf(downloadsList)
 	for a = 0 to downloadsListLength {
 		tempPackage = downloadsList[a]
-		if tempPackage[:os] == GET["os"] {
+		if tempPackage[:os] == os {
 			if query == "download_link" {
 				display tempPackage[:download_url]
 			elif query == "version"
