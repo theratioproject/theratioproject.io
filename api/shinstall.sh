@@ -16,6 +16,9 @@ need_tty=yes
 install_simple_lang() {
 	get_os_platform || return 1
 	local os_platform=$return_value
+	if [ $simple_lang_version = "not_supported_yet" ]; then 
+	
+	fi
 	local setup_file_name="$os_platform"_"$simple_lang_version"
 	echo $setup_file_name
 }
