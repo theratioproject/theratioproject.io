@@ -10,14 +10,14 @@
 
 setup_url_prefix="http://10.0.2.2/simple-lang/"
 temp_dir="${TMPDIR:-/tmp}"
-simple_lang_version="s0.3.36"
+simple_lang_version="not_supported_yet"
 need_tty=yes
 
 install_simple_lang() {
 	get_os_platform || return 1
 	local os_platform=$return_value
 	if [ $simple_lang_version = "not_supported_yet" ]; then 
-		display_error your 
+		display_error "simple-lang not built on your platform $os_platform"
 	fi
 	local setup_file_name="$os_platform"_"$simple_lang_version"
 	echo $setup_file_name
@@ -73,7 +73,7 @@ get_os_platform() {
 		  local myos="windows"
 		  ;;
 		*)
-		  err "unknown operating system: $uos"
+		  display_error "unknown operating system: $uos"
 		  ;;
 	  esac
 
@@ -99,7 +99,7 @@ get_os_platform() {
 		*aarch64* )
 		  local mycpu="arm64" ;;
 		*)
-		  err "unknown processor: $ucpu"
+		  display_error "unknown processor: $ucpu"
 		  ;;
 	  esac
 
