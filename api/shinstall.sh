@@ -33,6 +33,7 @@ install_simple_lang() {
 	if [ -e "$temp_dir$setup_file_name.zip" ]; then 
 		display "installing $setup_file_name..."
 		install "$temp_dir$setup_file_name.zip" $os_platform
+		echo "kjkj"
 		
 		if [ -e "$temp_dir"s"$simple_lang_version" ]; then 
 			display "simple $simple_lang_version installed successfully"
@@ -51,7 +52,7 @@ install() {
 	if [ $2 = "windows_amd64" ] || [ $2 = "windows_x86" ]; then 
 		unzip -o $1 -d "$installation_dir"s"$simple_lang_version" &> /dev/null
 	else #if [ $2 = "linux_amd64" ] || [ $2 = "linux_x86" ]; then
-		echo "" #sudo dpkg -i $1
+		echo "yes " #sudo dpkg -i $1
 	fi
 }
 
