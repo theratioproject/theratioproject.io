@@ -38,6 +38,10 @@ install_simple_lang() {
 	
 }
 
+remove_downloaded_zip() {
+	
+}
+
 display() {
 	echo "simple-lang:install:script: $1"
 }
