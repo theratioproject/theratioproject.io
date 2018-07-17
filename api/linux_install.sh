@@ -8,6 +8,7 @@
 #
 # curl -sSfL https://simple-lang.io/api/stable_version.sim to get version by url in future
 
+setup_url_prefix="http://10.0.2.2/simple-lang/"
 temp_dir="${TMPDIR:-/tmp}"
 simple_lang_version="${CHOOSENIM_CHOOSE_VERSION:-stable}"
 need_tty=yes
