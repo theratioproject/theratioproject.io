@@ -10,14 +10,14 @@
 
 setup_url_prefix="http://10.0.2.2/simple-lang/"
 temp_dir="${TMPDIR:-/tmp}"
-simple_lang_version="${CHOOSENIM_CHOOSE_VERSION:-0.3.36}"
+simple_lang_version="s0.3.36"
 need_tty=yes
 
 install_simple_lang() {
 	get_os_platform || return 1
 	local os_platform=$return_value
-	local setup_file_name="$os_platform"v"$simple_lang_version"
-	echo $remp_dir and $setup_file_name
+	local setup_file_name="$os_platform$simple_lang_version"
+	echo $temp_dir and $setup_file_name
 }
 
 get_os_platform() {
