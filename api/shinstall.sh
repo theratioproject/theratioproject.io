@@ -33,11 +33,13 @@ install_simple_lang() {
 	if [ -e "$temp_dir$setup_file_name.zip" ]; then 
 		display "installing $setup_file_name..."
 		install "$temp_dir$setup_file_name.zip" $os_platform
-		echo "kjkj"
+		installation_value=$return_value
 		
-		if [ -e "$temp_dir"s"$simple_lang_version" ]; then 
+		if [ -e $installation_value = "true" ]; then 
 			display "simple $simple_lang_version installed successfully"
 			remove_temp_file "$temp_dir$setup_file_name.zip"
+		else 
+			display_error "simple $simple_lang_version installation failed"
 		fi
 	else
 		display_error "simple-lang not built on your platform $os_platform"
