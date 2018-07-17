@@ -29,7 +29,7 @@ install_simple_lang() {
 	curl -sSfL "$setup_url" -o "$temp_dir$setup_file_name.zip"
 	if [ -e "$temp_dir$setup_file_name.zip" ]; then 
 		display "installing $setup_file_name..."
-		install "$temp_dir$setup_file_name.zip" $get_os_platform
+		install "$temp_dir$setup_file_name.zip" $os_platform
 		
 		if [ -e "$temp_dir"s"$simple_lang_version" ]; then 
 			display "simple $simple_lang_version installed successfully"
@@ -44,7 +44,6 @@ install_simple_lang() {
 }
 
 install() {
-	display_error "$1 $2"
 	#if $2 
 }
 
