@@ -16,6 +16,10 @@ upgradeExist = false
 				display tempPackage[:download_url]
 			elif query == "version"
 				display tempPackage[:version]
+			elif query == "file_name"
+				display tempPackage[:file_name]
+			elif query == "version"
+				display tempPackage[:version]
 			}
 			var = '
 {
