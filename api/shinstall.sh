@@ -10,7 +10,7 @@
 
 setup_url_prefix="http://127.0.0.1/simple-lang/"
 temp_dir="${TMPDIR:-/tmp}"
-simple_lang_version="s0.3.36"
+simple_lang_version="0.3.36"
 need_tty=yes
 
 install_simple_lang() {
@@ -21,7 +21,7 @@ install_simple_lang() {
 		display_error "try building simple-lang from source"
 		exit 1 
 	fi
-	local setup_file_name="simple-$os_platform"_"$simple_lang_version"
+	local setup_file_name="simple$simple_lang_version-$os_platform"
 	local setup_url="$setup_url_prefix$simple_lang_version/$setup_file_name.zip"
 	display "$setup_url"
 	display "downloading $setup_file_name..."
