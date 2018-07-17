@@ -44,8 +44,10 @@ install_simple_lang() {
 }
 
 install() {
-	if [ $2 == "*windows*" ]; then 
-		display "it windows"
+	if [ $2 == "windows_amd64" ] || [ $2 == "windows_32" ]; then 
+		if [ -e "$installation_dir" ]; then  
+		
+		fi
 	fi
 }
 
