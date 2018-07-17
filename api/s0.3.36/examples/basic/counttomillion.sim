@@ -1,9 +1,0 @@
-
-for a = 0 to 5000000
-	
-end
-
-#count 0 to 1000000 in 	0.3 sec 	>	less than 1 sec
-#count 0 to 5000000 in 	2.4 sec 	>	less than 1 min
-#count 0 to 10000000 in 35.3 sec	>	less than 1 min
-#count 0 to 80000000 in 38.5 sec	>	less than 1 min
