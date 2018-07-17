@@ -44,7 +44,9 @@ install_simple_lang() {
 }
 
 install() {
-	#if $2 
+	if [ $2 == "*windows*" ]; then 
+		display "it windows"
+	fi
 }
 
 remove_temp_file() {
