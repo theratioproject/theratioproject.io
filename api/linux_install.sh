@@ -1,13 +1,13 @@
 
 
-TEMP_DIR="${TMPDIR:-/tmp}"
-SIMPLE_LANG_VERSION="${CHOOSENIM_CHOOSE_VERSION:-stable}"
+temp_dir="${TMPDIR:-/tmp}"
+simple_lang_version="${CHOOSENIM_CHOOSE_VERSION:-stable}"
 need_tty=yes
 
 install_simple_lang() {
 	get_os_platform || return 1
-	local os_platform=$RETURN_VALUE
-	echo $TEMP_DIR and $SIMPLE_LANG_VERSION
+	local os_platform=$return_value
+	echo $remp_dir and $simple_lang_version and $os_platform
 }
 
 get_os_platform() {
@@ -82,7 +82,7 @@ get_os_platform() {
 		  ;;
 	  esac
 
-	  RET_VAL="$myos"_"$mycpu"
+	  return_value="$myos"_"$mycpu"
 }
 
 install_simple_lang
