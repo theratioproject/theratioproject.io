@@ -10,7 +10,7 @@ downloadsList = [
 		:version = "0.3.36",
 		:size = "5.0 MB",
 		:code_name = "red ribbon",
-		:download_url = "http://localhost/simple-lang/modular/s0.3.36-64.zip",
+		:download_url = "http://localhost/simple-lang/s0.3.36/simple0.3.36-windows_amd64.zip",
 		:file_name = "simple0.3.36-windows_amd64",
 		:file_extension = "zip",
 		:os = "windows_amd64"
@@ -19,8 +19,9 @@ downloadsList = [
 		:version = "0.3.36",
 		:size = "3.8 MB",
 		:code_name = "red ribbon",
-		:download_url = "http://localhost/simple-lang/modular/s0.3.36.zip",
+		:download_url = "http://localhost/simple-lang/s0.3.36/simple0.3.36-windows_x86.zip",
+		:file_name = "simple0.3.36-windows_x86",
 		:file_extension = "zip",
-		:os = "windows_x64"
+		:os = "windows_x86"
 	]
 ]
