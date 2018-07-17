@@ -21,7 +21,7 @@ install_simple_lang() {
 	installation_dir=$return_value
 	local setup_extension=$return_value
 	local setup_file_name="simple$simple_lang_version-$os_platform"
-	local setup_url=`curl -sSfL $setup_query_url?os=$os_platform&query=download_link`
+	local setup_url=$(fetch_setup_info $os_platform "download_link" ) #`curl -sSfL $setup_query_url?os=$os_platform&query=download_link`
 	if [ $simple_lang_version = "not_supported_yet" ]; then 
 		display "simple-lang not built on your platform $os_platform"
 		display_error "try building simple-lang from source"
@@ -52,6 +52,7 @@ install_simple_lang() {
 
 fetch_setup_info() {
 	params="-F 'os=$1' -F 'query=$2'"
+	display $2
 	response=$(curl -sSfL "$setup_query_url" "$params")
 	echo "$response"
 }
