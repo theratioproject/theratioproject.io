@@ -1,0 +1,4 @@
+#!simple
+
+call "web/functions/Methods.sim"
+call "../database/GetDownloads.sim"
