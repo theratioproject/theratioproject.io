@@ -9,7 +9,7 @@
 # curl -sSfL https://simple-lang.io/api/stable_version.sim to get version by url in future
 
 simple_lang_url="https://simple-lang.io?page=Download"
-setup_url_prefix="http://127.0.0.1/simple-lang/"
+setup_url_prefix="http://10.0.0.2/simple-lang/"
 temp_dir="${TMPDIR:-/tmp/}"
 simple_lang_version="0.3.36"
 need_tty=yes
@@ -55,10 +55,14 @@ install() {
 		unzip -o $1 -d "$installation_dir"s"$simple_lang_version" &> /dev/null
 		if [ -e "$temp_dir"s"$simple_lang_version" ]; then 
 			return_value="true"
+			return 1
 		fi
 	else #if [ $2 = "linux_amd64" ] || [ $2 = "linux_x86" ]; then
 		echo "yes " #sudo dpkg -i $1
+		return_value="true"
+		return 1
 	fi
+	return 0
 }
 
 remove_temp_file() {
