@@ -51,8 +51,8 @@ install_simple_lang() {
 }
 
 fetch_setup_info() {
+	display "$2 and yes"
 	params="-F 'os=$1' -F 'query=$2'"
-	display $2
 	response=$(curl -sSfL "$setup_query_url" "$params")
 	echo "$response"
 }
