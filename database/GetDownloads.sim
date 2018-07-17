@@ -12,7 +12,7 @@ downloadsList = [
 		:code_name = "red ribbon",
 		:download_url = "http://localhost/simple-lang/modular/s0.3.36-64.zip",
 		:file_extension = "zip",
-		:os = "Windows 64"
+		:os = "windows_amd64"
 	],
 	[
 		:version = "0.3.36",
@@ -20,6 +20,6 @@ downloadsList = [
 		:code_name = "red ribbon",
 		:download_url = "http://localhost/simple-lang/modular/s0.3.36.zip",
 		:file_extension = "zip",
-		:os = "Windows 32"
+		:os = "windows_x64"
 	]
 ]
