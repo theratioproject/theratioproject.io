@@ -8,7 +8,7 @@
 #
 # curl -sSfL https://simple-lang.io/api/stable_version.sim to get version by url in future
 
-simple_lang_url="https://simple-lang.io/download/"
+simple_lang_url="https://simple-lang.io?page=Download"
 setup_url_prefix="http://127.0.0.1/simple-lang/"
 temp_dir="${TMPDIR:-/tmp}"
 simple_lang_version="0.3.36"
@@ -30,11 +30,11 @@ install_simple_lang() {
 	curl -sSfL "$setup_url" -o "$installation_dir$setup_file_name.zip"
 	display "installing $setup_file_name..."
 	if [ -e "$installation_dir" ]; then 
-		unzip 
+		
 	else
 		display_error "simple-lang not built on your platform $os_platform"
 		display_error "please install from alternative source"
-		display_error "visit"
+		display_error "visit $simple_lang_url"
 	fi 
 	
 }
