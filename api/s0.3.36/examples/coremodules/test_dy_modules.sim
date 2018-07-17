@@ -1,0 +1,14 @@
+
+callDynamicModule("archiver.so")
+callDynamicModule("file_savant.so")
+callDynamicModule("mathic.so")
+callDynamicModule("networker.so")
+callDynamicModule("parser.so")
+callDynamicModule("security.so")
+callDynamicModule("string_savant.so")
+callDynamicModule("systemic.so")
+callDynamicModule("consoler.so")
+
+__printwfb(14,32,"Yea we are in color"+crlf)
+
+display "Hello world"+crlf

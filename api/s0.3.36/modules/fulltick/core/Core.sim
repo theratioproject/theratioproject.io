@@ -1,0 +1,31 @@
+/* 
+	Copyright (c) 2018 Azeez Adewale <azeezadewale98@gmail.com"> 
+	MIT License Copyright (c) 2018 simple 
+
+*/
+
+/* 
+ * #filename - Core.sim
+ * #author - Azeez Adewale
+ * #date - 19 Febuary 2017
+ */
+ 
+module fulltick.core
+
+call "simple/core/DynamicLoader.sim" ? simple.core
+callModule("fulltick")
+
+LAF_PLASTIC = "plastic" 
+
+LAF_GLEAM = "gleam"
+
+LAF_GTKPLUS = "gtk+"
+
+LAF_NONE = "none"
+
+LAF_DEFAULT  = "none"
+
+block setLookAndFeel(laf)
+	__set_look_and_feel(laf)
+	
+

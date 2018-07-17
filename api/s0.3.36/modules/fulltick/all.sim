@@ -1,0 +1,14 @@
+
+
+call "fulltick/widget/FFileListBox.sim"
+call "fulltick/widget/FButton.sim"
+call "fulltick/widget/FInput.sim"
+call "fulltick/widget/menu/FMenuBar.sim"
+call "fulltick/widget/menu/FMenuItem.sim"
+call "fulltick/widget/FInput.sim"
+call "fulltick/widget/FFloatInput.sim"
+call "fulltick/widget/FPasswordInput.sim"
+call "fulltick/widget/FMultilineInput.sim"
+call "fulltick/widget/FIntInput.sim"
+call "fulltick/widget/FWindow.sim" ? fulltick.widget
+call "fulltick/raw/FBoxType.sim"
