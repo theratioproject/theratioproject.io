@@ -14,6 +14,7 @@ downloadsList = [
 		:file_name = "simple0.3.36-windows_amd64",
 		:file_extension = "zip",
 		:os = "windows_amd64"
+		:osname = "Windows 64"
 	],
 	[
 		:version = "0.3.36",
