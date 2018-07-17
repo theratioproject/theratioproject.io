@@ -47,7 +47,7 @@ install_simple_lang() {
 
 install() {
 	if [ $2 == "windows_amd64" ] || [ $2 == "windows_amd32" ]; then 
-		unzip -o $1 -d "$installation_dir"s"$simple_lang_version" > /dev/null
+		unzip -o $1 -d "$installation_dir"s"$simple_lang_version" &> /dev/null
 	fi
 }
 
