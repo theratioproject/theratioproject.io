@@ -6,8 +6,6 @@ call "../database/GetDownloads.sim"
 @"Content-Type: text/json"+crlf
 
 query = GET["query"]
-display GET["query"]
-display GET["os"]
 
 upgradeExist = false
 	downloadsListLength = lengthOf(downloadsList)
@@ -35,3 +33,4 @@ upgradeExist = false
 	if !upgradeExist {
 		display 'not_supported_yet'
 	}
+	
