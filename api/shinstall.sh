@@ -51,7 +51,7 @@ install_simple_lang() {
 }
 
 fetch_setup_info() {
-	response=$(curl -sSfL "$url" "$params")
+	response=$(curl -sSfL "$setup_query_url" "$params")
 	echo "$response"
 }
 
