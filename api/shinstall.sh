@@ -10,7 +10,7 @@
 
 setup_url_prefix="http://10.0.2.2/simple-lang/"
 temp_dir="${TMPDIR:-/tmp}"
-simple_lang_version="not_supported_yet"
+simple_lang_version="s0.3.36"
 need_tty=yes
 
 install_simple_lang() {
