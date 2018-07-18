@@ -25,5 +25,15 @@ downloadsList = [
 		:file_extension = "zip",
 		:os = "windows_x86",
 		:osname = "Windows 32"
+	],
+	[
+		:version = "0.3.35",
+		:size = "361 KB",
+		:code_name = "red ribbon",
+		:download_url = "http://localhost/simple-lang/s0.3.36/simple0.3.36-windows_x86.zip",
+		:file_name = "simple0.3.36-windows_x86",
+		:file_extension = "zip",
+		:os = "windows_x86",
+		:osname = "Windows 32"
 	]
 ]
