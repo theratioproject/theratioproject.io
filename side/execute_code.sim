@@ -1,6 +1,4 @@
-#!simple 
-
-@"ContentType: text/html"+crlf
+#!simple -cgi
 
 call "web/functions/Methods.sim"
 
