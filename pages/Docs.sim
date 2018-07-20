@@ -1,4 +1,4 @@
-call "./database/GetDocs.sim"
+call "../database/GetDocs.sim"
 
 @'
 	<section class="devsite-landing-row devsite-landing-row-1-up"><div class="devsite-landing-row-group"><div class="devsite-landing-row-item ">
