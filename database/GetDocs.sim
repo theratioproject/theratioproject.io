@@ -1,8 +1,8 @@
 
 docsList = [
     [
-        :title = "Getting started"
-        :url = "https://github.com/simple-lang/simple/wiki/Home:-Getting-started."
+        :title = "Getting started",
+        :url = "https://github.com/simple-lang/simple/wiki/Home:-Getting-started.",
         :website = "Github Wiki",
         :date = "July, 2018.",
         :author = "Abdulazeez Abdulazeez Adeshina",
