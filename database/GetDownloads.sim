@@ -27,13 +27,23 @@ downloadsList = [
 		:osname = "Windows 32"
 	],
 	[
-		:version = "0.3.35",
+		:version = "0.3.36",
 		:size = "361 KB",
 		:code_name = "red ribbon",
 		:download_url = "http://10.0.2.2/simple-lang/s0.3.36/simple0.3.35-linux_amd64.deb",
-		:file_name = "simple0.3.35-linux_amd64",
+		:file_name = "simple0.3.36-linux_amd64",
 		:file_extension = "deb",
 		:os = "linux_amd64",
 		:osname = "Linux 64"
+	],
+	[
+		:version = "0.3.36",
+		:size = "",
+		:code_name = "red ribbon",
+		:download_url = "", #This will be appended in the main file.
+		:file_name = "simple0.3.36-linux-i386",
+		:file_extension = "deb",
+		:os = "linux_i386",
+		:osname = "Linux 32"
 	]
 ]
