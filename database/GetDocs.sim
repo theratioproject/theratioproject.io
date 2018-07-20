@@ -13,7 +13,7 @@ docsList = [
         :url = "https://github.com/simple-lang/simple/wiki/Variables",
         :website = "Github Wiki",
         :date = "July, 2018",
-        :author = "Abdulazeez Abdulazeez Adeshina"
+        :author = "Abdulazeez Abdulazeez Adeshina",
         :description = "Variables in simple-lang and some of their messages."
     ]
 ]
