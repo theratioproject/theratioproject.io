@@ -17,6 +17,8 @@ elif pageSubTitle == "Index"
 	call "./pages/package/PackagesIndex.sim"
 elif pageSubTitle == "Docs"
 	call "./pages/Docs.sim"
+elif pageSubTitle == "Contribute"
+	call "./pages/Contribute.sim"
 else
 	@GET["page"]+'<br />'
 	@GET["sub_page"] + '<br />'
