@@ -1,0 +1,19 @@
+call "./database/GetDocs.sim"
+
+@'
+	<section class="devsite-landing-row devsite-landing-row-1-up"><div class="devsite-landing-row-group"><div class="devsite-landing-row-item ">
+	<div class="resource-widget dac-resource-widget-no-img dynamic-content-widget" data-query="type:blog+tag:featured+tag:androidstudio,type:studio blog" data-sortorder="-timestamp" data-maxresults="3" data-show-authors="true">
+	<div class="dynamic-content-results" dynamic-card-style="">
+	
+	'
+
+for a = 0 to lengthOf(docsList) {
+    tempDoc = docsList[a]
+    @ '
+    <div class="dynamic-card-wrapper"><div class="dynamic-card" >
+			<a href="'+tempDoc[:url]+'" class="dynamic-card-image-bg" style="background-image: url(../assets/images/opensource.jpg);"></a>
+			<div class="dynamic-card-content-wrapper"><div class="dynamic-card-content"><p class="dynamic-card-category">'+tempDoc[:website]+'</p>
+			<a target="_blank" href="'+tempDoc[:url]+'" ><h3 id="">'+tempDoc[:title]+'</h3></a>
+			<p class="dynamic-card-summary">'+tempDoc[:description]+'</p></div><div class="dynamic-card-author"><p class="dynamic-card-author-name"></p><p class="dynamic-card-author-date">'+tempDoc[:author]+' - '+tempDoc[:date]+'</p></div></div></div></div>
+    '
+}
