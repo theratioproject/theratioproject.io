@@ -23,11 +23,11 @@ downloadAndroidUrl = downloadUrl+"&sub_page=Android"
 buildFromSourceUrl = downloadUrl+"&sub_page=Build From Source"
 
 #documentation
-gettingStartedUrl = documentationUrl+"&sub_page=Getting Started"
-syntaxUrl = documentationUrl+"&sub_page=Syntax"
-modulesUrl = documentationUrl+"&sub_page=Modules"
-environmentsUrl = documentationUrl+"&sub_page=Environments"
-examplesUrl = documentationUrl+"&sub_page=Examples"
+# gettingStartedUrl = documentationUrl+"&sub_page=Getting Started"
+# syntaxUrl = documentationUrl+"&sub_page=Syntax"
+# modulesUrl = documentationUrl+"&sub_page=Modules"
+# environmentsUrl = documentationUrl+"&sub_page=Environments"
+# examplesUrl = documentationUrl+"&sub_page=Examples"
 
 #blog
 videosUrl = blogUrl+"&sub_page=Videos"
