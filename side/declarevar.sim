@@ -15,29 +15,29 @@ homeSubHeadings = [
 
 ]
 
-docsSubHeadings = [
-	[
-		:title = "Getting Started",
-		:url = gettingStartedUrl
-	],
-	[
-		:title = "Syntax",
-		:url = syntaxUrl
-	],
-	[
-		:title = "Modules",
-		:url = modulesUrl
-	],
-	[
-		:title = "Environments",
-		:url = environmentsUrl
-	],
-	[
-		:title = "Examples",
-		:url = examplesUrl
-	]
+# docsSubHeadings = [
+# 	[
+# 		:title = "Getting Started",
+# 		:url = gettingStartedUrl
+# 	],
+# 	[
+# 		:title = "Syntax",
+# 		:url = syntaxUrl
+# 	],
+# 	[
+# 		:title = "Modules",
+# 		:url = modulesUrl
+# 	],
+# 	[
+# 		:title = "Environments",
+# 		:url = environmentsUrl
+# 	],
+# 	[
+# 		:title = "Examples",
+# 		:url = examplesUrl
+# 	]
 
-]
+# ]
 
 downloadSubHeadings = [
 	[
@@ -148,8 +148,8 @@ mainHeadings = [
 	],
 	[
 		:title = "Docs",
-		:url = documentationUrl,
-		:subheading = docsSubHeadings
+		:url = documentationUrl
+		# :subheading = docsSubHeadings
 	],
 	[
 		:title = "Blog",
@@ -205,8 +205,8 @@ footerSocialMedia = [
 
 footerLinks = [
 	[
-		:title = "Docs",
-		:sublinks = docsSubHeadings
+		:title = "Docs"
+		# :sublinks = docsSubHeadings
 	],
 	[
 		:title = "Packages Index",
