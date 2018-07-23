@@ -14,7 +14,7 @@ packagesList = [
 		:size = "143.75 KB",
 		:website = modulesUrl,
 		:date = "09 July 2018",
-		:download_url = "http://10.0.2.2/simple-lang/modular/atomic-module-1.0.1.zip",
+		:download_url = "http://localhost/simple-lang/modular/atomic-module-1.0.1.zip",
 		:supporting_modules = "nuclearicalyret letitrainagain chopprate"
 	],
 	[
