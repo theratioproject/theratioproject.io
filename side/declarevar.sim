@@ -4,10 +4,10 @@
 
 homeSubHeadings = [
 	
-	[
+	/*[
 		:title = "Features",
 		:url = featuresUrl
-	],
+	],*/
 	[
 		:title = "Try Online",
 		:url = tryOnlineUrl
@@ -15,29 +15,29 @@ homeSubHeadings = [
 
 ]
 
-# docsSubHeadings = [
-# 	[
-# 		:title = "Getting Started",
-# 		:url = gettingStartedUrl
-# 	],
-# 	[
-# 		:title = "Syntax",
-# 		:url = syntaxUrl
-# 	],
-# 	[
-# 		:title = "Modules",
-# 		:url = modulesUrl
-# 	],
-# 	[
-# 		:title = "Environments",
-# 		:url = environmentsUrl
-# 	],
-# 	[
-# 		:title = "Examples",
-# 		:url = examplesUrl
-# 	]
+docsSubHeadings = [
+	[
+		:title = "Getting Started",
+		:url = gettingStartedUrl
+	],
+	[
+		:title = "Syntax",
+		:url = syntaxUrl
+	],
+	[
+		:title = "Modules",
+		:url = modulesUrl
+	],
+	[
+		:title = "Environments",
+		:url = environmentsUrl
+	],
+	[
+		:title = "Examples",
+		:url = examplesUrl
+	]
 
-# ]
+]
 
 downloadSubHeadings = [
 	[
@@ -47,7 +47,7 @@ downloadSubHeadings = [
 	[
 		:title = "Linux",
 		:url = downloadLinuxUrl
-	],
+	]/*,
 	[
 		:title = "Unix",
 		:url = downloadUnixUrl
@@ -67,7 +67,7 @@ downloadSubHeadings = [
 	[
 		:title = "Build From Source",
 		:url = buildFromSourceUrl
-	]
+	]*/
 
 ]
 
@@ -76,11 +76,11 @@ blogSubHeadings = [
 	[
 		:title = "Blog",
 		:url = blogUrl
-	],
+	]/*,
 	[
 		:title = "Videos",
 		:url = videosUrl
-	]
+	]*/
 
 ]
 
@@ -122,11 +122,11 @@ contributeSubHeadings = [
 	[
 		:title = "Contributors",
 		:url = contributorsUrl
-	],
+	]/*,
 	[
 		:title = "Code Of Conduct",
 		:url = codeOfConductUrl
-	]
+	]*/
 
 ]
 
@@ -140,7 +140,7 @@ mainHeadings = [
 		:title = "Download",
 		:url = downloadUrl,
 		:subheading = downloadSubHeadings
-	],
+	]/*,
 	[
 		:title = "Packages Index",
 		:url = packageUrl,
@@ -148,9 +148,9 @@ mainHeadings = [
 	],
 	[
 		:title = "Docs",
-		:url = documentationUrl
-		# :subheading = docsSubHeadings
-	],
+		:url = documentationUrl,
+		:subheading = docsSubHeadings
+	]*/,
 	[
 		:title = "Blog",
 		:url = blogUrl,
@@ -205,8 +205,8 @@ footerSocialMedia = [
 
 footerLinks = [
 	[
-		:title = "Docs"
-		# :sublinks = docsSubHeadings
+		:title = "Docs",
+		:sublinks = docsSubHeadings
 	],
 	[
 		:title = "Packages Index",

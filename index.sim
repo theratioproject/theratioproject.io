@@ -18,18 +18,14 @@ elif pageSubTitle == "Index"
 	call "./pages/package/PackagesIndex.sim"
 elif pageSubTitle == "Getting Started"
 	call "./pages/Docs.sim"
-<<<<<<< HEAD
 elif pageTitle = "Download" 
 	call "./pages/Download.sim"
-elif pageTitle = "Contribute" 
-=======
-elif pageSubTitle == "Contribute"
->>>>>>> 0975f8aa3e5310066007b0d83d4017380ef13463
+elif pageTitle == "Contribute"
 	call "./pages/Contribute.sim"
 else
 	@GET["page"]+'<br />'
 	@GET["sub_page"] + '<br />'
-
+	@SERVER("HTTP_USER_AGENT") + '<br />'
 	@'
 
 
