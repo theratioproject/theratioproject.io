@@ -23,7 +23,6 @@ elif pageTitle = "Download"
 elif pageTitle == "Contribute"
 	call "./pages/Contribute.sim"
 else
-	@SERVER
 	@GET["page"]+'<br />'
 	@GET["sub_page"] + '<br />'
 	@"user agent >> "SERVER[:HTTP_USER_AGENT] + '<br />'
