@@ -25,7 +25,14 @@ elif pageTitle == "Contribute"
 else
 	@GET["page"]+'<br />'
 	@GET["sub_page"] + '<br />'
-	@"user agent >> "+CLIENT["OS"] + '<br />'
+	@"user agent >> "+SERVER["HTTP_USER_AGENT"] + '<br />'
+	
+	@'
+		<pre>
+		' @SERVER @'
+
+
+	'
 }
 
 
