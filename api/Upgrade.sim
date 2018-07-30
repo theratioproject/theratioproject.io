@@ -1,11 +1,15 @@
 #!simple
 
 call "web/functions/Methods.sim"
-call "../database/GetDownloads.sim"
+call "simple/internet/RemoteCall.sim"
+call "../side/urladdresses.sim"
 
 @"Content-Type: text/json"+crlf
 
-os = GET["os"]
+remoteCode = fetchRemotefile(getDownloadUrl)
+if remoteCode != null {
+	executeCode(remoteCode)
+	os = GET["os"]
 
 	upgradeExist = false
 	downloadsListLength = lengthOf(downloadsList)
@@ -31,8 +35,16 @@ os = GET["os"]
 	@'
 {
 	"value":"failed",
-	"message":"simple-lang is currently not build on your operating system\nTry building from source ",
+	"message":"simple-lang is currently not build on your operating system. Try building from source ",
 }
 	'
 	}
+else
+	@'
+{
+	"value":"failed",
+	"message":"the package url is broken",
+}
+	'
+}
 	

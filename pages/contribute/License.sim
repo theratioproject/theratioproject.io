@@ -1,0 +1,88 @@
+@'
+		<div class="clearfix">
+		<div class="col-6 float-left">
+		<svg height="32" class="octicon octicon-law license-summary-octicon float-left mr-2" viewBox="0 0 14 16" version="1.1" width="28" aria-hidden="true"><path fill-rule="evenodd" d="M7 4c-.83 0-1.5-.67-1.5-1.5S6.17 1 7 1s1.5.67 1.5 1.5S7.83 4 7 4zm7 6c0 1.11-.89 2-2 2h-1c-1.11 0-2-.89-2-2l2-4h-1c-.55 0-1-.45-1-1H8v8c.42 0 1 .45 1 1h1c.42 0 1 .45 1 1H3c0-.55.58-1 1-1h1c0-.55.58-1 1-1h.03L6 5H5c0 .55-.45 1-1 1H3l2 4c0 1.11-.89 2-2 2H2c-1.11 0-2-.89-2-2l2-4H1V5h3c0-.55.45-1 1-1h4c.55 0 1 .45 1 1h3v1h-1l2 4zM2.5 7L1 10h3L2.5 7zM13 10l-1.5-3-1.5 3h3z"/></svg>
+		<span style="margin-left:20px;margin-bottom:15px;">MIT License</span>
+		<p class="mb-0 text-gray text-small pr-2">A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.</p>
+	  </div>
+		<div class="col-6 float-left p-2">
+		  <div class="one-third column">
+			<h5 class="mt-1 mb-2">Permissions</h5>
+			<ul class="list-style-none">
+				<li class="text-small pl-3">
+				  <svg width="13" class="octicon octicon-check rule-type-permissions ml-n3 v-align-middle" viewBox="0 0 12 16" version="1.1" height="17" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+				  <span class="tooltipped tooltipped-se tooltipped-multiline v-align-middle"
+					aria-label="This software and derivatives may be used for commercial purposes.">
+					Commercial use
+				  </span>
+				</li>
+				<li class="text-small pl-3">
+				  <svg width="13" class="octicon octicon-check rule-type-permissions ml-n3 v-align-middle" viewBox="0 0 12 16" version="1.1" height="17" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+				  <span class="tooltipped tooltipped-se tooltipped-multiline v-align-middle"
+					aria-label="This software may be modified.">
+					Modification
+				  </span>
+				</li>
+				<li class="text-small pl-3">
+				  <svg width="13" class="octicon octicon-check rule-type-permissions ml-n3 v-align-middle" viewBox="0 0 12 16" version="1.1" height="17" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+				  <span class="tooltipped tooltipped-se tooltipped-multiline v-align-middle"
+					aria-label="This software may be distributed.">
+					Distribution
+				  </span>
+				</li>
+				<li class="text-small pl-3">
+				  <svg width="13" class="octicon octicon-check rule-type-permissions ml-n3 v-align-middle" viewBox="0 0 12 16" version="1.1" height="17" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+				  <span class="tooltipped tooltipped-se tooltipped-multiline v-align-middle"
+					aria-label="This software may be used and modified in private.">
+					Private use
+				  </span>
+				</li>
+			</ul>
+		  </div>
+		  </div>
+		  <div class="one-third column">
+			<h5 class="mt-1 mb-2">Limitations</h5>
+			<ul class="list-style-none">
+				<li class="text-small pl-3">
+				  <svg width="13" class="octicon octicon-x rule-type-limitations ml-n3 v-align-middle" viewBox="0 0 12 16" version="1.1" height="17" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+				  <span class="tooltipped tooltipped-s tooltipped-multiline v-align-middle"
+					aria-label="This license includes a limitation of liability.">
+					Liability
+				  </span>
+				</li>
+				<li class="text-small pl-3">
+				  <svg width="13" class="octicon octicon-x rule-type-limitations ml-n3 v-align-middle" viewBox="0 0 12 16" version="1.1" height="17" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+				  <span class="tooltipped tooltipped-s tooltipped-multiline v-align-middle"
+					aria-label="The license explicitly states that it does NOT provide any warranty.">
+					Warranty
+				  </span>
+				</li>
+			</ul>
+		  </div>
+	</div>	'
+	
+	licenceText = '
+		Copyright (c) 2018 simple
+
+		Permission is hereby granted, free of charge, to any person obtaining a copy
+		of this software and associated documentation files (the "Software"), to deal
+		in the Software without restriction, including without limitation the rights
+		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+		copies of the Software, and to permit persons to whom the Software is
+		furnished to do so, subject to the following conditions:
+
+		The above copyright notice and this permission notice shall be included in all
+		copies or substantial portions of the Software.
+
+		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+		SOFTWARE.
+	'
+	@'<pre> '+licenceText+' </pre>'
+	
+	
+	

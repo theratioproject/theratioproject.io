@@ -1,0 +1,9 @@
+
+
+if pageSubTitle == "License" {
+	call "./contribute/License.sim"
+elif pageSubTitle == "Contributing" 
+	call "./contribute/Contributing.sim"
+elif pageSubTitle == "Contributors" 
+	call "./contribute/Contributors.sim"
+}

@@ -1,5 +1,4 @@
 
-
 #main heading
 indexUrl = "./index.sim"
 homeUrl = indexUrl+"?page=Home"
@@ -60,3 +59,33 @@ githubExampleFolderUrl = "https://raw.githubusercontent.com/simple-lang/simple/m
 
 #images urls
 simple_lang_logo = "./assets/images/favicon.ico"
+
+#database urls
+getDownloadUrl = "http://127.0.0.1/simple-lang.io/database/GetDownloads.txt"
+getPackagesUrl = "http://127.0.0.1/simple-lang.io/database/GetPackages.txt"
+getBlogsUrl = "http://127.0.0.1/simple-lang.io/database/GetBlogs.txt"
+getContributorsUrl = "http://127.0.0.1/simple-lang.io/database/GetContributors.txt"
+getDeclareVarUrl = "http://127.0.0.1/simple-lang.io/side/declarevar.txt"
+
+
+#github urls
+githubContributingUrl = "https://raw.githubusercontent.com/simple-lang/simple/master/CONTRIBUTORS.MD"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

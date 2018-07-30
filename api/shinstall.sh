@@ -9,17 +9,18 @@
 # curl -sSfL https://simple-lang.io/api/stable_version.sim to get version by url in future
 
 simple_lang_url="https://simple-lang.io?page=Download"
-setup_query_url="http://192.168.43.168/simple-lang.io/api/GetSetupInfo.sim"
+setup_query_url="http://127.0.0.1/simple-lang.io/api/GetSetupInfo.sim"
 temp_dir="${TMPDIR:-/tmp/}"
 simple_lang_version="0.3.36"
 need_tty=yes
+setup_extension="zip"
 
 install_simple_lang() {
 	get_os_platform || return 1
 	local os_platform=$return_value
 	get_installation_dir $os_platform || return 1
 	installation_dir=$return_value
-	local setup_extension=$(fetch_setup_info "$os_platform" "extension")
+	#$(fetch_setup_info "$os_platform" "extension")
 	local setup_file_name=$(fetch_setup_info "$os_platform" "file_name")
 	simple_lang_version=$(fetch_setup_info "$os_platform" "version")
 	local setup_url=$(fetch_setup_info "$os_platform" "download_link") 
@@ -28,7 +29,7 @@ install_simple_lang() {
 		display_error "try building simple-lang from source"
 		exit 1 
 	fi
-	curl -sSfL "$setup_url" -o "$temp_dir$setup_file_name.zip"
+	curl -sSfL "$setup_url" -o "$temp_dir$setup_file_name.zip" -L
 	if [ -e "$temp_dir$setup_file_name.zip" ]; then 
 		display "installing $setup_file_name..."
 		install "$temp_dir$setup_file_name.zip" $os_platform
@@ -50,7 +51,7 @@ install_simple_lang() {
 }
 
 fetch_setup_info() {
-	response=$(curl -sSfL -X GET "$setup_query_url?os=$1&query=$2")
+	response=$(curl -sSfL -X GET "$setup_query_url?os=$1&query=$2&type=$setup_extension")
 	echo "$response"
 }
 
@@ -117,6 +118,7 @@ get_os_platform() {
 	  case $uos in
 		*linux* )
 		  local myos="linux"
+		  setup_extension="deb"
 		  ;;
 		*dragonfly* )
 		  local myos="freebsd"
@@ -144,9 +146,11 @@ get_os_platform() {
 		  ;;
 		*haiku* )
 		  local myos="haiku"
+		  setup_extension="zip"
 		  ;;
 		*mingw* )
 		  local myos="windows"
+		  setup_extension="zip"
 		  ;;
 		*)
 		  display_error "unknown operating system: $uos"

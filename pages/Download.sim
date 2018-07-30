@@ -1,0 +1,34 @@
+call "simple/system/System.sim"
+
+popedDownload = false
+
+if pageSubTitle == "" {
+	pageSubTitle = getOS() 	
+}
+
+pageSubTitle = toLowerCase(pageSubTitle)
+if stringContains(pageSubTitle,"windows") {
+	call "./download/WindowsDownload.sim"
+elif stringContains(pageSubTitle,"linux")
+	call "./download/LinuxDownload.sim"
+elif stringContains(pageSubTitle,"unix")
+	call "./download/UnixDownload.sim"
+elif stringContains(pageSubTitle,"mac")
+	call "./download/MacDownload.sim"
+elif stringContains(pageSubTitle,"haiku")
+	call "./download/HaikuDownload.sim"
+elif stringContains(pageSubTitle,"android")
+	call "./download/AndroidDownload.sim"
+}
+
+block popDownload(platform)
+	@'
+	  <div class="dac-landing-row-hero"><div class="inline-block">
+		<button class="devsite-dialog-button button dac-button dac-outline-button" data-modal-dialog-id="studio_win_notools_exe_download">Download '+platform[:file_name]+'</button> 
+	  <div class="dac-studio-version"> <br /> s'+platform[:version]+' - '+platform[:size]+' - '+platform[:date]+'
+    </div></div></div>
+	  
+		
+	'
+	popedDownload = true
+	

@@ -1,33 +1,35 @@
 
-call "../../database/GetPackages.sim"
+remoteCode = fetchRemotefile(getPackagesUrl)
+if remoteCode != null {
+	executeCode(remoteCode)
+	@'
+		<section class="devsite-landing-row-landing-row-1-up"><div class="devsite-landing-row-group">
+		<div class="devsite-landing-row-item"> <div class="dac-full-width"> <div class="devsite-table-wrapper">
+			<table class="download">
+				<tbody>
+				<tr><th>Name</th><th>Title</th><th>Author</th><th>Description</th><th>Version</th><th>Size</th><th>Download</th></tr>
+	'				
+					for a = 0 to lengthOf(packagesList) {
+						tempPackage = packagesList[a]
+						@'
+							<tr>
+								<td>'+tempPackage[:name]+'</td>
+								<td>'+tempPackage[:title]+'</td>
+								<td><a target="_blank" href="'+tempPackage[:authorwebsite]+'">'+tempPackage[:author]+'</a></td>
+								<td>'+tempPackage[:description]+'</td>
+								<td>'+tempPackage[:version]+'</td>
+								<td>'+tempPackage[:size]+'</td>
+								<td>
+									<a href="'+tempPackage[:download_url]+'">
+									<button class="devsite-dialog-button button-white button-regular">DOWNLOAD</button></a>
+								</td>
+							</tr>
+						'
+					}
+	@'
+				</tbody>
+			</table>
+		</div> </div></div></div></section>
 
-@'
-	<section class="devsite-landing-row-landing-row-1-up"><div class="devsite-landing-row-group">
-	<div class="devsite-landing-row-item"> <div class="dac-full-width"> <div class="devsite-table-wrapper">
-		<table class="download">
-			<tbody>
-			<tr><th>Name</th><th>Title</th><th>Author</th><th>Description</th><th>Version</th><th>Size</th><th>Download</th></tr>
-'				
-				for a = 0 to lengthOf(packagesList) {
-					tempPackage = packagesList[a]
-					@'
-						<tr>
-							<td>'+tempPackage[:name]+'</td>
-							<td>'+tempPackage[:title]+'</td>
-							<td><a target="_blank" href="'+tempPackage[:authorwebsite]+'">'+tempPackage[:author]+'</a></td>
-							<td>'+tempPackage[:description]+'</td>
-							<td>'+tempPackage[:version]+'</td>
-							<td>'+tempPackage[:size]+'</td>
-							<td>
-								<a href="'+tempPackage[:download_url]+'">
-								<button class="devsite-dialog-button button-white button-regular">DOWNLOAD</button></a>
-							</td>
-						</tr>
-					'
-				}
-@'
-			</tbody>
-		</table>
-	</div> </div></div></div></section>
-
-'
+	'
+}

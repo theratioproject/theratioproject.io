@@ -1,6 +1,7 @@
 #!simple -cgi
 
 call "web/functions/Methods.sim"
+call "simple/internet/RemoteCall.sim"
 
 pageTitle = GET["page"]
 pageSubTitle = GET["sub_page"]
@@ -15,8 +16,12 @@ elif pageSubTitle == "Blog"
 	call "./pages/Blog.sim"
 elif pageSubTitle == "Index"
 	call "./pages/package/PackagesIndex.sim"
-elif pageSubTitle == "Docs"
+elif pageSubTitle == "Getting Started"
 	call "./pages/Docs.sim"
+elif pageTitle = "Download" 
+	call "./pages/Download.sim"
+elif pageTitle = "Contribute" 
+	call "./pages/Contribute.sim"
 else
 	@GET["page"]+'<br />'
 	@GET["sub_page"] + '<br />'

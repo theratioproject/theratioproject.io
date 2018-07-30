@@ -1,0 +1,18 @@
+
+/*
+	contributors is at the top 
+	new contributor at the bottom
+*/
+
+contributorsList = [
+	[
+		:name = "Azeez Adewale",
+		:image_url = "http://localhost/simple-lang.io/assets/images/favicon.ico",
+		:contribution = "Author",
+		:about = "",
+		:email = "azeezadewale98@gmail.com",
+		:twitter_handle = "iamthecarisma",
+		:github_username = "Thecarisma",
+		:website = "www.google.com"
+	]
+]

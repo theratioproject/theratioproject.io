@@ -1,33 +1,36 @@
 #!simple
 
 call "web/functions/Methods.sim"
+call "simple/internet/RemoteCall.sim"
 call "../side/urladdresses.sim"
-call "../database/GetPackages.sim"
 
 @"Content-Type: text/json"+crlf
 
-package = GET["package"]
+remoteCode = fetchRemotefile(getPackagesUrl)
+if remoteCode != null {
+	executeCode(remoteCode)
+	package = GET["package"]
 
-if package = "" || package == "(null)" {
+	if package = "" || package == "(null)" {
 	@'
 {
 	"value":"failed",
 	"message":"no package provided",
 }
 	'
-else
-	type = GET["type"] 
-	version = GET["version"]
-	os = GET["os"]
-	
-	if type == "" { type = "module" }
-	if version == "" { version = "latest" }
-	
-	packageExist = false
-	packageListLength = lengthOf(packagesList)
-	for a = 0 to packageListLength {
-		tempPackage = packagesList[a]
-		if tempPackage[:name] == package && tempPackage[:type] == type && (tempPackage[:version] == version || version == "latest") {
+	else
+		type = GET["type"] 
+		version = GET["version"]
+		os = GET["os"]
+		
+		if type == "" { type = "module" }
+		if version == "" { version = "latest" }
+		
+		packageExist = false
+		packageListLength = lengthOf(packagesList)
+		for a = 0 to packageListLength {
+			tempPackage = packagesList[a]
+			if tempPackage[:name] == package && tempPackage[:type] == type && (tempPackage[:version] == version || version == "latest") {
 			@'
 {
 	"value":"success",
@@ -46,17 +49,25 @@ else
 	"download_url": "'+tempPackage[:download_url]+'",
 	"supporting_modules" : "'+tempPackage[:supporting_modules]+'",
 }'
-			packageExist = true
-			break
+				packageExist = true
+				break
+			}
 		}
+		if !packageExist {
+		@'
+	{
+		"value":"failed",
+		"message":"the '+package+' '+type+' cannot be found in the package index",
 	}
-	if !packageExist {
+		'
+		}
+		
+	}
+else
 	@'
 {
 	"value":"failed",
-	"message":"the '+package+' '+type+' cannot be found in the package index",
+	"message":"the package url is broken",
 }
 	'
-	}
-	
 }

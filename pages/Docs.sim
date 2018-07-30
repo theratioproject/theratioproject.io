@@ -16,4 +16,6 @@ for a = 0 to lengthOf(docsList) {
 			<a target="_blank" href="'+tempDoc[:url]+'" ><h3 id="">'+tempDoc[:title]+'</h3></a>
 			<p class="dynamic-card-summary">'+tempDoc[:description]+'</p></div><div class="dynamic-card-author"><p class="dynamic-card-author-name"></p><p class="dynamic-card-author-date">'+tempDoc[:author]+' - '+tempDoc[:date]+'</p></div></div></div></div>
     '
+	
 }
+
