@@ -26,9 +26,10 @@ else
 	@GET["page"]+'<br />'
 	@GET["sub_page"] + '<br />'
 	@"user agent >> "SERVER["HTTP_USER_AGENT"] + '<br />'
-	@HTTP_USER_AGENT
+	
 	@'
-
+		<pre>
+		' @SERVER @'
 
 
 	'
