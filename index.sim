@@ -1,7 +1,6 @@
 #!simple -cgi
 
 call "web/functions/Methods.sim"
-call "web/functions/ClientSpec.sim"
 call "simple/internet/RemoteCall.sim"
 
 pageTitle = GET["page"]
@@ -26,7 +25,6 @@ elif pageTitle == "Contribute"
 else
 	@GET["page"]+'<br />'
 	@GET["sub_page"] + '<br />'
-	@"user agent >> "+CLIENTSPEC["OS"] + '<br />'
 }
 
 

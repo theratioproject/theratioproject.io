@@ -1,9 +1,10 @@
-call "simple/system/System.sim"
+
+call "web/functions/ClientSpec.sim"
 
 popedDownload = false
 
 if pageSubTitle == "" {
-	pageSubTitle = getOS() 	
+	pageSubTitle = CLIENTSPEC["OS"] 	
 }
 
 pageSubTitle = toLowerCase(pageSubTitle)
