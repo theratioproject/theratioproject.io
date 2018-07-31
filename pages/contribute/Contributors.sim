@@ -1,9 +1,7 @@
  
+call "../database/GetContributors.sim"
  
-remoteCode = fetchRemotefile(getContributorsUrl)
-if remoteCode != null {
-	executeCode(remoteCode)
-	clLength = lengthOf(contributorsList)
+clLength = lengthOf(contributorsList)
 	
 	@'
 		<section class="devsite-landing-row devsite-landing-row-1-up"><div class="devsite-landing-row-group"><div class="devsite-landing-row-item ">
@@ -60,4 +58,3 @@ if remoteCode != null {
 	@'
 		</div></div></div></div></section>
 	'
-}
