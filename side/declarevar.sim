@@ -185,18 +185,6 @@ footerSocialMedia = [
 		:url = slackUrl,
 		:imagesrc = "./assets/images/slack_Icon.png",
 		:description = "Join the conversation on Slack simple-lang.slack.com"
-	],
-	[
-		:title = "Youtube",
-		:url = youtubeUrl,
-		:imagesrc = "./assets/images/youtube_48dp.png",
-		:description = "Check out simple-lang Videos on YouTube"
-	],
-	[
-		:title = "Google+",
-		:url = googlePlusUrl,
-		:imagesrc = "./assets/images/google_plus_48dp.png",
-		:description = "Follow simple-lang on Google+"
 	]
 
 ]
