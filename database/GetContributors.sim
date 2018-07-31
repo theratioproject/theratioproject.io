@@ -37,7 +37,7 @@ contributorsList = [
 		:image_url = "",
 		:contribution = "",
 		:email = "",
-		:twitter_handle = "appcypher",
+		:twitter_handle = "theappcypher",
 		:github_username = "appcypher",
 		:website = ""
 	],
