@@ -5,8 +5,7 @@ call "../database/GetDownloads.sim"
 popedDownload = false
 
 if pageSubTitle == "" {
-	pageSubTitle = CLIENTSPEC["OS"] 	
-	display pageSubTitle + "<br />"
+	pageSubTitle = CLIENTSPEC["OS"] 
 }
 
 pageSubTitle = toLowerCase(pageSubTitle)
@@ -37,7 +36,7 @@ block fetchPlatformDownloads(platformHint, platformArc)
 		<div class="devsite-landing-row-item"> <div class="dac-full-width"> <div class="devsite-table-wrapper">
 			<table class="download">
 				<tbody>
-				<tr><th>Version</th><th>Date</th><th>Size</th><th>Type</th><th>Download</th><th>Release Note</th></tr>
+				<tr><th>Version</th><th>Arc</th><th>Date</th><th>Size</th><th>Type</th><th>Download</th><th>Release Note</th></tr>
 	'				
 					for a = 0 to lengthOf(downloadsList) {
 						tempPackage = downloadsList[a]
@@ -46,6 +45,7 @@ block fetchPlatformDownloads(platformHint, platformArc)
 							@'
 								<tr>
 									<td>s'+tempPackage[:version]+'</td>
+									<td>'+tempPackage[:arc]+'</td>
 									<td>'+tempPackage[:date]+'</td>
 									<td>'+tempPackage[:size]+'</td>
 									<td>'+tempPackage[:file_extension]+'</td>
