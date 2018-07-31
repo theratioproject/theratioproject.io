@@ -1,8 +1,6 @@
+call "../database/GetPackages.sim"
 
-remoteCode = fetchRemotefile(getPackagesUrl)
-if remoteCode != null {
-	executeCode(remoteCode)
-	@'
+@'
 		<section class="devsite-landing-row-landing-row-1-up"><div class="devsite-landing-row-group">
 		<div class="devsite-landing-row-item"> <div class="dac-full-width"> <div class="devsite-table-wrapper">
 			<table class="download">
@@ -32,4 +30,3 @@ if remoteCode != null {
 		</div> </div></div></div></section>
 
 	'
-}
