@@ -33,6 +33,15 @@ contributorsList = [
 		:website = ""
 	],
 	[
+		:name = "Steve Akinyemi",
+		:image_url = "",
+		:contribution = "",
+		:email = "busarih159@gmail.com",
+		:twitter_handle = "appcypher",
+		:github_username = "appcypher",
+		:website = ""
+	],
+	[
 		:name = "Busari Habibullaah",
 		:image_url = "",
 		:contribution = "",
