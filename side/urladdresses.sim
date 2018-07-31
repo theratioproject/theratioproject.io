@@ -64,6 +64,7 @@ simple_lang_logo = "./assets/images/favicon.ico"
 getDownloadUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/database/GetDownloads.sim"
 getPackagesUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/database/GetPackages.sim"
 getBlogsUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/database/GetBlogs.sim"
+getDocsUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/database/GetDocs.sim"
 getContributorsUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/database/GetContributors.sim"
 getDeclareVarUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/side/declarevar.sim"
 
