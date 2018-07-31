@@ -17,10 +17,10 @@ contributorsList = [
 	],
 	[
 		:name = "Ikechi Michael",
-		:image_url = "http://localhost/simple-lang.io/assets/images/favicon.ico",
-		:contribution = "Author",
-		:about = "",
-		:email = "azeezadewale98@gmail.com",
+		:image_url = "",
+		:contribution = "",
+		:about = "Changing the world, one line of code at a time",
+		:email = "mykehell123@gmail.com",
 		:twitter_handle = "iamthecarisma",
 		:github_username = "Thecarisma",
 		:website = "www.google.com"
