@@ -7,7 +7,7 @@
 contributorsList = [
 	[
 		:name = "Azeez Adewale",
-		:image_url = "",
+		:image_url = "https://pbs.twimg.com/profile_images/1006635297784950785/C5GcFBfi_400x400.jpg",
 		:contribution = "Author",
 		:about = "",
 		:email = "azeezadewale98@gmail.com",
@@ -21,8 +21,8 @@ contributorsList = [
 		:contribution = "",
 		:about = "Changing the world, one line of code at a time",
 		:email = "mykehell123@gmail.com",
-		:twitter_handle = "iamthecarisma",
-		:github_username = "Thecarisma",
-		:website = "www.google.com"
+		:twitter_handle = "mykeels",
+		:github_username = "mykeels",
+		:website = ""
 	]
 ]
