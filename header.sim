@@ -1,19 +1,6 @@
 #!simple
 
-#mainUrlAddress = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/side/urladdresses.sim"
-mainUrlAddress = "http://127.0.0.1/simple-lang.io/side/urladdresses.txt"
-
-remoteCode = fetchRemotefile(mainUrlAddress)
-if remoteCode != null {
-	executeCode(remoteCode) 
-	remoteCode1 = fetchRemotefile(getDeclareVarUrl)
-	if remoteCode1 != null {
-		executeCode(remoteCode1)
-	else 
-		__exit__
-	}
-
-	mainSubHeadings = null
+mainSubHeadings = null
 
 	@'
 	<html lang="en">
@@ -120,6 +107,4 @@ if remoteCode != null {
 			<div class="devsite-main-content clearfix" style="margin-top:10px;">
 		
 	' 
-
-}
 

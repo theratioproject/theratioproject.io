@@ -6,10 +6,7 @@ call "../side/urladdresses.sim"
 
 @"Content-Type: text/json"+crlf
 
-remoteCode = fetchRemotefile(getDownloadUrl)
-if remoteCode != null {
-	executeCode(remoteCode)
-	query = GET["query"]
+query = GET["query"]
 	os = GET["os"]
 	type = GET["type"]
 
@@ -38,7 +35,4 @@ if remoteCode != null {
 		if !upgradeExist {
 			display 'not_supported_yet'
 		}
-else 
-	display 'not_supported_yet'
-}
 	
