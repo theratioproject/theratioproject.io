@@ -120,17 +120,6 @@ if remoteCode != null {
 			<div class="devsite-main-content clearfix" style="margin-top:10px;">
 		
 	' 
-	fetchFromJS("http://www.google.com")
 
 }
 
-block fetchFromJS(url)
-	@'<script>
-		function ggggggg(){
-		$.get("'+url+'", function (data) {
-			document.write(data);
-			alert(data);
-		});	
-		}
-	  </script>
-	'
