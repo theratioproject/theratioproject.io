@@ -10,7 +10,7 @@ if pageSubTitle == "" {
 }
 
 pageSubTitle = toLowerCase(pageSubTitle)
-tempOsArch = "amd64"
+tempOsArch = getTempArc(pageSubTitle)
 if stringContains(pageSubTitle,"windows") { fetchPlatformDownloads("windows",tempOsArch)
 elif stringContains(pageSubTitle,"linux") fetchPlatformDownloads("linux",tempOsArch)
 elif stringContains(pageSubTitle,"unix") fetchPlatformDownloads("unix",tempOsArch)
@@ -64,4 +64,9 @@ block fetchPlatformDownloads(platformHint, platformArc)
 		</div> </div></div></div></section>
 
 	'
+	
+block getTempArc(osdumb)
+	arc = "amd64"
+	
+	return arc
 	
