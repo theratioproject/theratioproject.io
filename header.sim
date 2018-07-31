@@ -2,7 +2,10 @@
 
 call "./side/urladdresses.sim"
 
-remoteCode = fetchRemotefile("https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/side/urladdresses.sim")
+mainUrlAddress = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/side/urladdresses.sim"
+mainUrlAddress = 
+
+remoteCode = fetchRemotefile("http://127.0.0.1/simpledd-lang.io/side/urladdresses.txt")
 remoteCode1 = fetchRemotefile(getDeclareVarUrl)
 if remoteCode != null && remoteCode1 != null {
 	executeCode(remoteCode) executeCode(remoteCode1)
