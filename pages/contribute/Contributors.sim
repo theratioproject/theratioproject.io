@@ -49,8 +49,8 @@ clLength = lengthOf(contributorsList)
 						<img class="contributors-image" src="'+cImageUrl+'" alt="Avatar">
 					</a>
 					<br /><span style="font-weight:bold;">'+contributor[:name]+'</span> <br />
+					<span>'+contributor[:contribution]+'</span> <br />
 					<span>'+contributor[:email]+'</span> <br />
-					<span>'+contributor[:about]+'</span> <br />
 					'+cWebsiteUrl+'
 					'+cTwitterUrl+'
 					'+cGithubUrl+'
