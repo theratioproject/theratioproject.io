@@ -12,15 +12,15 @@ pageSubTitle = toLowerCase(pageSubTitle)
 if stringContains(pageSubTitle,"windows") {
 	fetchPlatformDownloads("windows")
 elif stringContains(pageSubTitle,"linux")
-	call "./download/LinuxDownload.sim"
+	fetchPlatformDownloads("linux")
 elif stringContains(pageSubTitle,"unix")
-	call "./download/UnixDownload.sim"
+	fetchPlatformDownloads("unix")
 elif stringContains(pageSubTitle,"mac")
-	call "./download/MacDownload.sim"
+	fetchPlatformDownloads("mac")
 elif stringContains(pageSubTitle,"haiku")
-	call "./download/HaikuDownload.sim"
+	fetchPlatformDownloads("haiku")
 elif stringContains(pageSubTitle,"android")
-	call "./download/AndroidDownload.sim"
+	fetchPlatformDownloads("android")
 }
 
 block popDownload(platform)
