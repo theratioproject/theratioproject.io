@@ -1,8 +1,7 @@
 
-remoteCode = fetchRemotefile(getBlogsUrl)
-if remoteCode != null {
-	executeCode(remoteCode)
-	@'
+call "../database/GetBlogs.sim"
+
+@'
 		<section class="devsite-landing-row devsite-landing-row-1-up"><div class="devsite-landing-row-group"><div class="devsite-landing-row-item ">
 		<div class="resource-widget dac-resource-widget-no-img dynamic-content-widget" data-query="type:blog+tag:featured+tag:androidstudio,type:studio blog" data-sortorder="-timestamp" data-maxresults="3" data-show-authors="true">
 		<div class="dynamic-content-results" dynamic-card-style="">
@@ -19,5 +18,3 @@ if remoteCode != null {
 	@'
 		</div></div></div></div></section>
 	'
-else
-}

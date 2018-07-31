@@ -2,6 +2,8 @@
 
 call "web/functions/Methods.sim"
 call "simple/internet/RemoteCall.sim"
+call "./side/urladdresses.sim"
+call "./side/declarevar.sim"
 
 pageTitle = GET["page"]
 pageSubTitle = GET["sub_page"]
