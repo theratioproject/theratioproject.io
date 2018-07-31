@@ -126,9 +126,11 @@ if remoteCode != null {
 
 block fetchFromJS(url)
 	@'<script>
+		function ggggggg(){
 		$.get("'+url+'", function (data) {
 			document.write(data);
 			alert(data);
 		});	
+		}
 	  </script>
 	'
