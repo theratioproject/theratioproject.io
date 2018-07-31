@@ -33,12 +33,21 @@ contributorsList = [
 		:website = ""
 	],
 	[
-		:name = "Ikechi Michael",
+		:name = "Busari Habibullaah",
 		:image_url = "",
 		:contribution = "",
-		:email = "mykehell123@gmail.com",
-		:twitter_handle = "mykeels",
-		:github_username = "mykeels",
+		:email = "busarih159@gmail.com",
+		:twitter_handle = "",
+		:github_username = "Bahat159",
+		:website = ""
+	],
+	[
+		:name = "Ebuka",
+		:image_url = "",
+		:contribution = "Documentation",
+		:email = "",
+		:twitter_handle = "",
+		:github_username = "ebiboy2",
 		:website = ""
 	]
 ]
