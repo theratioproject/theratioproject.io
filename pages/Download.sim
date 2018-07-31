@@ -11,18 +11,12 @@ if pageSubTitle == "" {
 
 pageSubTitle = toLowerCase(pageSubTitle)
 tempOsArch = "amd64"
-if stringContains(pageSubTitle,"windows") {
-	fetchPlatformDownloads("windows")
-elif stringContains(pageSubTitle,"linux")
-	fetchPlatformDownloads("linux")
-elif stringContains(pageSubTitle,"unix")
-	fetchPlatformDownloads("unix")
-elif stringContains(pageSubTitle,"mac")
-	fetchPlatformDownloads("mac")
-elif stringContains(pageSubTitle,"haiku")
-	fetchPlatformDownloads("haiku")
-elif stringContains(pageSubTitle,"android")
-	fetchPlatformDownloads("android")
+if stringContains(pageSubTitle,"windows") { fetchPlatformDownloads("windows",tempOsArch)
+elif stringContains(pageSubTitle,"linux") fetchPlatformDownloads("linux",tempOsArch)
+elif stringContains(pageSubTitle,"unix") fetchPlatformDownloads("unix",tempOsArch)
+elif stringContains(pageSubTitle,"mac") fetchPlatformDownloads("mac",tempOsArch)
+elif stringContains(pageSubTitle,"haiku") fetchPlatformDownloads("haiku",tempOsArch)
+elif stringContains(pageSubTitle,"android") fetchPlatformDownloads("android",tempOsArch)
 }
 
 block popDownload(platform)

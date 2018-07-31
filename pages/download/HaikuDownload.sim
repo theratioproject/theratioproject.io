@@ -1,0 +1,32 @@
+@'
+		<section class="devsite-landing-row-landing-row-1-up"><div class="devsite-landing-row-group">
+		<div class="devsite-landing-row-item"> <div class="dac-full-width"> <div class="devsite-table-wrapper">
+			<table class="download">
+				<tbody>
+				<tr><th>Version</th><th>Date</th><th>Size</th><th>Type</th><th>Download</th><th>Release Note</th></tr>
+	'				
+					for a = 0 to lengthOf(downloadsList) {
+						tempPackage = downloadsList[a]
+						if stringContains(tempPackage[:os],"haiku") {
+							if !popedDownload { popDownload(tempPackage) }
+							@'
+								<tr>
+									<td>s'+tempPackage[:version]+'</td>
+									<td>'+tempPackage[:date]+'</td>
+									<td>'+tempPackage[:size]+'</td>
+									<td>'+tempPackage[:file_extension]+'</td>
+									<td>
+										<a href="'+tempPackage[:download_url]+'">
+										<button class="devsite-dialog-button button-white button-regular">DOWNLOAD</button></a>
+									</td>
+									<td><a target="_blank" href="'+tempPackage[:release_note]+'">Release Note</a></td>
+								</tr>
+							'
+						}
+					}
+	@'
+				</tbody>
+			</table>
+		</div> </div></div></div></section>
+
+	'
