@@ -6,9 +6,11 @@ popedDownload = false
 
 if pageSubTitle == "" {
 	pageSubTitle = CLIENTSPEC["OS"] 	
+	display pageSubTitle + "<br />"
 }
 
 pageSubTitle = toLowerCase(pageSubTitle)
+tempOsArch = "amd64"
 if stringContains(pageSubTitle,"windows") {
 	fetchPlatformDownloads("windows")
 elif stringContains(pageSubTitle,"linux")
