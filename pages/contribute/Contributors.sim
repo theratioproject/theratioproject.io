@@ -13,8 +13,10 @@ clLength = lengthOf(contributorsList)
 		for a = 0 to clLength {
 			contributor = contributorsList[a]
 			cImageUrl = contributor[:image_url]
-			if cImageUrl = "" {
+			if cImageUrl = "" && contributor[:twitter_handle] != null {
+				"http://avatars.io/twitter/"
 				cImageUrl = 'https://www.gravatar.com/avatar/'+md5(contributor[:email])+'.jpg?s=150'
+			elif cImageUrl = "" && contributor[:email] != null
 			}
 			
 			cWebsiteUrl = contributor[:website]

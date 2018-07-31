@@ -17,7 +17,7 @@ contributorsList = [
 	],
 	[
 		:name = "Ikechi Michael",
-		:image_url = "http://avatars.io/twitter/mykeelshyghghg",
+		:image_url = "",
 		:contribution = "",
 		:about = "Changing the world, one line of code at a time",
 		:email = "mykehell123@gmail.com",
