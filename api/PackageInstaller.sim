@@ -3,13 +3,11 @@
 call "web/functions/Methods.sim"
 call "simple/internet/RemoteCall.sim"
 call "../side/urladdresses.sim"
+call "../database/GetDownloads.sim"
 
 @"Content-Type: text/json"+crlf
 
-remoteCode = fetchRemotefile(getPackagesUrl)
-if remoteCode != null {
-	executeCode(remoteCode)
-	package = GET["package"]
+package = GET["package"]
 
 	if package = "" || package == "(null)" {
 	@'
@@ -70,4 +68,3 @@ else
 	"message":"the package url is broken",
 }
 	'
-}
