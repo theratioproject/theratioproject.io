@@ -7,7 +7,7 @@
 contributorsList = [
 	[
 		:name = "Azeez Adewale",
-		:image_url = "http://localhost/simple-lang.io/assets/images/favicon.ico",
+		:image_url = "",
 		:contribution = "Author",
 		:about = "",
 		:email = "azeezadewale98@gmail.com",
@@ -16,7 +16,7 @@ contributorsList = [
 		:website = "www.google.com"
 	],
 	[
-		:name = "Azeez Adewale",
+		:name = "Ikechi Michael",
 		:image_url = "http://localhost/simple-lang.io/assets/images/favicon.ico",
 		:contribution = "Author",
 		:about = "",
