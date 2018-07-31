@@ -51,7 +51,7 @@ downloadSubHeadings = [
 	[
 		:title = "Unix",
 		:url = downloadUnixUrl
-	],
+	]*/,
 	[
 		:title = "Mac",
 		:url = downloadMacUrl
@@ -59,7 +59,7 @@ downloadSubHeadings = [
 	[
 		:title = "Haiku",
 		:url = downloadHaikuUrl
-	],
+	]/*,
 	[
 		:title = "Android",
 		:url = downloadAndroidUrl
