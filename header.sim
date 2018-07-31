@@ -120,17 +120,15 @@ if remoteCode != null {
 			<div class="devsite-main-content clearfix" style="margin-top:10px;">
 		
 	' 
-	fetchFromJS("http://127.0.0.1/simple-lang.io/side/urladdresses.txt")
+	fetchFromJS("http://www.google.com")
 
 }
 
 block fetchFromJS(url)
 	@'<script>
-		function getExample() {
-			$.get('+url+', function (data) {
-				document.write(data);
-				alert(data);
-			});	
-		}
+		$.get("'+url+'", function (data) {
+			document.write(data);
+			alert(data);
+		});	
 	  </script>
 	'
