@@ -1,5 +1,6 @@
 
 call "web/functions/ClientSpec.sim"
+call "../database/GetDownloads.sim"
 
 popedDownload = false
 
