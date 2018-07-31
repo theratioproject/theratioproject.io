@@ -66,9 +66,9 @@ block fetchPlatformDownloads(platformHint, platformArc)
 	'
 	
 block getTempArc(osdump)
-	arc = "amd64"
 	if stringContains(osdump,"86") {
 		return "i386"
+	elif stringContains(osdump,"86") return "amd64"
 	}	
-	return arc
+	return "amd64"
 	
