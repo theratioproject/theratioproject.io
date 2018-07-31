@@ -3,6 +3,7 @@
 call "web/functions/Methods.sim"
 call "simple/internet/RemoteCall.sim"
 call "../side/urladdresses.sim"
+call "../database/GetPackages.sim"
 
 @"Content-Type: text/json"+crlf
 
