@@ -42,7 +42,7 @@ block fetchPlatformDownloads(platformHint, platformArc)
 					for a = 0 to lengthOf(downloadsList) {
 						tempPackage = downloadsList[a]
 						if stringContains(tempPackage[:os],platformHint) {
-							if !popedDownload && == platformArc { popDownload(tempPackage) }
+							if !popedDownload && stringContains(tempPackage[:os],platformArc) { popDownload(tempPackage) }
 							@'
 								<tr>
 									<td>s'+tempPackage[:version]+'</td>

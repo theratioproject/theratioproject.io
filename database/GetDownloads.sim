@@ -26,7 +26,7 @@ downloadsList = [
 		:download_url = "http://127.0.0.1/simple-lang/s0.3.36/simple0.3.36-windows_x86.zip",
 		:file_name = "simple0.3.36-windows_x86",
 		:file_extension = "zip",
-		:os = "windows_x86",
+		:os = "windows_i386",
 		:release_note = "https://github.com/simple-lang/simple/release_note",
 		:osname = "Windows 32"
 	],
