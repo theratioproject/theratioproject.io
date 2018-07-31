@@ -21,7 +21,7 @@ contributorsList = [
 		:contribution = "",
 		:about = "Changing the world, one line of code at a time",
 		:email = "mykehell123@gmail.com",
-		:twitter_handle = "mykeels",
+		:twitter_handle = "",
 		:github_username = "mykeels",
 		:website = ""
 	]
