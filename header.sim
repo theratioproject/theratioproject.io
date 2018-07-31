@@ -2,7 +2,7 @@
 
 call "./side/urladdresses.sim"
 
-remoteCode = fetchRemotefile("http://127.0.0.1/simple-lang.io/side/urladdresses.txt")
+remoteCode = fetchRemotefile("http://127.0.0.1/simpledd-lang.io/side/urladdresses.txt")
 remoteCode1 = fetchRemotefile(getDeclareVarUrl)
 if remoteCode != null && remoteCode1 != null {
 	executeCode(remoteCode) executeCode(remoteCode1)
