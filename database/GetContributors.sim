@@ -17,7 +17,7 @@ contributorsList = [
 	],
 	[
 		:name = "Ikechi Michael",
-		:image_url = "https://pbs.twimg.com/profile_images/1011343522585305088/4A2JZFvB_400x400.jpg",
+		:image_url = "https://twitter.com/mykeels/profile_image?size=original",
 		:contribution = "",
 		:about = "Changing the world, one line of code at a time",
 		:email = "mykehell123@gmail.com",
