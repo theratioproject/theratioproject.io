@@ -65,7 +65,7 @@ getDownloadUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/m
 getPackagesUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/database/GetPackages.sim"
 getBlogsUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/database/GetBlogs.sim"
 getContributorsUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/database/GetContributors.sim"
-getDeclareVarUrl = "http://127.0.0.1/simple-lang.io/side/declarevar.txt"
+getDeclareVarUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/side/declarevar.sim"
 
 
 #github urls
