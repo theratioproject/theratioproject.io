@@ -31,7 +31,7 @@ block popDownload(platform)
 	popedDownload = true
 	
 	
-block fetchPlatformDownloads(platformHint) 
+block fetchPlatformDownloads(platformHint, platformArc) 
 	@'
 		<section class="devsite-landing-row-landing-row-1-up"><div class="devsite-landing-row-group">
 		<div class="devsite-landing-row-item"> <div class="dac-full-width"> <div class="devsite-table-wrapper">
@@ -42,7 +42,7 @@ block fetchPlatformDownloads(platformHint)
 					for a = 0 to lengthOf(downloadsList) {
 						tempPackage = downloadsList[a]
 						if stringContains(tempPackage[:os],platformHint) {
-							if !popedDownload { popDownload(tempPackage) }
+							if !popedDownload && == platformArc { popDownload(tempPackage) }
 							@'
 								<tr>
 									<td>s'+tempPackage[:version]+'</td>
