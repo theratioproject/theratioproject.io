@@ -61,10 +61,10 @@ githubExampleFolderUrl = "https://raw.githubusercontent.com/simple-lang/simple/m
 simple_lang_logo = "./assets/images/favicon.ico"
 
 #database urls
-getDownloadUrl = "http://127.0.0.1/simple-lang.io/database/GetDownloads.txt"
-getPackagesUrl = "http://127.0.0.1/simple-lang.io/database/GetPackages.txt"
-getBlogsUrl = "http://127.0.0.1/simple-lang.io/database/GetBlogs.txt"
-getContributorsUrl = "http://127.0.0.1/simple-lang.io/database/GetContributors.txt"
+getDownloadUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/database/GetDownloads.sim"
+getPackagesUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/database/GetPackages.sim"
+getBlogsUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/database/GetBlogs.sim"
+getContributorsUrl = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/database/GetContributors.sim"
 getDeclareVarUrl = "http://127.0.0.1/simple-lang.io/side/declarevar.txt"
 
 
