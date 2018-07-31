@@ -3,14 +3,11 @@
 call "web/functions/Methods.sim"
 call "simple/internet/RemoteCall.sim"
 call "../side/urladdresses.sim"
-call "../database/GetPackages.sim"
+call "../database/GetDownloads.sim"
 
 @"Content-Type: text/json"+crlf
 
-remoteCode = fetchRemotefile(getDownloadUrl)
-if remoteCode != null {
-	executeCode(remoteCode)
-	os = GET["os"]
+os = GET["os"]
 
 	upgradeExist = false
 	downloadsListLength = lengthOf(downloadsList)
@@ -40,12 +37,3 @@ if remoteCode != null {
 }
 	'
 	}
-else
-	@'
-{
-	"value":"failed",
-	"message":"the package url is broken",
-}
-	'
-}
-	
