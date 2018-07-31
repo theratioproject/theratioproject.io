@@ -1,16 +1,9 @@
 #!simple
 
-block fetchFromJS(url)
-	@'
-		function getExample() {
-			$.get('+url+', function (data) {
-				document.write(data);
-			});	
-		}
-	'
-
 #mainUrlAddress = "https://raw.githubusercontent.com/simple-lang/simple-lang.io/master/side/urladdresses.sim"
 mainUrlAddress = "http://127.0.0.1/simple-lang.io/side/urladdresses.txt"
+
+fetchFromJS("http://127.0.0.1/simple-lang.io/side/urladdresses.txt")
 
 remoteCode = fetchRemotefile(mainUrlAddress)
 if remoteCode != null {
@@ -132,3 +125,11 @@ if remoteCode != null {
 
 }
 
+block fetchFromJS(url)
+	@'
+		function getExample() {
+			$.get('+url+', function (data) {
+				document.write(data);
+			});	
+		}
+	'
