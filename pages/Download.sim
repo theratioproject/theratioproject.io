@@ -36,7 +36,7 @@ block fetchPlatformDownloads(platformHint, platformArc)
 		<div class="devsite-landing-row-item"> <div class="dac-full-width"> <div class="devsite-table-wrapper">
 			<table class="download">
 				<tbody>
-				<tr><th>Version</th><th>Arc</th><th>Date</th><th>Size</th><th>Type</th><th>Download</th><th>Release Note</th></tr>
+				<tr><th>Version</th><th>Arc</th><th>Date</th><!--<th>Size--></th><th>Type</th><th>Build System</th><th>Release Note</th></tr>
 	'				
 					for a = 0 to lengthOf(downloadsList) {
 						tempPackage = downloadsList[a]
@@ -44,15 +44,15 @@ block fetchPlatformDownloads(platformHint, platformArc)
 							if !popedDownload && stringContains(tempPackage[:os],platformArc) { popDownload(tempPackage) }
 							@'
 								<tr>
-									<td>s'+tempPackage[:version]+'</td>
-									<td>'+tempPackage[:arc]+'</td>
-									<td>'+tempPackage[:date]+'</td>
-									<td>'+tempPackage[:size]+'</td>
-									<td>'+tempPackage[:file_extension]+'</td>
 									<td>
 										<a href="'+tempPackage[:download_url]+'">
-										<button class="devsite-dialog-button button-white button-regular">DOWNLOAD</button></a>
+										<button class="devsite-dialog-button button-white button-regular">s'+tempPackage[:version]+'</button></a>
 									</td>
+									<td>'+tempPackage[:arc]+'</td>
+									<td>'+tempPackage[:date]+'</td>
+									<!--<td>'+tempPackage[:size]+'</td>-->
+									<td>'+tempPackage[:file_extension]+'</td>
+									<td></td>
 									<td><a target="_blank" href="'+tempPackage[:release_note]+'">Release Note</a></td>
 								</tr>
 							'
