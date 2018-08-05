@@ -3,9 +3,11 @@ call "web/functions/ClientSpec.sim"
 call "../database/GetDownloads.sim"
 
 popedDownload = false
+noSubTitle = false
 
 if pageSubTitle == "" {
 	pageSubTitle = CLIENTSPEC["OS"] 
+	noSubTitle = true
 }
 
 pageSubTitle = toLowerCase(pageSubTitle)
@@ -31,12 +33,13 @@ block popDownload(platform)
 	
 	
 block fetchPlatformDownloads(platformHint, platformArc) 
+	downloadsAvailable = 0
 	@'
 		<section class="devsite-landing-row-landing-row-1-up"><div class="devsite-landing-row-group">
 		<div class="devsite-landing-row-item"> <div class="dac-full-width"> <div class="devsite-table-wrapper">
 			<table class="download">
 				<tbody>
-				<tr><th>Version</th><th>Arc</th><th>Date</th><!--<th>Size--></th><th>Type</th><th>Build System</th><th>Release Note</th></tr>
+				<tr><th>Version</th><th>Arc</th><th>Date</th><th>Size</th><th>Type</th><th>Release Note</th></tr>
 	'				
 					for a = 0 to lengthOf(downloadsList) {
 						tempPackage = downloadsList[a]
@@ -50,13 +53,15 @@ block fetchPlatformDownloads(platformHint, platformArc)
 									</td>
 									<td>'+tempPackage[:arc]+'</td>
 									<td>'+tempPackage[:date]+'</td>
-									<!--<td>'+tempPackage[:size]+'</td>-->
+									<td>'+tempPackage[:size]+'</td>
 									<td>'+tempPackage[:file_extension]+'</td>
-									<td></td>
 									<td><a target="_blank" href="'+tempPackage[:release_note]+'">Release Note</a></td>
 								</tr>
 							'
+							downloadsAvailable++
+							if noSubTitle && downloadsAvailable == 4 { break }
 						}
+						
 					}
 	@'
 				</tbody>
