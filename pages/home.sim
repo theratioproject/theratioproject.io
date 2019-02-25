@@ -1,0 +1,144 @@
+
+sampleCode = '
+/*
+	simple-lang s' + simpleVersion()+'
+*/
+
+block main()
+	for a = 0 to 10 {
+		display "Hello World at "+a+nl
+	}
+ '
+ 
+githubExamples = [
+	[
+		:title = "Hello World",
+		:link = "https://raw.githubusercontent.com/simple-lang/simple/master/examples/basic/helloworld.sim"
+	],
+	[
+		:title = "Beep",
+		:link = "https://raw.githubusercontent.com/simple-lang/simple/master/examples/basic/beep.sim"
+	],
+	[
+		:title = "Decimal Triangle",
+		:link = "https://raw.githubusercontent.com/simple-lang/simple/master/examples/basic/decimaltriangle.sim"
+	],
+	[
+		:title = "Floyd Triangle",
+		:link = "https://raw.githubusercontent.com/simple-lang/simple/master/examples/basic/floydstriangle.sim"
+	],
+	[
+		:title = "List Demo",
+		:link = "https://raw.githubusercontent.com/simple-lang/simple/master/examples/basic/listdemo.sim"
+	],
+	[
+		:title = "Getter Setter",
+		:link = "https://raw.githubusercontent.com/simple-lang/simple/master/examples/basic/gettersetter.sim"
+	]
+]
+
+display `
+<div class="flex-container">
+	<div style="width:45%;flex-grow: 8;background:#b3b8bc;">
+		<div id="editor" class="try-online-editor">` + sampleCode + `</div>
+		<button class="try-online-button" onclick="runProgram()"><i class="play icon"></i>Run</button>
+
+		<div class="dropdown-div">
+		<label for="examples-dropdown" style="margin-left:50px;font-size:13px;"><b>Examples: </b></label>
+		<select id="examples-dropdown" onchange="getExample()" class="try-online-dropdown">
+		`
+			for example in githubExamples {
+				display `<option value="` + example[:link] + `">` + example[:title] + `</option>`
+			}
+display `
+		</select>
+		</div>
+		
+		<div style="margin-top:1%;display:table;width:100%; height: calc(100% - 60% - 60px);">
+		<div style="height:100%;padding-bottom: 8px;">
+            <textarea class="try-online-console" id="output" textarea="" name="" cols="" rows=""readonly="" >Program output goes here </textarea>
+		</div>
+        </div>
+	</div>
+  
+	<div style="width:52%;flex-grow: 8;" class="slideshow-container">
+		<div class="mySlides fade">
+		  <div class="text">>>` + getEnv("SIMPLE_PATH") + `
+		  simple is a post-modern general-purpose multi-paradigm language that makes it easy to build scalable software. 
+		  The supported programming paradigms are Imperative, Object-Oriented, Functional, Declarative and Descriptive programming. 
+		  Programs written in simple is portable to various platforms which includes Windows, OSX, Linux, Unix, Android e.t.c. 
+		  </div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="text">
+		  <bold style="font-weight:bold;">Accommodative Syntax</bold> <br />
+		  No forced rules you get to write your code in which ever style you want which means you can get started using 
+		  simple in a short time irrespective of your programming background. 
+		  <a href="` + baseUrl + `doc/accommodative-syntax">Learn More</a>
+		  </div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="text">
+		  <bold style="font-weight:bold;">Small and Fast</bold> <br />
+		  simple is designed to be small and fast such that it can be embedded easily into other programming language 
+		  and environment. The runtime is less than 700kb in size. It currently fast enough for most application. 
+		  </div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="text">
+		  <bold style="font-weight:bold;">Batteries Included. Practical</bold> <br />
+		  There are various module available to work with, environment programs such as <a href="` + baseUrl + `environment/bake">bake</a>, 
+		  <a href="` + baseUrl + `environment/simplerepl">simplerepl</a> written in simple-lang itself.
+		  </div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="text">
+		  <bold style="font-weight:bold;">Descriptive Programming</bold> <br />
+		  Yes descriptive programming such that the expected output of a program can be determined by mere reading the code. 
+		  With the combination of various paradigm in the language you will be able to write simple and descriptive code.
+		  </div>
+		</div>
+		
+		<div style="text-align:center">
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		</div>
+	</div>
+	
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js"></script>
+<script>
+	var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/chrome");
+    editor.session.setMode("ace/mode/javascript");
+	editor.getSession().setTabSize(4);
+	editor.setHighlightActiveLine(true);
+	editor.session.setUseWorker(false);
+	editor.setFontSize(15);
+	editor.resize();
+	function runProgram () {
+		var consoleBox = document.getElementById ("output");
+		consoleBox.value = "Waiting for response from server...";
+		$.get("pages/exec_code.sim", { "code": editor.getSession().getValue()}, function(data) {
+			consoleBox.value = data;
+			consoleBox.scrollTop = consoleBox.scrollHeight;
+		});      
+	}
+	function getExample() {
+		var dropdown = document.getElementById("examples-dropdown");
+		var exampleUrl = dropdown.options [dropdown.selectedIndex].value;
+		$.get(exampleUrl, function (data) {
+			editor.getSession().setValue(data);
+		});
+	}
+</script>
+`

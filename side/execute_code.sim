@@ -1,5 +1,0 @@
-#!simple -cgi
-
-call "web/functions/Methods.sim"
-
-executeCode(GET["code"])

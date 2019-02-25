@@ -1,34 +1,18 @@
-#!simple -cgi
+#!simple
+display "Content-Type: text/html "+nl+nl
+call web.functions.Methods
 
-call "web/functions/Methods.sim"
-call "simple/internet/RemoteCall.sim"
-call "./side/urladdresses.sim"
-call "./side/declarevar.sim"
+#get the page param for use in the header
+page = GET["page"]
 
-pageTitle = GET["page"]
-pageSubTitle = GET["sub_page"]
+#call the header file for html assets e.g css, js
+call "header.sim"
 
-if pageTitle == "" { pageTitle = "Home" }
-
-call "./header.sim"
-
-if pageSubTitle == "Try Online" {
-	call "./pages/TryOnline.sim"
-elif pageSubTitle == "Blog"
-	call "./pages/Blog.sim"
-elif pageSubTitle == "Index"
-	call "./pages/package/PackagesIndex.sim"
-elif pageSubTitle == "Getting Started"
-	call "./pages/Docs.sim"
-elif pageTitle = "Download" 
-	call "./pages/Download.sim"
-elif pageTitle == "Contribute"
-	call "./pages/Contribute.sim"
-else
-	@GET["page"]+'<br />'
-	@GET["sub_page"] + '<br />'
+#render the coresponding page 
+if page == "home" or page == "" {
+	call "./pages/home.sim"
+	
 }
 
-
-
-call "./footer.sim"
+#call the footer to close the tags and other after body script
+call "footer.sim"

@@ -1,0 +1,5 @@
+#!simple
+call "web/functions/Methods.sim"
+display "Content-Type: text/html "+nl+nl
+
+display "PLATFORM " + GET["platform"]

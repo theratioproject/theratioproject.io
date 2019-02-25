@@ -1,0 +1,9 @@
+Options -MultiViews
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^blog/(.*)$ /simple-lang.io/posts.sim?post_id=$1 [L]
+RewriteRule ^home/(.*)$ /simple-lang.io/ [L]
+RewriteRule ^index/(.*)$ /simple-lang.io/index.sim?page=$1 [L]
+RewriteRule ^download/(.*)$ /simple-lang.io/download.sim?platform=$1 [L]
+RewriteRule ^/(.*)$ /simple-lang.io/index.sim?page=$1 [L]
