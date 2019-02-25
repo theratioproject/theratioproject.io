@@ -8,8 +8,8 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #b3b8bc;
-  color: black;
+  background-color: #627584;
+  color: white;
   text-align: center;
   padding:0px;
   margin-bottom:0px;
@@ -213,7 +213,7 @@ body {
 }
 
 .try-online-button {
-  background-color: #627584; /* Green */
+  background-color: #b3b8bc;
   border: none;
   color: white;
   padding: 10px 22px;
@@ -246,4 +246,27 @@ body {
   display: inline-block;
   padding: 10px 22px;
   font-size: 16px;
+}
+
+.blog .articles {
+  font-size: 25px;
+  line-height: 20px;
+}
+
+.blog .articles .title {
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.blog .articles p {
+  font-size: 15px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.blog .invert {
+	color: white;
+	padding: 3%;
 }

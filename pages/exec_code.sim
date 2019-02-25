@@ -1,4 +1,11 @@
-#!simple
-call web.functions.Methods
-display "Content-Type: text/html "+nl+nl
-executeCode(GET["code"])
+
+final one = null
+fo()
+display "Global : " + one + " "
+
+block fo()
+	one = 20 two = 10
+	for a = 0 to 30
+		one++
+	end
+	display "Local : " + one + " " + nl

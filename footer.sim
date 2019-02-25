@@ -2,7 +2,7 @@
 display `	
 	</div>
 	<div class="footer">
-		<p>simple 2019</p>
+		<p>The source of this website is available <a href="https://github.com/simple-lang/simple-lang.io">here</a>. simple 2019</p>
 	</div>
 	</body>
 	<script src="./assets/main.js?` + __rand() + `"></script>

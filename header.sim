@@ -18,10 +18,6 @@ mainHeadings = [
 	[
 		:title = "Help",
 		:url = baseUrl + "help/"
-	],
-	[
-		:title = "Contribute",
-		:url = "https://github.com/simple-lang/simple"
 	]
 
 ]

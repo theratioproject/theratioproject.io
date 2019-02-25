@@ -2,6 +2,8 @@ Options -MultiViews
 Options +FollowSymLinks
 RewriteEngine On
 
+SetEnv SIMPLE_PATH "/cgi-bin/"
+
 RewriteRule ^blog/(.*)$ /simple-lang.io/posts.sim?post_id=$1 [L]
 RewriteRule ^home/(.*)$ /simple-lang.io/ [L]
 RewriteRule ^index/(.*)$ /simple-lang.io/index.sim?page=$1 [L]
