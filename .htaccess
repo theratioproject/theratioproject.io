@@ -2,10 +2,17 @@ Options -MultiViews
 Options +FollowSymLinks
 RewriteEngine On
 
-SetEnv SIMPLE_PATH "/cgi-bin/"
+SetEnvIf Host ^ SIMPLE_PATH="/cgi-bin/"
+SetEnvIf Host ^ BASE_URL=/simple-lang.io/
 
-RewriteRule ^blog/(.*)$ /simple-lang.io/posts.sim?post_id=$1 [L]
-RewriteRule ^home/(.*)$ /simple-lang.io/ [L]
-RewriteRule ^index/(.*)$ /simple-lang.io/index.sim?page=$1 [L]
-RewriteRule ^download/(.*)$ /simple-lang.io/download.sim?platform=$1 [L]
-RewriteRule ^/(.*)$ /simple-lang.io/index.sim?page=$1 [L]
+RewriteRule ^blog/(.*)$ %{ENV:BASE_URL}posts.sim?post_id=$1 [L]
+RewriteRule ^home/(.*)$ %{ENV:BASE_URL} [L]
+RewriteRule ^index/(.*)$ %{ENV:BASE_URL}index.sim?page=$1 [L]
+RewriteRule ^download/(.*)$ %{ENV:BASE_URL}download.sim?platform=$1 [L]
+
+
+RewriteRule ^admin/login(.*)$ %{ENV:BASE_URL}admin/signin.sim [L]
+RewriteRule ^admin/signup(.*)$ %{ENV:BASE_URL}admin/register.sim [L]
+RewriteRule ^admin/blog/(.*)$ %{ENV:BASE_URL}admin/posts.sim?post_id=$1 [L]
+
+RewriteRule ^/(.*)$ %{ENV:BASE_URL}index.sim?page=$1 [L]

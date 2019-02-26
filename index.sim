@@ -3,16 +3,224 @@ display "Content-Type: text/html "+nl+nl
 call web.functions.Methods
 
 #get the page param for use in the header
-page = GET["page"]
-
+pageTitle = GET["page"]
 #call the header file for html assets e.g css, js
 call "header.sim"
 
 #render the coresponding page 
-if page == "home" or page == "" {
-	call "./pages/home.sim"
+sampleCode = '
+/*
+	simple-lang s' + simpleVersion()+'
+*/
+
+block main()
+	for a = 0 to 10 {
+		display "Hello World at "+a+nl
+	}
+ '
+ 
+githubExamples = [
+	[
+		:title = "Hello World",
+		:link = "https://raw.githubusercontent.com/simple-lang/simple/master/examples/basic/helloworld.sim"
+	],
+	[
+		:title = "Beep",
+		:link = "https://raw.githubusercontent.com/simple-lang/simple/master/examples/basic/beep.sim"
+	],
+	[
+		:title = "Decimal Triangle",
+		:link = "https://raw.githubusercontent.com/simple-lang/simple/master/examples/basic/decimaltriangle.sim"
+	],
+	[
+		:title = "Floyd Triangle",
+		:link = "https://raw.githubusercontent.com/simple-lang/simple/master/examples/basic/floydstriangle.sim"
+	],
+	[
+		:title = "List Demo",
+		:link = "https://raw.githubusercontent.com/simple-lang/simple/master/examples/basic/listdemo.sim"
+	],
+	[
+		:title = "Getter Setter",
+		:link = "https://raw.githubusercontent.com/simple-lang/simple/master/examples/basic/gettersetter.sim"
+	]
+]
+
+display `
+<div class="flex-container">
+	<div style="width:45%;flex-grow: 8;background:#627584;">
+		<div id="editor" class="try-online-editor">` + sampleCode + `</div>
+		<button class="try-online-button" onclick="runProgram()"><i class="play icon"></i>Run</button>
+
+		<div class="dropdown-div">
+		<label for="examples-dropdown" style="margin-left:50px;font-size:13px;color:white;"><b>Examples: </b></label>
+		<select id="examples-dropdown" onchange="getExample()" class="try-online-dropdown">
+		`
+			for example in githubExamples {
+				display `<option value="` + example[:link] + `">` + example[:title] + `</option>`
+			}
+display `
+		</select>
+		</div>
+		
+		<div style="margin-top:1%;display:table;width:100%; height: calc(100% - 60% - 60px);">
+		<div style="height:100%;padding-bottom: 8px;">
+            <textarea class="try-online-console" id="output" textarea="" name="" cols="" rows=""readonly="" >Program output goes here </textarea>
+		</div>
+        </div>
+	</div>
+  
+	<div style="width:52%;flex-grow: 8;" class="slideshow-container">
+		<div class="mySlides fade">
+		  <div class="text">
+		  simple is a post-modern general-purpose multi-paradigm language that makes it easy to build scalable software. 
+		  The supported programming paradigms are Imperative, Object-Oriented, Functional, Declarative and Descriptive programming. 
+		  Programs written in simple is portable to various platforms which includes Windows, OSX, Linux, Unix, Android e.t.c. 
+		  </div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="text">
+		  <bold style="font-weight:bold;">Accommodative Syntax</bold> <br />
+		  No forced rules you get to write your code in which ever style you want which means you can get started using 
+		  simple in a short time irrespective of your programming background. 
+		  <a href="` + baseUrl + `doc/accommodative-syntax">Learn More</a>
+		  </div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="text">
+		  <bold style="font-weight:bold;">Small and Fast</bold> <br />
+		  simple is designed to be small and fast such that it can be embedded easily into other programming language 
+		  and environment. The runtime is less than 700kb in size. It currently fast enough for most application. 
+		  </div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="text">
+		  <bold style="font-weight:bold;">Batteries Included. Practical</bold> <br />
+		  There are various module available to work with, environment programs such as <a href="` + baseUrl + `environment/bake">bake</a>, 
+		  <a href="` + baseUrl + `environment/simplerepl">simplerepl</a> written in simple-lang itself.
+		  </div>
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="text">
+		  <bold style="font-weight:bold;">Descriptive Programming</bold> <br />
+		  Yes descriptive programming such that the expected output of a program can be determined by mere reading the code. 
+		  With the combination of various paradigm in the language you will be able to write simple and descriptive code.
+		  </div>
+		</div>
+		
+		<div style="text-align:center">
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		</div>
+	</div>
 	
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js"></script>
+<script>
+	var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/chrome");
+    editor.session.setMode("ace/mode/javascript");
+	editor.getSession().setTabSize(4);
+	editor.setHighlightActiveLine(true);
+	editor.session.setUseWorker(false);
+	editor.setFontSize(15);
+	editor.resize();
+	function runProgram () {
+		var consoleBox = document.getElementById ("output");
+		consoleBox.value = "Waiting for response from server...";
+		$.get("pages/exec_code.sim", { "code": editor.getSession().getValue()}, function(data) {
+			consoleBox.value = data;
+			consoleBox.scrollTop = consoleBox.scrollHeight;
+		});      
+	}
+	function getExample() {
+		var dropdown = document.getElementById("examples-dropdown");
+		var exampleUrl = dropdown.options [dropdown.selectedIndex].value;
+		$.get(exampleUrl, function (data) {
+			editor.getSession().setValue(data);
+		});
+	}
+</script>
+`
+
+display `
+<div class="flex-container" style="margin:3%;">  
+	<div style="width:55%;flex-grow: 8;" class="blog">
+		<span style="font-weight: bold;">Articles</span>
+		<div class="articles">
+			<a target="_blank" href="https://dev.to/kvng_zeez/introducing-simple---a-new-programming-language--ld9" class="title">Introducing simple-lang</a>
+			<p>
+			Simple has features every programming language will have such as variable declarations, functional programming, Object oriented programming etc and more to come. It houses all these features as it parent architecture comes from C. Simple is weakly typed, no explicit end of line required and can be embedded in C and C++ projects. Portability with javascript is a major goal we're trying and going to achieve.
+			</p>
+		</div>
+		<div class="articles">
+			<a target="_blank" href="https://dev.to/kvng_zeez/introducing-simple---a-new-programming-language--ld9" class="title">Introducing simple-lang</a>
+			<p>
+			Simple has features every programming language will have such as variable declarations, functional programming, Object oriented programming etc and more to come. It houses all these features as it parent architecture comes from C. Simple is weakly typed, no explicit end of line required and can be embedded in C and C++ projects. Portability with javascript is a major goal we're trying and going to achieve.
+			</p>
+		</div>
+		<div class="articles">
+			<a target="_blank" href="https://dev.to/kvng_zeez/introducing-simple---a-new-programming-language--ld9" class="title">Introducing simple-lang</a>
+			<p>
+			Simple has features every programming language will have such as variable declarations, functional programming, Object oriented programming etc and more to come. It houses all these features as it parent architecture comes from C. Simple is weakly typed, no explicit end of line required and can be embedded in C and C++ projects. Portability with javascript is a major goal we are trying and going to achieve.
+			</p>
+		</div>
+	</div>
+	
+	
+	<div style="width:42%;" class="blog">
+		<span style="font-weight: bold;">Community</span>
+		<div class="articles">
+			<!-- <a target="_blank" href="https://dev.to/kvng_zeez/introducing-simple---a-new-programming-language--ld9" class="title">Introducing simple-lang</a>-->
+			<p>
+			Discuss simple-lang by join the <a href="https://gitter.im/simple-language/development">Gitter channel</a>, 
+			read the <a href="` + baseUrl + `blog/">official Blog<a>, 
+			follow us on <a href="https://twitter.com/thesimplelang">Twitter<a>, 
+			or write to <a href="mailto:whatisthis914@gmail.com">whatisthis914@gmail.com</a>
+			</p>
+		</div>
+		
+		<span style="font-weight: bold;">Contribute</span>
+		<div class="articles">
+			<p>
+			Create an issue if you find any bugs on the <a href="https://github.com/simple-lang/simple/issues/new" >github</a> page. 
+			If you can fix an issue, make a <a href="https://github.com/simple-lang/simple/compare" >pull request</a>  on GitHub. 
+			</p>
+		</div>
+	</div>
+	
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
+</script>
+`
 
 #call the footer to close the tags and other after body script
 call "footer.sim"

@@ -1,0 +1,36 @@
+#!simple
+display "Content-Type: text/html "+nl+nl
+call web.functions.Methods
+pageTitle = "Login"
+call "header.sim"
+
+callModule("libsimple_sqlite")
+
+if GET['submit_username'] != "" {
+	db = __init_sqlite3()
+	__sqlite3_open("../assets/simple_lang_io.db", db)
+	username = GET['username']
+	password = GET['password']
+	display username + "|" + password
+}
+
+display `
+	<div style="margin:3%;">
+	<span style="font-weight: bold;font-size:40px;">Articles</span><br /><br />
+	
+	<form>
+		Username : <input type="input" name="username" placeholder="Username"><br /><br />
+		Password : <input type="password" name="password" placeholder="password"><br /><br />
+		<input type="submit" name="submit_username" value="login"><br /><br />
+	</form>
+	</div>
+	
+	<script>
+	function login() {
+		var username = document.getElementById("username").InnerText;
+		alert(username);
+	}
+	</script>
+`
+
+call "footer.sim"

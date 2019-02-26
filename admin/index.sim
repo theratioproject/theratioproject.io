@@ -1,0 +1,11 @@
+#!simple
+display "Content-Type: text/html "+nl+nl
+call web.functions.Methods
+pageTitle = "Dashboard"
+call "header.sim"
+
+#render the coresponding page 
+
+
+#call the footer to close the tags and other after body script
+call "footer.sim"

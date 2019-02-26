@@ -1,0 +1,83 @@
+
+#change to just '/' during deployment
+baseUrl = getEnv("BASE_URL")
+display `
+	<script>
+		function setCookie(cname, cvalue, exdays) {
+		  var d = new Date();
+		  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		  var expires = "expires="+ d.toUTCString();
+		  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+		
+		function getCookie(cname) {
+		  var name = cname + "=";
+		  var decodedCookie = decodeURIComponent(document.cookie);
+		  var ca = decodedCookie.split(';');
+		  for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+			  c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+			  return c.substring(name.length, c.length);
+			}
+		  }
+		  return "";
+		}
+		//setCookie("logged_in","false");
+		var loogedIn = getCookie("logged_in");
+		if (loogedIn === "" && !window.location.toString().includes("login")) {
+			window.location = "` + baseUrl + `admin/login" ;
+		}
+	</script>
+`
+
+mainHeadings = [
+	[
+		:title = "Home",
+		:url = baseUrl + "admin/"
+	],
+	[
+		:title = "Download",
+		:url = baseUrl + "admin/download/"
+	],
+	[
+		:title = "Wiki",
+		:url = baseUrl + "admin/wiki/"
+	],
+	[
+		:title = "Posts",
+		:url = baseUrl + "admin/blog/"
+	]
+]
+
+display `
+<html>
+	<head>
+		<base href="` + baseUrl + `">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./assets/main.css?` + __rand() + `">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>` + pageTitle + ` | Admin - simple</title>
+	</head>
+	<body>
+	<div class="navbar" id="mainBar">
+		<a class="title" href="` + baseUrl + `"> Simple Programming Language</a>
+		<div class="navbar-menus">
+		<span></span>
+		`
+	
+	for heading in mainHeadings {
+		display `<a href="` + heading[:url] + `"> ` + heading[:title] + `</a> 
+		`
+	}
+
+	display `<a href="javascript:void(0);" class="icon" onclick="viewFullMenu()">
+		<i class="fa fa-bars"></i>
+	</a>
+	</div>
+	</div>
+	<div class="content">
+`

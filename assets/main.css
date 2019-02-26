@@ -1,7 +1,16 @@
+@import url('https://use.fontawesome.com/releases/v5.0.9/css/all.css');
+@font-face {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/fontawesome-webfont.eot?v=#4.0.3");
+  src: url("fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("fonts/fontawesome-webfont.ttf?v=#4.0.3") format("truetype"), url("fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
+}
+
 body {
   margin: 0;
   font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .footer {
@@ -21,7 +30,7 @@ body {
 
 .navbar {
   overflow: hidden;
-  background-color: #b3b8bc;
+  background-color: #627584;
   z-index: 10000000;
 }
 
@@ -48,12 +57,12 @@ body {
 .navbar a.title {
   float: left;
   display: block;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  background-color: #b3b8bc;
+  background-color: #627584;
   font-weight: bold;
 }
 
@@ -266,7 +275,23 @@ body {
   -webkit-box-orient: vertical;
 }
 
+.posts .articles p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+}
+
 .blog .invert {
 	color: white;
 	padding: 3%;
+}
+
+.article {
+  margin:3%;
+  width:70%;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.article p {
+  
 }

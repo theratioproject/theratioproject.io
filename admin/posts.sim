@@ -1,0 +1,10 @@
+#!simple
+display "Content-Type: text/html "+nl+nl
+call web.functions.Methods
+pageTitle = "Posts"
+call "header.sim"
+
+#render the coresponding page 
+
+
+call "footer.sim"
