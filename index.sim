@@ -1,6 +1,7 @@
 #!simple
 display "Content-Type: text/html "+nl+nl
 call web.functions.Methods
+callModule("libsimple_sqlite")
 
 #get the page param for use in the header
 pageTitle = GET["page"]
@@ -156,24 +157,34 @@ display `
 <div class="flex-container" style="margin:3%;">  
 	<div style="width:55%;flex-grow: 8;" class="blog">
 		<span style="font-weight: bold;">Articles</span>
-		<div class="articles">
-			<a target="_blank" href="https://dev.to/kvng_zeez/introducing-simple---a-new-programming-language--ld9" class="title">Introducing simple-lang</a>
-			<p>
-			Simple has features every programming language will have such as variable declarations, functional programming, Object oriented programming etc and more to come. It houses all these features as it parent architecture comes from C. Simple is weakly typed, no explicit end of line required and can be embedded in C and C++ projects. Portability with javascript is a major goal we're trying and going to achieve.
-			</p>
-		</div>
-		<div class="articles">
-			<a target="_blank" href="https://dev.to/kvng_zeez/introducing-simple---a-new-programming-language--ld9" class="title">Introducing simple-lang</a>
-			<p>
-			Simple has features every programming language will have such as variable declarations, functional programming, Object oriented programming etc and more to come. It houses all these features as it parent architecture comes from C. Simple is weakly typed, no explicit end of line required and can be embedded in C and C++ projects. Portability with javascript is a major goal we're trying and going to achieve.
-			</p>
-		</div>
-		<div class="articles">
-			<a target="_blank" href="https://dev.to/kvng_zeez/introducing-simple---a-new-programming-language--ld9" class="title">Introducing simple-lang</a>
-			<p>
-			Simple has features every programming language will have such as variable declarations, functional programming, Object oriented programming etc and more to come. It houses all these features as it parent architecture comes from C. Simple is weakly typed, no explicit end of line required and can be embedded in C and C++ projects. Portability with javascript is a major goal we are trying and going to achieve.
-			</p>
-		</div>
+		`
+		db = __init_sqlite3()
+		__sqlite3_open("./assets/simple_lang_io.db", db)
+		blogs =  __sqlite3_exec(db,"select * from BLOG Limit 100")
+		for blog in blogs {
+				if blog[:External] == "true" {
+					display `
+						<div class="articles" >
+							<a target="_blank" href="` + blog[:Slug] + `" class="title">` + blog[:Title] + `</a>
+							<br /><span style="font-size:12px;">` + blog[:Date] + `<span>
+							<!-- <p>` + blog[:Excerpt] + `</p>-->
+							
+						</div>
+					`
+				else
+					display `
+						<div class="articles" >
+							<a href="` + baseUrl + `blog/` + blog[:Id] + `" class="title">` + blog[:Title] + `</a>
+							<br /><span style="font-size:12px;">` + blog[:Date] + `<span>
+							<p>` + blog[:Excerpt] + `</p>
+							
+						</div>
+					`
+				}
+				
+		}
+		__sqlite3_close(db)
+display `	
 	</div>
 	
 	

@@ -3,9 +3,57 @@ display "Content-Type: text/html "+nl+nl
 call web.functions.Methods
 pageTitle = "Dashboard"
 call "header.sim"
+callModule("libsimple_sqlite")
 
 #render the coresponding page 
-
+display `
+	<div style="margin:3%;">
+		<div style="font-size:20px;font-weight:bold;">
+			Welcome, ` + COOKIES['UserName'] + ` <br/>
+			` + COOKIES['FullName'] + ` <br/>
+			` + COOKIES['Email'] + `
+		</div>
+		<form action="` + baseUrl + `admin/signin.sim">
+			<input type="submit" name="submit_logout" value="logout"><br /><br />
+		</form>
+		`
+		display `
+		<div class="blog posts" style="margin:0%;">
+		<span style="font-weight: bold;font-size:40px;">Articles</span>
+		<form action="` + baseUrl + `admin/article/new/">
+			<input type="submit" name="new_article" value="New Article"><br /><br />
+		</form>
+		`
+			db = __init_sqlite3()
+			__sqlite3_open("../assets/simple_lang_io.db", db)
+			blogs =  __sqlite3_exec(db,"select * from BLOG where AuthorId=" + COOKIES["Id"] + " Limit 5")
+			for blog in blogs {
+					if blog[:External] == "true" {
+						display `
+							<div class="articles" style="margin-top:20px;width:70%;">
+								<a target="_blank" href="` + blog[:Slug] + `" class="title">` + blog[:Title] + `</a>
+								<span style="font-size:12px;">` + blog[:Date] + `<span>
+								<!-- <p> ` + blog[:Excerpt] + `</p>-->
+								
+							</div>
+						`
+					else
+						display `
+							<div class="articles" style="margin-top:20px;width:70%;">
+								<a href="` + baseUrl + `admin/article/edit/` + blog[:Id] + `" class="title">` + blog[:Title] + `</a>
+								<span style="font-size:12px;">` + blog[:Date] + `<span>
+								<p> ` + blog[:Excerpt] + `</p>
+								
+							</div>
+						`
+					}
+			}
+			
+	display `
+		</div>
+	</div>
+`
+__sqlite3_close(db)
 
 #call the footer to close the tags and other after body script
-call "footer.sim"
+#call "footer.sim"

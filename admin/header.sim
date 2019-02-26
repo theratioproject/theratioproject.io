@@ -25,9 +25,8 @@ display `
 		  }
 		  return "";
 		}
-		//setCookie("logged_in","false");
 		var loogedIn = getCookie("logged_in");
-		if (loogedIn === "" && !window.location.toString().includes("login")) {
+		if ((loogedIn === "" || loogedIn === "false") && !window.location.toString().includes("login")) {
 			window.location = "` + baseUrl + `admin/login" ;
 		}
 	</script>

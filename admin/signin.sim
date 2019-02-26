@@ -6,15 +6,47 @@ call "header.sim"
 
 callModule("libsimple_sqlite")
 
+if GET['submit_logout'] != "" {
+	display `
+		<script> 
+			setCookie("logged_in","true",-30) ;
+			setCookie("UserName","null",-30) ;
+			setCookie("Email","null",-30) ;
+			setCookie("Id","null",-30) ;
+			setCookie("FullName","null",-30) ;
+			window.location = "` + baseUrl + `" ;
+		</script>
+	`
+}
+
 if GET['submit_username'] != "" {
 	db = __init_sqlite3()
 	__sqlite3_open("../assets/simple_lang_io.db", db)
 	username = GET['username']
 	password = GET['password']
-	display username + "|" + password
+	query =  __sqlite3_exec(db,"select * from ADMIN where Username='" + username + "' and Password='" + password + "'")
+	if lengthOf(query) > 0 {
+		display `
+			<script> 
+			setCookie("logged_in","true",30) 
+			setCookie("UserName","` + query[0][:UserName] + `",30) 
+			setCookie("Email","` + query[0][:Email] + `",30) 
+			setCookie("Id","` + query[0][:Id] + `",30) 
+			setCookie("FullName","` + query[0][:FullName] + `",30) 
+			window.location = "` + baseUrl + `admin/" ;
+			</script>
+		`
+	}
+	__sqlite3_close(db)
 }
 
 display `
+	<script>
+		var loogedIn = getCookie("logged_in");
+		if ((loogedIn === "true")) {
+			window.location = "` + baseUrl + `admin/" ;
+		}
+	</script>
 	<div style="margin:3%;">
 	<span style="font-weight: bold;font-size:40px;">Articles</span><br /><br />
 	
@@ -33,4 +65,4 @@ display `
 	</script>
 `
 
-call "footer.sim"
+#call "footer.sim"

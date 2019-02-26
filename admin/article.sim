@@ -1,0 +1,97 @@
+#!simple
+display "Content-Type: text/html "+nl+nl
+call web.functions.Methods
+call simple.utilities.DateTime
+import simple.core
+pageTitle = "Dashboard"
+call "header.sim"
+callModule("libsimple_sqlite")
+
+#display SERVER
+if GET["update_article"] != "" {
+	Id = GET['id']
+	Title = GET['title']
+	Slug = GET['slug']
+	Excerpt = replaceStr(GET['excerpt'], crlf, nl)
+	Content = replaceStr(GET['content'], crlf, nl)
+	db = __init_sqlite3()
+	__sqlite3_open("../assets/simple_lang_io.db", db)
+	query =  __sqlite3_exec(db,'update BLOG set Title="' +  Title + '", Slug="' + Slug + '", Excerpt="' + Excerpt + '", Content="' + Content + '"  where Id="' + Id +'"')
+	if lengthOf(query) > 0 {
+		display `<script>window.location = "` + baseUrl + `admin/" ;</script>`
+	}
+	__sqlite3_close(db)
+	
+elif GET["create_article"] != "" 
+	Id = GET['id']
+	Title = GET['title']
+	Slug = GET['slug']
+	Excerpt = replaceStr(GET['excerpt'], crlf, nl)
+	Content = replaceStr(GET['content'], crlf, nl)
+	db = __init_sqlite3()
+	__sqlite3_open("../assets/simple_lang_io.db", db)
+	date = new DateTime()
+	query =  __sqlite3_exec(db,'insert into BLOG (Title,External,Slug,Excerpt,Content,AuthorId,Date) 
+										values ("'+Title+'", "false", "'+Slug+'", "'+Excerpt+'", "'+Content+'", "'+COOKIES['Id']+'", "'+date.toString()+'")')
+	__sqlite3_close(db)
+	display `<script>window.location = "` + baseUrl + `blog/`+Slug+`" ;</script>`
+	
+elif GET['delete_article'] != ""
+	Id = GET['id']
+	db = __init_sqlite3()
+	__sqlite3_open("../assets/simple_lang_io.db", db)
+	query =  __sqlite3_exec(db,'delete from BLOG where Id="' + Id +'"')
+	__sqlite3_close(db)
+	display `<script>window.location = "` + baseUrl + `admin/" ;</script>`
+	
+}
+
+
+#__exit__
+if GET['op'] == "edit" {
+	if GET['post_id'] == "" {
+		#display `<script>window.location = "` + baseUrl + `admin/"</script>;`
+	}
+	
+	db = __init_sqlite3()
+	__sqlite3_open("../assets/simple_lang_io.db", db)
+	article =  __sqlite3_exec(db,"select * from BLOG where Id=" + GET['post_id'] + "")
+	display `
+		<div style="font-size:20px;font-weight:bold;width:70%;margin:3%;">
+			<span style="">Edit Article<span> <br />
+			Write the article in Markdown.<br /><br />
+			<form method="get" action="` + baseUrl + `admin/article.sim">
+				<input type="hidden" name="id" value="` + article[0][:Id] + `">
+				Title : <textarea name="title" style="width:100%;height:30px;margin-bottom:2%;" required>` + article[0][:Title] + `</textarea>
+				Slug : <br/><textarea name="slug" style="width:50%;height:30px;margin-bottom:2%;" required>` + article[0][:Slug] + `</textarea><br/>
+				Excerpt : <br/><textarea name="excerpt" style="width:100%;height:50px;margin-bottom:2%;"  maxlength="600" minlength="200" required>` + article[0][:Excerpt] + `</textarea><br/>
+				Content : <textarea name="content" style="width:100%;height:50%;margin-bottom:2%;" required>` + article[0][:Content] + `</textarea>
+				<input type="submit" name="update_article" value="UPDATE ARTICLE"> .... <input type="submit" name="delete_article" value="DELETE"><br /><br />
+			</form>
+		</div>
+		
+	`
+	__sqlite3_close(db)
+	
+elif GET['op'] == "new" 
+	display `
+		<div style="font-size:20px;font-weight:bold;width:70%;margin:3%;">
+			<span style="">Create New Article<span> <br />
+			Write the article in Markdown.<br /><br />
+			<form action="` + baseUrl + `admin/article.sim">
+				Title : <textarea name="title" style="width:100%;height:30px;margin-bottom:2%;" required></textarea>
+				Slug : <br/><textarea name="slug" style="width:50%;height:30px;margin-bottom:2%;" required>`+__rand()+`-`+__rand()+`</textarea><br/>
+				Excerpt : <br/><textarea name="excerpt" style="width:100%;height:50px;margin-bottom:2%;" maxlength="600" minlength="200" required></textarea><br/>
+				Content : <textarea name="content" style="width:100%;height:50%;margin-bottom:2%;" required></textarea>
+				<input type="submit" name="create_article" value="CREATE ARTICLE"><br /><br />
+			</form>
+		</div>
+		
+	`
+	
+else
+	display `<script>window.location = "` + baseUrl + `admin/" ;</script>`
+}
+
+#call the footer to close the tags and other after body script
+#call "footer.sim"

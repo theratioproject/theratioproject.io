@@ -14,5 +14,6 @@ RewriteRule ^download/(.*)$ %{ENV:BASE_URL}download.sim?platform=$1 [L]
 RewriteRule ^admin/login(.*)$ %{ENV:BASE_URL}admin/signin.sim [L]
 RewriteRule ^admin/signup(.*)$ %{ENV:BASE_URL}admin/register.sim [L]
 RewriteRule ^admin/blog/(.*)$ %{ENV:BASE_URL}admin/posts.sim?post_id=$1 [L]
+RewriteRule ^admin/article/(.*)/(.*)$ %{ENV:BASE_URL}admin/article.sim?op=$1&post_id=$2 [L]
 
 RewriteRule ^/(.*)$ %{ENV:BASE_URL}index.sim?page=$1 [L]

@@ -22,10 +22,8 @@ if postId == "" {
 						display `
 							<div class="articles" style="margin-top:20px;width:70%;">
 								<a target="_blank" href="` + blog[:Slug] + `" class="title">` + blog[:Title] + `</a>
-								<span style="font-size:12px;">` + blog[:Date] + `<span>
-								<!-- <p> 
-								` + blog[:Content] + `
-								</p>-->
+								<br /><span style="font-size:12px;">` + blog[:Date] + `<span>
+								<!-- <p> ` + blog[:Excerpt] + `</p>-->
 								
 							</div>
 						`
@@ -33,14 +31,13 @@ if postId == "" {
 						display `
 							<div class="articles" style="margin-top:20px;width:70%;">
 								<a href="` + baseUrl + `blog/` + blog[:Id] + `" class="title">` + blog[:Title] + `</a>
-								<span style="font-size:12px;">` + blog[:Date] + `<span>
-								<p> 
-								` + blog[:Content] + `
-								</p>
+								<br /><span style="font-size:12px;">` + blog[:Date] + `<span>
+								<p>` + blog[:Excerpt] + `</p>
 								
 							</div>
 						`
 					}
+					
 			}
 			
 	display `
@@ -53,7 +50,7 @@ elif strContains(postId, '-')
 	if lengthOf(article) > 0 {
 		display `<div class="article" >
 			<span style="font-weight: bold;font-size:30px;">` + article[0][:Title] + `</span><br /><br />
-			<span style="font-weight: bold;font-size:17px;">` + article[0][:Author] + ` - ` + article[0][:Date] + `</span><br /><br />
+			<span style="font-weight: bold;font-size:17px;">` /*+ article[0][:Author] + ` - `*/ + article[0][:Date] + `</span><br /><br />
 			<p id="markdown-paragraph"> </p>
 			</div>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
@@ -71,13 +68,13 @@ else
 	if lengthOf(article) > 0 {
 		display `<div class="article" >
 			<span style="font-weight: bold;font-size:30px;">` + article[0][:Title] + `</span><br /><br />
-			<span style="font-weight: bold;font-size:17px;">` + article[0][:Author] + ` - ` + article[0][:Date] + `</span><br /><br />
+			<span style="font-weight: bold;font-size:17px;">` /*+ article[0][:Author] + ` - `*/ + article[0][:Date] + `</span><br /><br />
 			<p id="markdown-paragraph"> </p>
 			</div>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
 			<script>
 				var converter = new showdown.Converter(), 
-				text      = '` + article[0][:Content] + `';
+				text      = "` + escapeString(article[0][:Content]) + `";
 				document.getElementById('markdown-paragraph').innerHTML  = converter.makeHtml(text);
 			</script>
 		`
