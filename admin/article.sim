@@ -1,7 +1,7 @@
 #!simple
 display "Content-Type: text/html "+nl+nl
 call web.functions.Methods
-call simple.utilities.DateTime
+call simple.util.DateTime
 import simple.core
 pageTitle = "Dashboard"
 call "header.sim"

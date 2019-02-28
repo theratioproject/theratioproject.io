@@ -11,7 +11,11 @@ display `
 		`
 		display `
 		<div class="blog posts" style="margin:0%;">
-		<span style="font-weight: bold;font-size:40px;">Articles</span><br /><br />`
+		<span style="font-weight: bold;font-size:40px;">Articles</span>
+		<form action="` + baseUrl + `admin/article/new/">
+			<input type="submit" name="new_article" value="New Article"><br /><br />
+		</form>
+		<br /><br />`
 			db = __init_sqlite3()
 			__sqlite3_open("../assets/simple_lang_io.db", db)
 			blogs =  __sqlite3_exec(db,"select * from BLOG where AuthorId=" + COOKIES["Id"] + " Limit 100")

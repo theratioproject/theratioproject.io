@@ -1,0 +1,177 @@
+#!simple
+display "Content-Type: text/html "+nl+nl
+call web.functions.Methods
+call simple.util.DateTime
+import simple.core
+pageTitle = "Modify Release"
+call "header.sim"
+callModule("libsimple_sqlite")
+
+#display SERVER
+if GET["update_download"] != "" {
+	Id = GET['id']
+	Name = GET['name']
+	Type = GET['type']
+	OS = GET['os']
+	OS_Code = GET['os_code']
+	Arch = GET['arch']
+	Size = GET['size']
+	Link= GET['link']
+	db = __init_sqlite3()
+	__sqlite3_open("../assets/simple_lang_io.db", db)
+	query =  __sqlite3_exec(db,'update Downloads set Name="' +  Name + '", Type="' + Type + '", OS="' + OS + '", OS_Code="' + OS_Code + '", Arch="' + Arch + '", Size="' + Size + '", Link="' + Link + '"  where Id="' + Id +'"')
+	if lengthOf(query) > 0 {
+		display `<script>window.location = "` + baseUrl + `admin/download/" ;</script>`
+	}
+	__sqlite3_close(db)
+	
+elif GET["create_realease"] != "" 
+	Name = GET['name']
+	Type = GET['type']
+	OS = GET['os']
+	OS_Code = GET['os_code']
+	Arch = GET['arch']
+	Size = GET['size']
+	Version = GET['version']
+	Link = GET['link']
+	db = __init_sqlite3()
+	__sqlite3_open("../assets/simple_lang_io.db", db)
+	date = new DateTime()
+	query =  __sqlite3_exec(db,'insert into Downloads (Name,Type,OS,OS_Code,Arch,Size,Version,Link,Date) 
+		values ("'+Name+'", "'+Type+'", "'+OS+'", "'+OS_Code+'", "'+Arch+'", "'+Size+'", "'+Version+'", "'+Link+'", "'+date.toString()+'")')
+	__sqlite3_close(db)
+	display `<script>window.location = "` + baseUrl + `admin/version/list/` + Version + `" ;</script>`
+	
+elif GET["create_realease_version"] != "" 
+	Version = GET['version']
+	db = __init_sqlite3()
+	__sqlite3_open("../assets/simple_lang_io.db", db)
+	query =  __sqlite3_exec(db,'insert into Versions (Version) 
+		values ("'+Version+'")')
+	__sqlite3_close(db)
+	display `<script>window.location = "` + baseUrl + `admin/version/list/` + Version + `" ;</script>`
+	
+elif GET['delete_download'] != ""
+	Id = GET['id']
+	db = __init_sqlite3()
+	__sqlite3_open("../assets/simple_lang_io.db", db)
+	query =  __sqlite3_exec(db,'delete from Downloads where Id="' + Id +'"')
+	__sqlite3_close(db)
+	display `<script>window.location = "` + baseUrl + `admin/download/" ;</script>`
+	
+elif GET['delete_release'] != ""
+	Version = GET['version']
+	db = __init_sqlite3()
+	__sqlite3_open("../assets/simple_lang_io.db", db)
+	query =  __sqlite3_exec(db,'delete from Downloads where Version="' + Version +'"')
+	query =  __sqlite3_exec(db,'delete from Versions where Version="' + Version +'"')
+	__sqlite3_close(db)
+	display `<script>window.location = "` + baseUrl + `admin/download/" ;</script>`
+	
+}
+
+
+#__exit__
+if GET['op'] == "list" {
+	display `
+	<div style="margin:3%;">
+		`
+		display `
+		<div class="blog posts" style="margin:0%;">
+		<span style="font-weight: bold;font-size:40px;">` + GET["id"] + `</span><br /><br />`
+			db = __init_sqlite3()
+			__sqlite3_open("../assets/simple_lang_io.db", db)
+			downloads =  __sqlite3_exec(db,"select * from Downloads where Version='" + GET["id"] + "' Limit 100")
+			for download in downloads {
+					display `
+						<div class="articles" style="margin-top:20px;width:70%;">
+							<a href="` + baseUrl + `admin/version/edit/` + download[:Id] + `" class="title">` + download[:Name] + `</a>
+						</div>
+					`
+			}
+			__sqlite3_close(db)
+			
+			display `
+			<form style="margin-top:20px;" action="` + baseUrl + `admin/version/new/` + GET["id"] + `">
+				<input type="submit" name="new_download" value="ADD RELEASE">
+			</form>
+			
+			<form style="margin-top:20px;" method="get" action="` + baseUrl + `admin/version.sim">
+				<input type="hidden" name="version" value="` + GET["id"] + `">
+				<input type="submit" name="delete_release" value="DELETE RELEASE"><br /><br />
+			</form>
+			`
+			
+			
+	display `
+		</div>
+	</div>
+`
+
+elif GET['op'] == "edit" 
+	
+	if GET['id'] == "" {
+		display `<script>window.location = "` + baseUrl + `admin/"</script>;`
+	}
+	
+	db = __init_sqlite3()
+	__sqlite3_open("../assets/simple_lang_io.db", db)
+	download =  __sqlite3_exec(db,"select * from Downloads where Id=" + GET['id'] + "")
+	display `
+		<div style="font-size:20px;font-weight:bold;width:70%;margin:3%;">
+			<span style="">Edit Release<span> <br />
+			<p style="font-weight:100;">Make sure the Name conforms with simple$VERSION-$OS_ARCH.$EXTENSION</p>
+			<form method="get" action="` + baseUrl + `admin/version.sim">
+				<input type="hidden" name="id" value="` + download[0][:Id] + `">
+				Name : <textarea name="name" style="width:100%;height:30px;margin-bottom:2%;" required>` + download[0][:Name] + `</textarea>
+				Type : <textarea name="type" style="width:100%;height:30px;margin-bottom:2%;" required>` + download[0][:Type] + `</textarea>
+				Operating System : <br/><textarea name="os" style="width:100%;height:30px;margin-bottom:2%;" required>` + download[0][:OS] + `</textarea><br/>
+				Operating System Code : <br/><textarea name="os_code" style="width:100%;height:30px;margin-bottom:2%;" required>` + download[0][:OS_Code] + `</textarea><br/>
+				Architecture : <br/><textarea name="arch" style="width:100%;height:30px;margin-bottom:2%;" required>` + download[0][:Arch] + `</textarea><br/>
+				Size : <br/><textarea name="size" style="width:100%;height:30px;margin-bottom:2%;" required>` + download[0][:Size] + `</textarea><br/>
+				Download Url : <br/><textarea name="link" style="width:100%;height:30px;margin-bottom:2%;" required>` + download[0][:Link] + `</textarea><br/>
+				<input type="submit" name="update_download" value="UPDATE RELEASE"> .... <input type="submit" name="delete_download" value="DELETE"><br /><br />
+			</form>
+		</div>
+		
+	`
+	__sqlite3_close(db)
+	
+elif GET['op'] == "new" 
+	display `
+		<div style="font-size:20px;font-weight:bold;width:70%;margin:3%;">
+			<span style="">Create New Release<span> <br />
+			<p style="font-weight:100;">Make sure the Name conforms with simple$VERSION-$OS_ARCH.$EXTENSION</p><br />
+			<form action="` + baseUrl + `admin/version.sim">
+				<input type="hidden" name="version" value="` + GET['id'] + `">
+				Name : <textarea name="name" style="width:100%;height:30px;margin-bottom:2%;" required></textarea>
+				Type : <textarea name="type" style="width:100%;height:30px;margin-bottom:2%;" required></textarea>
+				Operating System : <br/><textarea name="os" style="width:100%;height:30px;margin-bottom:2%;" required></textarea><br/>
+				Operating System Code : <br/><textarea name="os_code" style="width:100%;height:30px;margin-bottom:2%;" required></textarea><br/>
+				Architecture : <br/><textarea name="arch" style="width:100%;height:30px;margin-bottom:2%;" required></textarea><br/>
+				Size : <br/><textarea name="size" style="width:100%;height:30px;margin-bottom:2%;" required></textarea><br/>
+				Download Url : <br/><textarea name="link" style="width:100%;height:30px;margin-bottom:2%;" required></textarea><br/>
+				<input type="submit" name="create_realease" value="CREATE RELEASE"><br /><br />
+			</form>
+		</div>
+		
+	`
+	
+elif GET['op'] == "add" 
+	display `
+		<div style="font-size:20px;font-weight:bold;width:70%;margin:3%;">
+			<span style="">Create New Release Version<span> <br />
+			<form style="margin-top:20px;" action="` + baseUrl + `admin/version.sim">
+				Version Name : <textarea name="version" style="width:100%;height:30px;margin-bottom:2%;" required></textarea>
+				<input type="submit" name="create_realease_version" value="CREATE RELEASE VERSION"><br /><br />
+			</form>
+		</div>
+		
+	`
+	
+else
+	display `<script>window.location = "` + baseUrl + `admin/download/" ;</script>`
+}
+
+#call the footer to close the tags and other after body script
+#call "footer.sim"

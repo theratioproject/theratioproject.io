@@ -10,77 +10,58 @@ call "header.sim" #call the header file for html assets e.g css, js
 
 db = __init_sqlite3()
 __sqlite3_open("./assets/simple_lang_io.db", db)
-if postId == "" {
-	
-	display `
+display `
 		<div class="blog posts" style="margin:3%;">
 		<span style="font-weight: bold;font-size:40px;">Downloads</span><br /><br />`
-		
-			blogs =  __sqlite3_exec(db,"select * from BLOG Limit 100")
-			for blog in blogs {
-					if blog[:External] == "true" {
-						display `
-							<div class="articles" style="margin-top:20px;width:70%;">
-								<a target="_blank" href="` + blog[:Slug] + `" class="title">` + blog[:Title] + `</a>
-								<br /><span style="font-size:12px;">` + blog[:Date] + `<span>
-								<!-- <p> ` + blog[:Excerpt] + `</p>-->
-								
-							</div>
-						`
-					else
-						display `
-							<div class="articles" style="margin-top:20px;width:70%;">
-								<a href="` + baseUrl + `blog/` + blog[:Id] + `" class="title">` + blog[:Title] + `</a>
-								<br /><span style="font-size:12px;">` + blog[:Date] + `<span>
-								<p>` + blog[:Excerpt] + `</p>
-								
-							</div>
-						`
-					}
-					
-			}
-			
+display `
+<div class="flex-container-wrap">
+`
+
+versions =  __sqlite3_exec(db,"select * from Versions order by Version desc")
+topScores =  __sqlite3_exec(db,"select * from Downloads where Version='" + versions[0][:Version] + "' and Type='Installer' and Arch like '%x64%'")
+for download in topScores {
 	display `
-		</div>
+		 <div>
+			<span class="title">` + download[:OS] + `</span><br />
+			<span >` + download[:Size] + `</span><br />
+			<a href="` + download[:Link] + `">` + download[:Name] + `</a><br />
+		  </div>
 	`
-	
-elif strContains(postId, '-')
-	#fetch by slug
-	article =  __sqlite3_exec(db,"select * from BLOG where Slug='" + postId + "'")
-	if lengthOf(article) > 0 {
-		display `<div class="article" >
-			<span style="font-weight: bold;font-size:30px;">` + article[0][:Title] + `</span><br /><br />
-			<span style="font-weight: bold;font-size:17px;">` /*+ article[0][:Author] + ` - `*/ + article[0][:Date] + `</span><br /><br />
-			<p id="markdown-paragraph"> </p>
-			</div>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
-			<script>
-				var converter = new showdown.Converter(), 
-				text      = '` + article[0][:Content] + `';
-				document.getElementById('markdown-paragraph').innerHTML  = converter.makeHtml(text);
-			</script>
-		`
-	}
-	
-else
-	#fetch by number
-	article =  __sqlite3_exec(db,"select * from BLOG where Id=" + postId + "")
-	if lengthOf(article) > 0 {
-		display `<div class="article" >
-			<span style="font-weight: bold;font-size:30px;">` + article[0][:Title] + `</span><br /><br />
-			<span style="font-weight: bold;font-size:17px;">` /*+ article[0][:Author] + ` - `*/ + article[0][:Date] + `</span><br /><br />
-			<p id="markdown-paragraph"> </p>
-			</div>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
-			<script>
-				var converter = new showdown.Converter(), 
-				text      = "` + escapeString(article[0][:Content]) + `";
-				document.getElementById('markdown-paragraph').innerHTML  = converter.makeHtml(text);
-			</script>
-		`
-	}
-	
 }
+display `  
+</div>
+<br/><br/><br/>
+`
+		
+versions =  __sqlite3_exec(db,"select * from Versions order by Version desc limit 10")
+for version in versions {
+	display `<table>
+			  <caption>` + version[:Version] + `</caption>
+			  <tr>
+				<th>Name</th>
+				<th>OS</th>
+				<th>Arch</th>
+				<th>Type</th>
+				<th>Size</th>
+			  </tr>`
+			  
+    downloads =  __sqlite3_exec(db,"select * from Downloads where Version='" + version[:Version] + "'")
+	for download in downloads {
+		display `
+			
+			  <tr>
+				<td><a target="_blank" href="` + download[:Link] + `">` + download[:Name] + `</a></td>
+				<td>` + download[:OS] + `</td>
+				<td>` + download[:Arch] + `</td>
+				<td>` + download[:Type] + `</td>
+				<td>` + download[:Size] + `</td>
+			  </tr>
+			
+		`
+	}
+	display `</table>`
+}
+display `</div>`
 __sqlite3_close(db)
 
 call "footer.sim" #call the footer to close the tags and other after body script

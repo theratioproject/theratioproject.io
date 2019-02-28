@@ -13,6 +13,45 @@ body {
   font-family: Georgia, "Times New Roman", serif;
 }
 
+a { 
+  color: inherit; 
+} 
+
+table {
+  min-width: 70%;
+}
+
+table, th, td {
+  text-decoration: none;
+}
+
+th, td {
+  padding: 10px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+table th {
+  color: black;
+  background: white;
+  text-align: left;
+}
+
+table caption {
+  float:left;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .footer {
   left: 0;
   bottom: 0;
@@ -118,6 +157,10 @@ body {
   justify-content: center;
 }
 
+.left {
+  justify-content: left;	
+}
+
 .flex-container > div {
   width: 100px;
   margin: 5px;
@@ -184,6 +227,30 @@ body {
   -webkit-animation-duration: 1.5s;
   animation-name: fade;
   animation-duration: 1.5s;
+}
+
+.flex-container-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-container-wrap > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
+  font-size: 17px;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  border-color: #627584;
+}
+
+.flex-container-wrap > div .title {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  line-height:30px;
 }
 
 @-webkit-keyframes fade {
