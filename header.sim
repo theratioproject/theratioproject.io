@@ -1,6 +1,6 @@
 
 #change to just '/' during deployment
-baseUrl = "/simple-lang.io/"
+baseUrl = getEnv("BASE_URL")
 
 mainHeadings = [
 	[
@@ -8,16 +8,16 @@ mainHeadings = [
 		:url = baseUrl + "download/"
 	],
 	[
-		:title = "Modules",
-		:url = baseUrl + "modules/"
+		:title = "Wiki",
+		:url = "https://github.com/simple-lang/simple/wiki"
 	],
 	[
 		:title = "Blog",
 		:url = baseUrl + "blog/"
 	],
 	[
-		:title = "Help",
-		:url = baseUrl + "help/"
+		:title = "Contribute",
+		:url = "https://github.com/simple-lang/simple"
 	]
 
 ]

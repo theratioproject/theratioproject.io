@@ -9,14 +9,14 @@ postId = GET["post_id"] #get the post id for a article
 call "header.sim" #call the header file for html assets e.g css, js
 
 db = __init_sqlite3()
-__sqlite3_open("./assets/simple_lang_io.db", db)
+__sqlite3_open("simple_lang_io.db", db)
 if postId == "" {
 	
 	display `
 		<div class="blog posts" style="margin:3%;">
 		<span style="font-weight: bold;font-size:40px;">Articles</span><br /><br />`
 		
-			blogs =  __sqlite3_exec(db,"select * from BLOG Limit 100")
+			blogs =  __sqlite3_exec(db,"select * from BLOG order by Date desc Limit 50")
 			for blog in blogs {
 					if blog[:External] == "true" {
 						display `
@@ -51,12 +51,12 @@ elif strContains(postId, '-')
 		display `<div class="article" >
 			<span style="font-weight: bold;font-size:30px;">` + article[0][:Title] + `</span><br /><br />
 			<span style="font-weight: bold;font-size:17px;">` /*+ article[0][:Author] + ` - `*/ + article[0][:Date] + `</span><br /><br />
-			<p id="markdown-paragraph"> </p>
+			<p id="markdown-paragraph"></p>
 			</div>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
 			<script>
 				var converter = new showdown.Converter(), 
-				text      = '` + article[0][:Content] + `';
+				text      = '` + escapeString(article[0][:Content]) + `';
 				document.getElementById('markdown-paragraph').innerHTML  = converter.makeHtml(text);
 			</script>
 		`

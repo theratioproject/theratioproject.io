@@ -21,7 +21,7 @@ if GET['submit_logout'] != "" {
 
 if GET['submit_username'] != "" {
 	db = __init_sqlite3()
-	__sqlite3_open("../assets/simple_lang_io.db", db)
+	__sqlite3_open("../simple_lang_io.db", db)
 	username = GET['username']
 	password = GET['password']
 	query =  __sqlite3_exec(db,"select * from ADMIN where Username='" + username + "' and Password='" + password + "'")

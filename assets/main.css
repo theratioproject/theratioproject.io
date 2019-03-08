@@ -354,11 +354,35 @@ table caption {
 
 .article {
   margin:3%;
-  width:70%;
+  width:70% !important;
+  word-wrap: break-word;
   font-size: 17px;
   line-height: 25px;
+  overflow: auto;
+  clear:both;
+  height:auto;
+}
+
+.article img {
+  max-width:80% !important;
+  float:center;
+  height:auto;
+  width:auto;
+  margin:10px;
 }
 
 .article p {
-  
+	
+}
+
+.article pre {
+  background-color: rgb(45,45,45);
+  color: white;
+  margin: 5px;
+  padding: 10px;
+}
+
+.article code {
+  background-color: rgb(45,45,45);
+  color: white;
 }

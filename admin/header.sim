@@ -42,10 +42,6 @@ mainHeadings = [
 		:url = baseUrl + "admin/download/"
 	],
 	[
-		:title = "Wiki",
-		:url = baseUrl + "admin/wiki/"
-	],
-	[
 		:title = "Posts",
 		:url = baseUrl + "admin/blog/"
 	]

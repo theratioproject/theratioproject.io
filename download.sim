@@ -9,7 +9,7 @@ postId = GET["post_id"] #get the post id for a article
 call "header.sim" #call the header file for html assets e.g css, js
 
 db = __init_sqlite3()
-__sqlite3_open("./assets/simple_lang_io.db", db)
+__sqlite3_open("simple_lang_io.db", db)
 display `
 		<div class="blog posts" style="margin:3%;">
 		<span style="font-weight: bold;font-size:40px;">Downloads</span><br /><br />`
@@ -18,7 +18,7 @@ display `
 `
 
 versions =  __sqlite3_exec(db,"select * from Versions order by Version desc")
-topScores =  __sqlite3_exec(db,"select * from Downloads where Version='" + versions[0][:Version] + "' and Type='Installer' and Arch like '%x64%'")
+topScores =  __sqlite3_exec(db,"select * from Downloads where (Version='" + versions[0][:Version] + "' and Arch like '%64%' and Type='Installer') or (Version='" + versions[0][:Version] + "' and Type='Source')")
 for download in topScores {
 	display `
 		 <div>

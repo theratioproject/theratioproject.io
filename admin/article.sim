@@ -8,38 +8,43 @@ call "header.sim"
 callModule("libsimple_sqlite")
 
 #display SERVER
-if GET["update_article"] != "" {
-	Id = GET['id']
-	Title = GET['title']
-	Slug = GET['slug']
-	Excerpt = replaceStr(GET['excerpt'], crlf, nl)
-	Content = replaceStr(GET['content'], crlf, nl)
+if POST["update_article"] != "" {
+	Id = POST['id']
+	Title = POST['title']
+	Slug = POST['slug']
+	Excerpt = replaceStr(POST['excerpt'], crlf, nl)
+	Excerpt = replaceStr(Excerpt, '"', "'")
+	Content = replaceStr(POST['content'], crlf, nl)
+	Content = replaceStr(Content, '"', "'")
 	db = __init_sqlite3()
-	__sqlite3_open("../assets/simple_lang_io.db", db)
+	__sqlite3_open("../simple_lang_io.db", db)
 	query =  __sqlite3_exec(db,'update BLOG set Title="' +  Title + '", Slug="' + Slug + '", Excerpt="' + Excerpt + '", Content="' + Content + '"  where Id="' + Id +'"')
+	#display __sqlite3_errmsg(db) + nl __exit__
 	if lengthOf(query) > 0 {
 		display `<script>window.location = "` + baseUrl + `admin/" ;</script>`
 	}
 	__sqlite3_close(db)
 	
-elif GET["create_article"] != "" 
-	Id = GET['id']
-	Title = GET['title']
-	Slug = GET['slug']
-	Excerpt = replaceStr(GET['excerpt'], crlf, nl)
-	Content = replaceStr(GET['content'], crlf, nl)
+elif POST["create_article"] != "" 
+	Id = POST['id']
+	Title = POST['title']
+	Slug = POST['slug']
+	Excerpt = replaceStr(POST['excerpt'], crlf, nl)
+	Excerpt = replaceStr(Excerpt, '"', "'")
+	Content = replaceStr(POST['content'], crlf, nl)
+	Content = replaceStr(Content, '"', "'")
 	db = __init_sqlite3()
-	__sqlite3_open("../assets/simple_lang_io.db", db)
+	__sqlite3_open("../simple_lang_io.db", db)
 	date = new DateTime()
 	query =  __sqlite3_exec(db,'insert into BLOG (Title,External,Slug,Excerpt,Content,AuthorId,Date) 
 										values ("'+Title+'", "false", "'+Slug+'", "'+Excerpt+'", "'+Content+'", "'+COOKIES['Id']+'", "'+date.toString()+'")')
 	__sqlite3_close(db)
 	display `<script>window.location = "` + baseUrl + `blog/`+Slug+`" ;</script>`
 	
-elif GET['delete_article'] != ""
-	Id = GET['id']
+elif POST['delete_article'] != ""
+	Id = POST['id']
 	db = __init_sqlite3()
-	__sqlite3_open("../assets/simple_lang_io.db", db)
+	__sqlite3_open("../simple_lang_io.db", db)
 	query =  __sqlite3_exec(db,'delete from BLOG where Id="' + Id +'"')
 	__sqlite3_close(db)
 	display `<script>window.location = "` + baseUrl + `admin/" ;</script>`
@@ -54,13 +59,13 @@ if GET['op'] == "edit" {
 	}
 	
 	db = __init_sqlite3()
-	__sqlite3_open("../assets/simple_lang_io.db", db)
+	__sqlite3_open("../simple_lang_io.db", db)
 	article =  __sqlite3_exec(db,"select * from BLOG where Id=" + GET['post_id'] + "")
 	display `
 		<div style="font-size:20px;font-weight:bold;width:70%;margin:3%;">
 			<span style="">Edit Article<span> <br />
 			Write the article in Markdown.<br /><br />
-			<form method="get" action="` + baseUrl + `admin/article.sim">
+			<form method="post" action="` + baseUrl + `admin/article/">
 				<input type="hidden" name="id" value="` + article[0][:Id] + `">
 				Title : <textarea name="title" style="width:100%;height:30px;margin-bottom:2%;" required>` + article[0][:Title] + `</textarea>
 				Slug : <br/><textarea name="slug" style="width:50%;height:30px;margin-bottom:2%;" required>` + article[0][:Slug] + `</textarea><br/>
@@ -78,7 +83,7 @@ elif GET['op'] == "new"
 		<div style="font-size:20px;font-weight:bold;width:70%;margin:3%;">
 			<span style="">Create New Article<span> <br />
 			Write the article in Markdown.<br /><br />
-			<form action="` + baseUrl + `admin/article.sim">
+			<form method="post" action="` + baseUrl + `admin/article/">
 				Title : <textarea name="title" style="width:100%;height:30px;margin-bottom:2%;" required></textarea>
 				Slug : <br/><textarea name="slug" style="width:50%;height:30px;margin-bottom:2%;" required>`+__rand()+`-`+__rand()+`</textarea><br/>
 				Excerpt : <br/><textarea name="excerpt" style="width:100%;height:50px;margin-bottom:2%;" maxlength="600" minlength="200" required></textarea><br/>

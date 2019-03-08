@@ -1,13 +1,13 @@
 Options -MultiViews
 Options +FollowSymLinks
+Options +Indexes
 RewriteEngine On
 
-SetEnvIf Host ^ BASE_URL=/simple-lang.io/
-#SetEnvIf Host ^ SIMPLE_PATH="/cgi-bin/"
+SetEnv BASE_URL /simple-lang.io/
 SetEnv LD_LIBRARY_PATH /home/project-web/simple-lang/lib/bin
 SetEnv SIMPLE_PATH /home/project-web/simple-lang/lib
 
-ErrorDocument 404 /simple-lang.io/
+#ErrorDocument 404 /
 
 RewriteRule ^blog/(.*)$ %{ENV:BASE_URL}posts.sim?post_id=$1 [L]
 RewriteRule ^home/(.*)$ %{ENV:BASE_URL} [L]
@@ -20,7 +20,9 @@ RewriteRule ^admin/login(.*)$ %{ENV:BASE_URL}admin/signin.sim [L]
 RewriteRule ^admin/signup(.*)$ %{ENV:BASE_URL}admin/register.sim [L]
 RewriteRule ^admin/blog/(.*)$ %{ENV:BASE_URL}admin/posts.sim?post_id=$1 [L]
 RewriteRule ^admin/article/(.*)/(.*)$ %{ENV:BASE_URL}admin/article.sim?op=$1&post_id=$2 [L]
+RewriteRule ^admin/article/(.*)$ %{ENV:BASE_URL}admin/article.sim [L]
 RewriteRule ^admin/download/(.*)$ %{ENV:BASE_URL}admin/mod_download.sim?post_id=$1 [L]
 RewriteRule ^admin/version/(.*)/(.*)$ %{ENV:BASE_URL}admin/version.sim?op=$1&id=$2 [L]
+RewriteRule ^admin/version/(.*)$ %{ENV:BASE_URL}admin/version.sim [L]
 
 RewriteRule ^/(.*)$ %{ENV:BASE_URL}index.sim?page=$1 [L]

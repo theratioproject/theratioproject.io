@@ -17,8 +17,8 @@ display `
 		</form>
 		<br /><br />`
 			db = __init_sqlite3()
-			__sqlite3_open("../assets/simple_lang_io.db", db)
-			blogs =  __sqlite3_exec(db,"select * from BLOG where AuthorId=" + COOKIES["Id"] + " Limit 100")
+			__sqlite3_open("../simple_lang_io.db", db)
+			blogs =  __sqlite3_exec(db,"select * from BLOG where AuthorId=" + COOKIES["Id"] + " order by Date desc Limit 100")
 			for blog in blogs {
 					if blog[:External] == "true" {
 						display `

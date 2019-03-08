@@ -13,7 +13,7 @@ display `
 		<div class="blog posts" style="margin:0%;">
 		<span style="font-weight: bold;font-size:40px;">Add/Modify Downloads</span><br /><br />`
 			db = __init_sqlite3()
-			__sqlite3_open("../assets/simple_lang_io.db", db)
+			__sqlite3_open("../simple_lang_io.db", db)
 			versions =  __sqlite3_exec(db,"select * from Versions order by Version desc limit 100")
 			for version in versions {
 					display `

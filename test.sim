@@ -1,0 +1,4 @@
+#!/home/project-web/simple-lang/lib/bin/simple
+
+display "Content-type: text/html"+crlf+crlf
+@"Hello World </br > Hello World 2"

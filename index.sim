@@ -138,7 +138,7 @@ display `
 	function runProgram () {
 		var consoleBox = document.getElementById ("output");
 		consoleBox.value = "Waiting for response from server...";
-		$.get("pages/exec_code.sim", { "code": editor.getSession().getValue()}, function(data) {
+		$.get("` + baseUrl + `/exec_code.sim", { "code": editor.getSession().getValue()}, function(data) {
 			consoleBox.value = data;
 			consoleBox.scrollTop = consoleBox.scrollHeight;
 		});      
@@ -159,8 +159,8 @@ display `
 		<span style="font-weight: bold;">Articles</span>
 		`
 		db = __init_sqlite3()
-		__sqlite3_open("./assets/simple_lang_io.db", db)
-		blogs =  __sqlite3_exec(db,"select * from BLOG Limit 100")
+		__sqlite3_open("simple_lang_io.db", db)
+		blogs =  __sqlite3_exec(db,"select * from BLOG order by Date desc Limit 5")
 		for blog in blogs {
 				if blog[:External] == "true" {
 					display `
